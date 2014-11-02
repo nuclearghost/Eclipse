@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import <TwitterKit/TwitterKit.h>
+
+
 
 @interface AppDelegate ()
 
@@ -21,6 +26,9 @@
     [Parse setApplicationId:@"0VJoi3nTwWf8RwJR7iwAYowSoLBod710f4l4knIK"
                   clientKey:@"lY2Qa764KQionl2YXAkpBsaWsSeF8F4WQwhNoz7q"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [Fabric with:@[CrashlyticsKit, TwitterKit]];
+
     
     return YES;
 }

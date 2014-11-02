@@ -26,6 +26,11 @@
 		B26217C41A06EEC70074A08C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217C31A06EEC70074A08C /* StoreKit.framework */; };
 		B26217C61A06EECE0074A08C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217C51A06EECE0074A08C /* SystemConfiguration.framework */; };
 		B26217C81A06EF610074A08C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217C71A06EF610074A08C /* Bolts.framework */; };
+		B26217CC1A06F0840074A08C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217CA1A06F0840074A08C /* Crashlytics.framework */; };
+		B26217CD1A06F0840074A08C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217CB1A06F0840074A08C /* Fabric.framework */; };
+		B26217D01A06F0C80074A08C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217CE1A06F0C80074A08C /* TwitterKit.framework */; };
+		B26217D11A06F0C80074A08C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B26217CF1A06F0C80074A08C /* TwitterKitResources.bundle */; };
+		B26217D41A06F0FD0074A08C /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D31A06F0FD0074A08C /* AuthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,12 @@
 		B26217C31A06EEC70074A08C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B26217C51A06EECE0074A08C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B26217C71A06EF610074A08C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B26217CA1A06F0840074A08C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		B26217CB1A06F0840074A08C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		B26217CE1A06F0C80074A08C /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
+		B26217CF1A06F0C80074A08C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
+		B26217D21A06F0FD0074A08C /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
+		B26217D31A06F0FD0074A08C /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,13 +84,16 @@
 			files = (
 				B26217C61A06EECE0074A08C /* SystemConfiguration.framework in Frameworks */,
 				B26217C41A06EEC70074A08C /* StoreKit.framework in Frameworks */,
+				B26217CC1A06F0840074A08C /* Crashlytics.framework in Frameworks */,
 				B26217C21A06EEC20074A08C /* Security.framework in Frameworks */,
 				B26217C81A06EF610074A08C /* Bolts.framework in Frameworks */,
 				B26217C01A06EEBD0074A08C /* QuartzCore.framework in Frameworks */,
 				B26217BE1A06EEB80074A08C /* MobileCoreServices.framework in Frameworks */,
+				B26217CD1A06F0840074A08C /* Fabric.framework in Frameworks */,
 				B26217BC1A06EEB10074A08C /* libz.dylib in Frameworks */,
 				B26217BA1A06EEAB0074A08C /* CoreLocation.framework in Frameworks */,
 				B26217B81A06EEA40074A08C /* CoreGraphics.framework in Frameworks */,
+				B26217D01A06F0C80074A08C /* TwitterKit.framework in Frameworks */,
 				B26217B61A06EE9F0074A08C /* CFNetwork.framework in Frameworks */,
 				B26217B41A06EE990074A08C /* AudioToolbox.framework in Frameworks */,
 				B26217B21A06EE7A0074A08C /* Parse.framework in Frameworks */,
@@ -129,6 +143,8 @@
 			children = (
 				B262178F1A06EE490074A08C /* AppDelegate.h */,
 				B26217901A06EE490074A08C /* AppDelegate.m */,
+				B26217D21A06F0FD0074A08C /* AuthViewController.h */,
+				B26217D31A06F0FD0074A08C /* AuthViewController.m */,
 				B26217921A06EE490074A08C /* ViewController.h */,
 				B26217931A06EE490074A08C /* ViewController.m */,
 				B26217951A06EE490074A08C /* Main.storyboard */,
@@ -142,6 +158,10 @@
 		B262178B1A06EE490074A08C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B26217CE1A06F0C80074A08C /* TwitterKit.framework */,
+				B26217CF1A06F0C80074A08C /* TwitterKitResources.bundle */,
+				B26217CA1A06F0840074A08C /* Crashlytics.framework */,
+				B26217CB1A06F0840074A08C /* Fabric.framework */,
 				B26217C71A06EF610074A08C /* Bolts.framework */,
 				B26217B11A06EE7A0074A08C /* Parse.framework */,
 				B262178C1A06EE490074A08C /* Info.plist */,
@@ -177,6 +197,7 @@
 				B26217841A06EE490074A08C /* Sources */,
 				B26217851A06EE490074A08C /* Frameworks */,
 				B26217861A06EE490074A08C /* Resources */,
+				B26217C91A06F05D0074A08C /* Run Fabric Script */,
 			);
 			buildRules = (
 			);
@@ -247,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26217D11A06F0C80074A08C /* TwitterKitResources.bundle in Resources */,
 				B26217971A06EE490074A08C /* Main.storyboard in Resources */,
 				B262179C1A06EE490074A08C /* LaunchScreen.xib in Resources */,
 				B26217991A06EE490074A08C /* Images.xcassets in Resources */,
@@ -262,11 +284,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B26217C91A06F05D0074A08C /* Run Fabric Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0ff55a0924d23f6f7e9e290ae229fe0ef9d43d74 dcee04a25ad747d9afb51f110851c2c6579ce6236cee9a54aa4c881d2ad3f09a";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B26217841A06EE490074A08C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26217D41A06F0FD0074A08C /* AuthViewController.m in Sources */,
 				B26217941A06EE490074A08C /* ViewController.m in Sources */,
 				B26217911A06EE490074A08C /* AppDelegate.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
@@ -394,6 +434,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Eclipse",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Eclipse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -408,6 +449,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Eclipse",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Eclipse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
