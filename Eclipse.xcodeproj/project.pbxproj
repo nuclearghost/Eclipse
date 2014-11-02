@@ -14,6 +14,18 @@
 		B26217991A06EE490074A08C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26217981A06EE490074A08C /* Images.xcassets */; };
 		B262179C1A06EE490074A08C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B262179A1A06EE490074A08C /* LaunchScreen.xib */; };
 		B26217A81A06EE490074A08C /* EclipseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217A71A06EE490074A08C /* EclipseTests.m */; };
+		B26217B21A06EE7A0074A08C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217B11A06EE7A0074A08C /* Parse.framework */; };
+		B26217B41A06EE990074A08C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217B31A06EE990074A08C /* AudioToolbox.framework */; };
+		B26217B61A06EE9F0074A08C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217B51A06EE9F0074A08C /* CFNetwork.framework */; };
+		B26217B81A06EEA40074A08C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217B71A06EEA40074A08C /* CoreGraphics.framework */; };
+		B26217BA1A06EEAB0074A08C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217B91A06EEAB0074A08C /* CoreLocation.framework */; };
+		B26217BC1A06EEB10074A08C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217BB1A06EEB10074A08C /* libz.dylib */; };
+		B26217BE1A06EEB80074A08C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217BD1A06EEB80074A08C /* MobileCoreServices.framework */; };
+		B26217C01A06EEBD0074A08C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217BF1A06EEBD0074A08C /* QuartzCore.framework */; };
+		B26217C21A06EEC20074A08C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217C11A06EEC20074A08C /* Security.framework */; };
+		B26217C41A06EEC70074A08C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217C31A06EEC70074A08C /* StoreKit.framework */; };
+		B26217C61A06EECE0074A08C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217C51A06EECE0074A08C /* SystemConfiguration.framework */; };
+		B26217C81A06EF610074A08C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217C71A06EF610074A08C /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +52,18 @@
 		B26217A11A06EE490074A08C /* EclipseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EclipseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26217A61A06EE490074A08C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B26217A71A06EE490074A08C /* EclipseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EclipseTests.m; sourceTree = "<group>"; };
+		B26217B11A06EE7A0074A08C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B26217B31A06EE990074A08C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B26217B51A06EE9F0074A08C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B26217B71A06EEA40074A08C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B26217B91A06EEAB0074A08C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B26217BB1A06EEB10074A08C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B26217BD1A06EEB80074A08C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B26217BF1A06EEBD0074A08C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B26217C11A06EEC20074A08C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B26217C31A06EEC70074A08C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B26217C51A06EECE0074A08C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B26217C71A06EF610074A08C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +71,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26217C61A06EECE0074A08C /* SystemConfiguration.framework in Frameworks */,
+				B26217C41A06EEC70074A08C /* StoreKit.framework in Frameworks */,
+				B26217C21A06EEC20074A08C /* Security.framework in Frameworks */,
+				B26217C81A06EF610074A08C /* Bolts.framework in Frameworks */,
+				B26217C01A06EEBD0074A08C /* QuartzCore.framework in Frameworks */,
+				B26217BE1A06EEB80074A08C /* MobileCoreServices.framework in Frameworks */,
+				B26217BC1A06EEB10074A08C /* libz.dylib in Frameworks */,
+				B26217BA1A06EEAB0074A08C /* CoreLocation.framework in Frameworks */,
+				B26217B81A06EEA40074A08C /* CoreGraphics.framework in Frameworks */,
+				B26217B61A06EE9F0074A08C /* CFNetwork.framework in Frameworks */,
+				B26217B41A06EE990074A08C /* AudioToolbox.framework in Frameworks */,
+				B26217B21A06EE7A0074A08C /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +99,16 @@
 		B262177F1A06EE490074A08C = {
 			isa = PBXGroup;
 			children = (
+				B26217C51A06EECE0074A08C /* SystemConfiguration.framework */,
+				B26217C31A06EEC70074A08C /* StoreKit.framework */,
+				B26217C11A06EEC20074A08C /* Security.framework */,
+				B26217BF1A06EEBD0074A08C /* QuartzCore.framework */,
+				B26217BD1A06EEB80074A08C /* MobileCoreServices.framework */,
+				B26217BB1A06EEB10074A08C /* libz.dylib */,
+				B26217B91A06EEAB0074A08C /* CoreLocation.framework */,
+				B26217B71A06EEA40074A08C /* CoreGraphics.framework */,
+				B26217B51A06EE9F0074A08C /* CFNetwork.framework */,
+				B26217B31A06EE990074A08C /* AudioToolbox.framework */,
 				B262178A1A06EE490074A08C /* Eclipse */,
 				B26217A41A06EE490074A08C /* EclipseTests */,
 				B26217891A06EE490074A08C /* Products */,
@@ -96,6 +142,8 @@
 		B262178B1A06EE490074A08C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B26217C71A06EF610074A08C /* Bolts.framework */,
+				B26217B11A06EE7A0074A08C /* Parse.framework */,
 				B262178C1A06EE490074A08C /* Info.plist */,
 				B262178D1A06EE490074A08C /* main.m */,
 			);
@@ -343,6 +391,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Eclipse",
+				);
 				INFOPLIST_FILE = Eclipse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +405,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Eclipse",
+				);
 				INFOPLIST_FILE = Eclipse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
