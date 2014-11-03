@@ -32,6 +32,7 @@
 		B26217D41A06F0FD0074A08C /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D31A06F0FD0074A08C /* AuthViewController.m */; };
 		B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D71A06F2EB0074A08C /* InitialViewController.m */; };
 		B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DA1A06FE830074A08C /* UserNameViewController.m */; };
+		B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		B26217D71A06F2EB0074A08C /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		B26217D91A06FE830074A08C /* UserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNameViewController.h; sourceTree = "<group>"; };
 		B26217DA1A06FE830074A08C /* UserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameViewController.m; sourceTree = "<group>"; };
+		B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomTableViewController.h; sourceTree = "<group>"; };
+		B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 				B26217D71A06F2EB0074A08C /* InitialViewController.m */,
 				B26217D91A06FE830074A08C /* UserNameViewController.h */,
 				B26217DA1A06FE830074A08C /* UserNameViewController.m */,
+				B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */,
+				B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				B26217911A06EE490074A08C /* AppDelegate.m in Sources */,
 				B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
+				B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */,
 				B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

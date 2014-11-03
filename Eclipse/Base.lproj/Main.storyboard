@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="215" y="522"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Rifts-->
         <scene sceneID="vrT-a9-NgD">
             <objects>
-                <tableViewController id="YY0-Ma-Qsc" sceneMemberID="viewController">
+                <tableViewController id="YY0-Ma-Qsc" customClass="ChatRoomTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eWs-kX-ndo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,9 @@
                             <outlet property="delegate" destination="YY0-Ma-Qsc" id="b7k-6W-vma"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="3Ml-fK-BBv"/>
+                    <navigationItem key="navigationItem" title="Rifts" id="3Ml-fK-BBv">
+                        <barButtonItem key="rightBarButtonItem" image="Plus" id="X6U-Lu-PzE"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="kcq-kI-ehe" kind="show" identifier="roomSegue" id="Mdj-e2-OgW"/>
                     </connections>
@@ -159,6 +161,9 @@
             <point key="canvasLocation" x="-595" y="890"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Plus" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6Gu-Aa-FaT"/>
     </inferredMetricsTieBreakers>
