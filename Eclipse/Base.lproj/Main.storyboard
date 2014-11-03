@@ -48,7 +48,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Rifts" id="3Ml-fK-BBv">
-                        <barButtonItem key="rightBarButtonItem" image="Plus" id="X6U-Lu-PzE"/>
+                        <barButtonItem key="rightBarButtonItem" image="Plus" id="X6U-Lu-PzE">
+                            <connections>
+                                <action selector="addTapped:" destination="YY0-Ma-Qsc" id="98X-GL-fup"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="kcq-kI-ehe" kind="show" identifier="roomSegue" id="Mdj-e2-OgW"/>
@@ -58,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="1035" y="1252"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="RSI-Yj-oBh">
             <objects>
-                <viewController id="kcq-kI-ehe" sceneMemberID="viewController">
+                <viewController id="kcq-kI-ehe" customClass="ChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LyR-Wi-g46"/>
                         <viewControllerLayoutGuide type="bottom" id="eQ4-kA-SFs"/>

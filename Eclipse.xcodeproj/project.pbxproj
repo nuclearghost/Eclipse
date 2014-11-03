@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */; };
 		B262178E1A06EE490074A08C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B262178D1A06EE490074A08C /* main.m */; };
 		B26217911A06EE490074A08C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217901A06EE490074A08C /* AppDelegate.m */; };
 		B26217971A06EE490074A08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26217951A06EE490074A08C /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D71A06F2EB0074A08C /* InitialViewController.m */; };
 		B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DA1A06FE830074A08C /* UserNameViewController.m */; };
 		B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */; };
+		C192EDA4DE5545701AF26EF9 /* libPods-Eclipse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFC23C879DC062AE92520EF /* libPods-Eclipse.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EFC23C879DC062AE92520EF /* libPods-Eclipse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eclipse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A691FB1D82DBCEE5F28765 /* Pods-Eclipse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eclipse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eclipse/Pods-Eclipse.debug.xcconfig"; sourceTree = "<group>"; };
+		4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eclipse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eclipse/Pods-Eclipse.release.xcconfig"; sourceTree = "<group>"; };
+		B23EE6FE1A073BDB00E5AE9E /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B26217881A06EE490074A08C /* Eclipse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eclipse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B262178C1A06EE490074A08C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B262178D1A06EE490074A08C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 				B26217B61A06EE9F0074A08C /* CFNetwork.framework in Frameworks */,
 				B26217B41A06EE990074A08C /* AudioToolbox.framework in Frameworks */,
 				B26217B21A06EE7A0074A08C /* Parse.framework in Frameworks */,
+				C192EDA4DE5545701AF26EF9 /* libPods-Eclipse.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25DB7CBFD8FF427A218464FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EFC23C879DC062AE92520EF /* libPods-Eclipse.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62000A8090DE1258A024E2A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42A691FB1D82DBCEE5F28765 /* Pods-Eclipse.debug.xcconfig */,
+				4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B262177F1A06EE490074A08C = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +157,8 @@
 				B262178A1A06EE490074A08C /* Eclipse */,
 				B26217A41A06EE490074A08C /* EclipseTests */,
 				B26217891A06EE490074A08C /* Products */,
+				62000A8090DE1258A024E2A2 /* Pods */,
+				25DB7CBFD8FF427A218464FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +228,8 @@
 				B26217DA1A06FE830074A08C /* UserNameViewController.m */,
 				B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */,
 				B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */,
+				B23EE6FE1A073BDB00E5AE9E /* ChatViewController.h */,
+				B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -212,10 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B26217AB1A06EE490074A08C /* Build configuration list for PBXNativeTarget "Eclipse" */;
 			buildPhases = (
+				E3EBFEA537241715932D0E75 /* Check Pods Manifest.lock */,
 				B26217841A06EE490074A08C /* Sources */,
 				B26217851A06EE490074A08C /* Frameworks */,
 				B26217861A06EE490074A08C /* Resources */,
 				B26217C91A06F05D0074A08C /* Run Fabric Script */,
+				B002E2D264C63FE00AAC2B05 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +334,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B002E2D264C63FE00AAC2B05 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eclipse/Pods-Eclipse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B26217C91A06F05D0074A08C /* Run Fabric Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,6 +363,21 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 0ff55a0924d23f6f7e9e290ae229fe0ef9d43d74 dcee04a25ad747d9afb51f110851c2c6579ce6236cee9a54aa4c881d2ad3f09a";
 		};
+		E3EBFEA537241715932D0E75 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -329,6 +390,7 @@
 				B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
 				B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */,
+				B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */,
 				B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +511,7 @@
 		};
 		B26217AC1A06EE490074A08C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42A691FB1D82DBCEE5F28765 /* Pods-Eclipse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -464,6 +527,7 @@
 		};
 		B26217AD1A06EE490074A08C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -530,6 +594,7 @@
 				B26217AD1A06EE490074A08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B26217AE1A06EE490074A08C /* Build configuration list for PBXNativeTarget "EclipseTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +603,7 @@
 				B26217B01A06EE490074A08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

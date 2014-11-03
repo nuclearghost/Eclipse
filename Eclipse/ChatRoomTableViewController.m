@@ -8,7 +8,13 @@
 
 #import "ChatRoomTableViewController.h"
 
+#import <Parse/Parse.h>
+
+#import "ChatViewController.h"
+
 @interface ChatRoomTableViewController ()
+
+@property (strong, nonatomic) NSMutableArray *chatRooms;
 
 @end
 
@@ -22,6 +28,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.chatRooms = [[NSMutableArray alloc] init];
+    
+    [self loadChats];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,68 +42,103 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.chatRooms count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    PFObject *chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = chatRoom[@"Name"];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PFObject *chatroom = self.chatRooms[indexPath.row];
+    //NSString *roomId = chatroom.objectId;
+    //CreateMessageItem([PFUser currentUser], roomId, chatroom[PF_CHATROOMS_NAME]);
+    
+    [self performSegueWithIdentifier:@"roomSegue" sender:chatroom];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"roomSegue"]) {
+        ChatViewController *cvc = (ChatViewController *)[segue destinationViewController];
+        cvc.room = (PFObject *)sender;
+    }
 }
-*/
 
+
+#pragma mark - UIBarButton Action
+
+- (IBAction)addTapped:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please enter a topic for your rift" message:nil delegate:self
+                                          cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+//--------------------------------------------------------------------------------------------------------------------
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//--------------------------------------------------------------------------------------------------------------------
+{
+    if (buttonIndex != alertView.cancelButtonIndex)
+    {
+        UITextField *textField = [alertView textFieldAtIndex:0];
+        if ([textField.text isEqualToString:@""] == NO)
+        {
+            PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
+            chatRoom[@"Name"] = textField.text;
+            chatRoom[@"creator"] = [PFUser currentUser];
+            [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+             {
+                 if (error == nil)
+                 {
+                     [self loadChats];
+                 }
+                 else {
+                     //[ProgressHUD showError:@"Network error."];
+                 }
+             }];
+        }
+    }
+}
+
+#pragma mark - Private Methods
+- (void)loadChats {
+    PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if (error == nil)
+         {
+             [self.chatRooms removeAllObjects];
+             for (PFObject *object in objects)
+             {
+                 [self.chatRooms addObject:object];
+             }
+             //[ProgressHUD dismiss];
+             [self.tableView reloadData];
+         }
+         else {
+             //[ProgressHUD showError:@"Network error."];
+         }
+     }];
+
+}
 @end

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChatRoomTableViewController : UITableViewController
+@interface ChatRoomTableViewController : UITableViewController <UIAlertViewDelegate>
+
+- (IBAction)addTapped:(id)sender;
 
 @end
