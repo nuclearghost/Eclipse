@@ -45,8 +45,10 @@
 - (void)createUser {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSString *userName = self.userNameField.text;
+    
     PFUser *user = [PFUser user];
-    user.username = self.userNameField.text;
+    user.username = userName;
     user.password = [defaults objectForKey:@"digitsAuthTokenSecret"];
     user[@"digitsPhoneNumber"] = [defaults objectForKey:@"digitsPhoneNumber"];
     user[@"digitsID"] = [defaults objectForKey:@"digitsID"];
@@ -56,6 +58,8 @@
         if (!error) {
             // Hooray! Let them use the app now.
             [self performSegueWithIdentifier:@"userNameRoomSegue" sender:nil];
+            
+            [defaults setObject:userName forKey:@"userName"];
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.

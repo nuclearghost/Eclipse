@@ -8,6 +8,9 @@
 
 #import "InitialViewController.h"
 
+#import <Parse/Parse.h>
+#import <Crashlytics/Crashlytics.h>
+
 @interface InitialViewController ()
 
 @end
@@ -27,7 +30,16 @@
     if (userName == nil) {
         [self performSegueWithIdentifier:@"authSegue" sender:nil];
     } else {
-        [self performSegueWithIdentifier:@"chatSegue" sender:nil];
+        NSString *secret = [defaults objectForKey:@"digitsAuthTokenSecret"];
+        [PFUser logInWithUsernameInBackground:userName password:secret
+                                        block:^(PFUser *user, NSError *error) {
+                                            if (user) {
+                                                [self performSegueWithIdentifier:@"chatSegue" sender:nil];
+                                            } else {
+                                                CLS_LOG(@"Error from login: %@", error);
+                                            }
+                                        }];
+        
     }
 }
 
