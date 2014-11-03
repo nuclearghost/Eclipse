@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B262178E1A06EE490074A08C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B262178D1A06EE490074A08C /* main.m */; };
 		B26217911A06EE490074A08C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217901A06EE490074A08C /* AppDelegate.m */; };
-		B26217941A06EE490074A08C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217931A06EE490074A08C /* ViewController.m */; };
 		B26217971A06EE490074A08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26217951A06EE490074A08C /* Main.storyboard */; };
 		B26217991A06EE490074A08C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26217981A06EE490074A08C /* Images.xcassets */; };
 		B262179C1A06EE490074A08C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B262179A1A06EE490074A08C /* LaunchScreen.xib */; };
@@ -31,6 +30,8 @@
 		B26217D01A06F0C80074A08C /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217CE1A06F0C80074A08C /* TwitterKit.framework */; };
 		B26217D11A06F0C80074A08C /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B26217CF1A06F0C80074A08C /* TwitterKitResources.bundle */; };
 		B26217D41A06F0FD0074A08C /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D31A06F0FD0074A08C /* AuthViewController.m */; };
+		B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D71A06F2EB0074A08C /* InitialViewController.m */; };
+		B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DA1A06FE830074A08C /* UserNameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,6 @@
 		B262178D1A06EE490074A08C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B262178F1A06EE490074A08C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B26217901A06EE490074A08C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B26217921A06EE490074A08C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B26217931A06EE490074A08C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B26217961A06EE490074A08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B26217981A06EE490074A08C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B262179B1A06EE490074A08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -75,6 +74,10 @@
 		B26217CF1A06F0C80074A08C /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
 		B26217D21A06F0FD0074A08C /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		B26217D31A06F0FD0074A08C /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		B26217D61A06F2EB0074A08C /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		B26217D71A06F2EB0074A08C /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		B26217D91A06FE830074A08C /* UserNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNameViewController.h; sourceTree = "<group>"; };
+		B26217DA1A06FE830074A08C /* UserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,13 +144,10 @@
 		B262178A1A06EE490074A08C /* Eclipse */ = {
 			isa = PBXGroup;
 			children = (
+				B26217951A06EE490074A08C /* Main.storyboard */,
 				B262178F1A06EE490074A08C /* AppDelegate.h */,
 				B26217901A06EE490074A08C /* AppDelegate.m */,
-				B26217D21A06F0FD0074A08C /* AuthViewController.h */,
-				B26217D31A06F0FD0074A08C /* AuthViewController.m */,
-				B26217921A06EE490074A08C /* ViewController.h */,
-				B26217931A06EE490074A08C /* ViewController.m */,
-				B26217951A06EE490074A08C /* Main.storyboard */,
+				B26217D51A06F2C00074A08C /* ViewControllers */,
 				B26217981A06EE490074A08C /* Images.xcassets */,
 				B262179A1A06EE490074A08C /* LaunchScreen.xib */,
 				B262178B1A06EE490074A08C /* Supporting Files */,
@@ -185,6 +185,19 @@
 				B26217A61A06EE490074A08C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B26217D51A06F2C00074A08C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B26217D21A06F0FD0074A08C /* AuthViewController.h */,
+				B26217D31A06F0FD0074A08C /* AuthViewController.m */,
+				B26217D61A06F2EB0074A08C /* InitialViewController.h */,
+				B26217D71A06F2EB0074A08C /* InitialViewController.m */,
+				B26217D91A06FE830074A08C /* UserNameViewController.h */,
+				B26217DA1A06FE830074A08C /* UserNameViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,9 +320,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26217D41A06F0FD0074A08C /* AuthViewController.m in Sources */,
-				B26217941A06EE490074A08C /* ViewController.m in Sources */,
 				B26217911A06EE490074A08C /* AppDelegate.m in Sources */,
+				B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
+				B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

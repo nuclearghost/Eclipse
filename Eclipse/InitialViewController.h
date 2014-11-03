@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  InitialViewController.h
 //  Eclipse
 //
 //  Created by Mark Meyer on 11/2/14.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 
-@interface ViewController : UIViewController
-
+@interface InitialViewController : UIViewController
 
 @end
-

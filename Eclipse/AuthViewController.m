@@ -8,6 +8,7 @@
 
 #import "AuthViewController.h"
 #import <TwitterKit/TwitterKit.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AuthViewController ()
 
@@ -18,7 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
-        // play with Digits session
+        
+        if (session != nil) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:session.phoneNumber forKey:@"digitsPhoneNumber"];
+            [defaults setObject:session.userID forKey:@"digitsID"];
+            [defaults setObject:session.authToken forKey:@"digitsAuthToken"];
+            [defaults setObject:session.authTokenSecret forKey:@"digitsAuthTokenSecret"];
+            
+            [self performSegueWithIdentifier:@"userNameSegue" sender:nil];
+        } else {
+            CLS_LOG(@"Error from digits: %@", error);
+        }
     }];
     authenticateButton.center = self.view.center;
     [self.view addSubview:authenticateButton];
