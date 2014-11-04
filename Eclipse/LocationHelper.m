@@ -72,4 +72,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 - (CLLocation *)getLastLocation {
     return self.locationManager.location;
 }
+
+- (PFGeoPoint *)getLastGeoPoint {
+    return [PFGeoPoint geoPointWithLocation:self.locationManager.location];
+}
 @end

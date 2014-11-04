@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 @import CoreLocation;
 
 @interface LocationHelper : NSObject <CLLocationManagerDelegate>
@@ -16,5 +17,6 @@
 
 - (void)startLocationServices;
 - (CLLocation *)getLastLocation;
+- (PFGeoPoint *)getLastGeoPoint;
 
 @end

@@ -53,6 +53,8 @@
     PFObject *chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
     
     cell.textLabel.text = chatRoom[@"Name"];
+    PFGeoPoint *point = chatRoom[@"centerPoint"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f, %f", point.latitude, point.longitude];
     
     return cell;
 }
@@ -102,7 +104,7 @@
             PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
             chatRoom[@"Name"] = textField.text;
             chatRoom[@"creator"] = [PFUser currentUser];
-            chatRoom[@"centerPoint"] = [PFGeoPoint geoPointWithLocation:[[LocationHelper sharedLocationHelper] getLastLocation]];
+            chatRoom[@"centerPoint"] = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
             [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
              {
                  if (error == nil)
@@ -120,6 +122,8 @@
 #pragma mark - Private Methods
 - (void)loadChats {
     PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
+    [query whereKey:@"centerPoint" nearGeoPoint:[[LocationHelper sharedLocationHelper] getLastGeoPoint] withinMiles:3.5];
+    [query whereKey:@"active" equalTo:[NSNumber numberWithBool:YES]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          if (error == nil)

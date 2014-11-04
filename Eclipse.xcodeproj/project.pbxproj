@@ -186,10 +186,10 @@
 		B262178A1A06EE490074A08C /* Eclipse */ = {
 			isa = PBXGroup;
 			children = (
-				B25A518F1A08A0C200F29D97 /* Helpers */,
 				B26217951A06EE490074A08C /* Main.storyboard */,
 				B262178F1A06EE490074A08C /* AppDelegate.h */,
 				B26217901A06EE490074A08C /* AppDelegate.m */,
+				B25A518F1A08A0C200F29D97 /* Helpers */,
 				B26217D51A06F2C00074A08C /* ViewControllers */,
 				B26217981A06EE490074A08C /* Images.xcassets */,
 				B262179A1A06EE490074A08C /* LaunchScreen.xib */,
