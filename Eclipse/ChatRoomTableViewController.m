@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 
 #import "ChatViewController.h"
+#import "LocationHelper.h"
 
 @interface ChatRoomTableViewController ()
 
@@ -23,14 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+
     self.chatRooms = [[NSMutableArray alloc] init];
-    
+
+    [[LocationHelper sharedLocationHelper] startLocationServices];
     [self loadChats];
 }
 
@@ -94,9 +92,7 @@
 
 #pragma mark - UIAlertViewDelegate
 
-//--------------------------------------------------------------------------------------------------------------------
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//--------------------------------------------------------------------------------------------------------------------
 {
     if (buttonIndex != alertView.cancelButtonIndex)
     {
@@ -106,6 +102,7 @@
             PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
             chatRoom[@"Name"] = textField.text;
             chatRoom[@"creator"] = [PFUser currentUser];
+            chatRoom[@"centerPoint"] = [PFGeoPoint geoPointWithLocation:[[LocationHelper sharedLocationHelper] getLastLocation]];
             [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
              {
                  if (error == nil)

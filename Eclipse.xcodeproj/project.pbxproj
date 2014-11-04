@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */; };
+		B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B25A51911A08A0E300F29D97 /* LocationHelper.m */; };
 		B262178E1A06EE490074A08C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B262178D1A06EE490074A08C /* main.m */; };
 		B26217911A06EE490074A08C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217901A06EE490074A08C /* AppDelegate.m */; };
 		B26217971A06EE490074A08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26217951A06EE490074A08C /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 		4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eclipse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eclipse/Pods-Eclipse.release.xcconfig"; sourceTree = "<group>"; };
 		B23EE6FE1A073BDB00E5AE9E /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		B25A51901A08A0E300F29D97 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
+		B25A51911A08A0E300F29D97 /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		B26217881A06EE490074A08C /* Eclipse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eclipse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B262178C1A06EE490074A08C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B262178D1A06EE490074A08C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,6 +144,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B25A518F1A08A0C200F29D97 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B25A51901A08A0E300F29D97 /* LocationHelper.h */,
+				B25A51911A08A0E300F29D97 /* LocationHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		B262177F1A06EE490074A08C = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +186,7 @@
 		B262178A1A06EE490074A08C /* Eclipse */ = {
 			isa = PBXGroup;
 			children = (
+				B25A518F1A08A0C200F29D97 /* Helpers */,
 				B26217951A06EE490074A08C /* Main.storyboard */,
 				B262178F1A06EE490074A08C /* AppDelegate.h */,
 				B26217901A06EE490074A08C /* AppDelegate.m */,
@@ -389,6 +402,7 @@
 				B26217911A06EE490074A08C /* AppDelegate.m in Sources */,
 				B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
+				B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */,
 				B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */,
 				B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */,
 				B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */,
