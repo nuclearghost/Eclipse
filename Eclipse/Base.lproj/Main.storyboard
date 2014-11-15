@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dkj-6v-2Cl">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -128,7 +129,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljk-R4-qPd">
-                                <rect key="frame" x="240" y="323" width="121" height="30"/>
+                                <rect key="frame" x="240" y="247" width="121" height="30"/>
                                 <state key="normal" title="Check Availability">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -141,7 +142,7 @@
                         <constraints>
                             <constraint firstItem="3vu-27-MCT" firstAttribute="trailing" secondItem="vYm-YE-u3h" secondAttribute="trailingMargin" id="7za-eX-u9u"/>
                             <constraint firstAttribute="centerX" secondItem="3vu-27-MCT" secondAttribute="centerX" id="J1H-eD-YwO"/>
-                            <constraint firstItem="ljk-R4-qPd" firstAttribute="top" secondItem="3vu-27-MCT" secondAttribute="bottom" constant="8" id="NFQ-lJ-l4B"/>
+                            <constraint firstItem="ljk-R4-qPd" firstAttribute="top" secondItem="3vu-27-MCT" secondAttribute="bottom" constant="-68" id="NFQ-lJ-l4B"/>
                             <constraint firstItem="3vu-27-MCT" firstAttribute="leading" secondItem="vYm-YE-u3h" secondAttribute="leadingMargin" id="V1S-kp-Q4t"/>
                             <constraint firstAttribute="centerY" secondItem="3vu-27-MCT" secondAttribute="centerY" id="dJi-UR-EUG"/>
                             <constraint firstAttribute="centerX" secondItem="ljk-R4-qPd" secondAttribute="centerX" id="joM-92-CiJ"/>
@@ -192,6 +193,6 @@
         <image name="Plus" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QgY-k8-CJK"/>
+        <segue reference="6Gu-Aa-FaT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -35,6 +35,7 @@
 		B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D71A06F2EB0074A08C /* InitialViewController.m */; };
 		B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DA1A06FE830074A08C /* UserNameViewController.m */; };
 		B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */; };
+		B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */; };
 		C192EDA4DE5545701AF26EF9 /* libPods-Eclipse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFC23C879DC062AE92520EF /* libPods-Eclipse.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		B26217DA1A06FE830074A08C /* UserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameViewController.m; sourceTree = "<group>"; };
 		B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomTableViewController.h; sourceTree = "<group>"; };
 		B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomTableViewController.m; sourceTree = "<group>"; };
+		B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bubbly Spaceship.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		B262178B1A06EE490074A08C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2E0C0091A181AB700AE8E12 /* Sounds */,
 				B26217CE1A06F0C80074A08C /* TwitterKit.framework */,
 				B26217CF1A06F0C80074A08C /* TwitterKitResources.bundle */,
 				B26217CA1A06F0840074A08C /* Crashlytics.framework */,
@@ -245,6 +248,14 @@
 				B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B2E0C0091A181AB700AE8E12 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 			files = (
 				B26217D11A06F0C80074A08C /* TwitterKitResources.bundle in Resources */,
 				B26217971A06EE490074A08C /* Main.storyboard in Resources */,
+				B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */,
 				B262179C1A06EE490074A08C /* LaunchScreen.xib in Resources */,
 				B26217991A06EE490074A08C /* Images.xcassets in Resources */,
 			);
@@ -528,14 +540,18 @@
 			baseConfigurationReference = 42A691FB1D82DBCEE5F28765 /* Pods-Eclipse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: co.imnear.Eclipse";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: co.imnear.Eclipse";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Eclipse",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Eclipse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b76d7d99-0fbe-40d5-9232-8d70333cf53f";
 			};
 			name = Debug;
 		};
@@ -544,14 +560,18 @@
 			baseConfigurationReference = 4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: co.imnear.Eclipse";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: co.imnear.Eclipse";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Eclipse",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Eclipse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b76d7d99-0fbe-40d5-9232-8d70333cf53f";
 			};
 			name = Release;
 		};
