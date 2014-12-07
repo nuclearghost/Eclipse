@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 
 #import "ChatViewController.h"
+#import "ChatTableViewCell.h"
 #import "LocationHelper.h"
 
 @interface ChatRoomTableViewController ()
@@ -48,13 +49,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    ChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     PFObject *chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = chatRoom[@"Name"];
-    PFGeoPoint *point = chatRoom[@"centerPoint"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f, %f", point.latitude, point.longitude];
+    cell.titleLabel.text = [chatRoom[@"Name"] uppercaseString];
+    PFGeoPoint *chatPoint = chatRoom[@"centerPoint"];
+    PFGeoPoint *currentPoint = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f km", [currentPoint distanceInKilometersTo:chatPoint]];
     
     return cell;
 }

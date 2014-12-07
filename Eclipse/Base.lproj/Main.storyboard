@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dkj-6v-2Cl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dkj-6v-2Cl">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="CakeSans-bold.otf">
+            <string>CakeSans-bold</string>
+            <string>CakeSans-bold</string>
+            <string>CakeSans-bold</string>
+        </mutableArray>
+        <mutableArray key="DINEng.ttf">
+            <string>DINEngschriftStd</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Auth View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -27,34 +37,52 @@
             </objects>
             <point key="canvasLocation" x="215" y="522"/>
         </scene>
-        <!--Rifts-->
+        <!--CONVERSATIONS NEARBY-->
         <scene sceneID="vrT-a9-NgD">
             <objects>
                 <tableViewController id="YY0-Ma-Qsc" customClass="ChatRoomTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eWs-kX-ndo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="22" sectionFooterHeight="22" id="eWs-kX-ndo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="fiX-VJ-Q3J" detailTextLabel="2WK-0o-azF" style="IBUITableViewCellStyleSubtitle" id="C9W-t1-347">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="160" id="C9W-t1-347" customClass="ChatTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C9W-t1-347" id="dlm-av-2uv">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fiX-VJ-Q3J">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OCEAN BEACH SURF COMMUNITY" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-tc-1lb">
+                                            <rect key="frame" x="8" y="8" width="402" height="97"/>
+                                            <fontDescription key="fontDescription" name="DINEngschriftStd" family="DIN 1451 Std" pointSize="32"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2WK-0o-azF">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999 People" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjk-cE-cnO">
+                                            <rect key="frame" x="8" y="130" width="109" height="21"/>
+                                            <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.4 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5z-es-BOr">
+                                            <rect key="frame" x="125" y="130" width="61" height="21"/>
+                                            <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2h:12m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-GT-ma8">
+                                            <rect key="frame" x="194" y="130" width="83" height="21"/>
+                                            <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="distanceLabel" destination="P5z-es-BOr" id="WRO-Xb-M7B"/>
+                                    <outlet property="peopleLabel" destination="Hjk-cE-cnO" id="ZY9-kS-O1M"/>
+                                    <outlet property="timeLabel" destination="Mn1-GT-ma8" id="sYa-hh-hdh"/>
+                                    <outlet property="titleLabel" destination="fHW-tc-1lb" id="vwy-Pf-i1S"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,13 +90,18 @@
                             <outlet property="delegate" destination="YY0-Ma-Qsc" id="b7k-6W-vma"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Rifts" id="3Ml-fK-BBv">
-                        <barButtonItem key="rightBarButtonItem" image="Plus" id="X6U-Lu-PzE">
+                    <navigationItem key="navigationItem" title="CONVERSATIONS NEARBY" id="3Ml-fK-BBv">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="b4h-qo-095">
+                            <color key="tintColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Magnifying" id="X6U-Lu-PzE">
+                            <color key="tintColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addTapped:" destination="YY0-Ma-Qsc" id="98X-GL-fup"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <segue destination="kcq-kI-ehe" kind="show" identifier="roomSegue" id="Mdj-e2-OgW"/>
                     </connections>
@@ -99,9 +132,14 @@
         <scene sceneID="Dv0-uU-5dI">
             <objects>
                 <navigationController id="X3e-bB-OZo" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="urb-Q8-22h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.14509803921568629" green="0.14509803921568629" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="YY0-Ma-Qsc" kind="relationship" relationship="rootViewController" id="oAN-X0-sHG"/>
@@ -190,7 +228,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Plus" width="25" height="25"/>
+        <image name="Magnifying" width="25" height="24"/>
+        <image name="Menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6Gu-Aa-FaT"/>

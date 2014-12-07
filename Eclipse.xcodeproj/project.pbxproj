@@ -35,6 +35,11 @@
 		B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D71A06F2EB0074A08C /* InitialViewController.m */; };
 		B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DA1A06FE830074A08C /* UserNameViewController.m */; };
 		B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */; };
+		B27D8D321A34F52E006BD19D /* CakeSans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D2F1A34F52E006BD19D /* CakeSans-bold.otf */; };
+		B27D8D331A34F52E006BD19D /* CakeSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D301A34F52E006BD19D /* CakeSans-Light.otf */; };
+		B27D8D341A34F52E006BD19D /* CakeSans-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D311A34F52E006BD19D /* CakeSans-regular.otf */; };
+		B27D8D361A34F690006BD19D /* DINEng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D351A34F690006BD19D /* DINEng.ttf */; };
+		B27D8D3A1A34FBC7006BD19D /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27D8D391A34FBC7006BD19D /* ChatTableViewCell.m */; };
 		B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */; };
 		C192EDA4DE5545701AF26EF9 /* libPods-Eclipse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFC23C879DC062AE92520EF /* libPods-Eclipse.a */; };
 /* End PBXBuildFile section */
@@ -92,6 +97,12 @@
 		B26217DA1A06FE830074A08C /* UserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameViewController.m; sourceTree = "<group>"; };
 		B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomTableViewController.h; sourceTree = "<group>"; };
 		B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomTableViewController.m; sourceTree = "<group>"; };
+		B27D8D2F1A34F52E006BD19D /* CakeSans-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-bold.otf"; sourceTree = "<group>"; };
+		B27D8D301A34F52E006BD19D /* CakeSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-Light.otf"; sourceTree = "<group>"; };
+		B27D8D311A34F52E006BD19D /* CakeSans-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-regular.otf"; sourceTree = "<group>"; };
+		B27D8D351A34F690006BD19D /* DINEng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DINEng.ttf; sourceTree = "<group>"; };
+		B27D8D381A34FBC7006BD19D /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
+		B27D8D391A34FBC7006BD19D /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
 		B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bubbly Spaceship.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,16 +169,6 @@
 		B262177F1A06EE490074A08C = {
 			isa = PBXGroup;
 			children = (
-				B26217C51A06EECE0074A08C /* SystemConfiguration.framework */,
-				B26217C31A06EEC70074A08C /* StoreKit.framework */,
-				B26217C11A06EEC20074A08C /* Security.framework */,
-				B26217BF1A06EEBD0074A08C /* QuartzCore.framework */,
-				B26217BD1A06EEB80074A08C /* MobileCoreServices.framework */,
-				B26217BB1A06EEB10074A08C /* libz.dylib */,
-				B26217B91A06EEAB0074A08C /* CoreLocation.framework */,
-				B26217B71A06EEA40074A08C /* CoreGraphics.framework */,
-				B26217B51A06EE9F0074A08C /* CFNetwork.framework */,
-				B26217B31A06EE990074A08C /* AudioToolbox.framework */,
 				B262178A1A06EE490074A08C /* Eclipse */,
 				B26217A41A06EE490074A08C /* EclipseTests */,
 				B26217891A06EE490074A08C /* Products */,
@@ -192,9 +193,11 @@
 				B262178F1A06EE490074A08C /* AppDelegate.h */,
 				B26217901A06EE490074A08C /* AppDelegate.m */,
 				B25A518F1A08A0C200F29D97 /* Helpers */,
+				B27D8D371A34FB9F006BD19D /* Views */,
 				B26217D51A06F2C00074A08C /* ViewControllers */,
 				B26217981A06EE490074A08C /* Images.xcassets */,
 				B262179A1A06EE490074A08C /* LaunchScreen.xib */,
+				B27D8D2D1A34F4ED006BD19D /* Resources */,
 				B262178B1A06EE490074A08C /* Supporting Files */,
 			);
 			path = Eclipse;
@@ -203,6 +206,16 @@
 		B262178B1A06EE490074A08C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B26217C51A06EECE0074A08C /* SystemConfiguration.framework */,
+				B26217C31A06EEC70074A08C /* StoreKit.framework */,
+				B26217C11A06EEC20074A08C /* Security.framework */,
+				B26217BF1A06EEBD0074A08C /* QuartzCore.framework */,
+				B26217BD1A06EEB80074A08C /* MobileCoreServices.framework */,
+				B26217BB1A06EEB10074A08C /* libz.dylib */,
+				B26217B91A06EEAB0074A08C /* CoreLocation.framework */,
+				B26217B71A06EEA40074A08C /* CoreGraphics.framework */,
+				B26217B51A06EE9F0074A08C /* CFNetwork.framework */,
+				B26217B31A06EE990074A08C /* AudioToolbox.framework */,
 				B2E0C0091A181AB700AE8E12 /* Sounds */,
 				B26217CE1A06F0C80074A08C /* TwitterKit.framework */,
 				B26217CF1A06F0C80074A08C /* TwitterKitResources.bundle */,
@@ -248,6 +261,34 @@
 				B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B27D8D2D1A34F4ED006BD19D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B27D8D2E1A34F4F6006BD19D /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B27D8D2E1A34F4F6006BD19D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B27D8D2F1A34F52E006BD19D /* CakeSans-bold.otf */,
+				B27D8D301A34F52E006BD19D /* CakeSans-Light.otf */,
+				B27D8D311A34F52E006BD19D /* CakeSans-regular.otf */,
+				B27D8D351A34F690006BD19D /* DINEng.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		B27D8D371A34FB9F006BD19D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B27D8D381A34FBC7006BD19D /* ChatTableViewCell.h */,
+				B27D8D391A34FBC7006BD19D /* ChatTableViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B2E0C0091A181AB700AE8E12 /* Sounds */ = {
@@ -341,9 +382,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27D8D331A34F52E006BD19D /* CakeSans-Light.otf in Resources */,
+				B27D8D361A34F690006BD19D /* DINEng.ttf in Resources */,
 				B26217D11A06F0C80074A08C /* TwitterKitResources.bundle in Resources */,
 				B26217971A06EE490074A08C /* Main.storyboard in Resources */,
+				B27D8D341A34F52E006BD19D /* CakeSans-regular.otf in Resources */,
 				B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */,
+				B27D8D321A34F52E006BD19D /* CakeSans-bold.otf in Resources */,
 				B262179C1A06EE490074A08C /* LaunchScreen.xib in Resources */,
 				B26217991A06EE490074A08C /* Images.xcassets in Resources */,
 			);
@@ -412,6 +457,7 @@
 			files = (
 				B26217D41A06F0FD0074A08C /* AuthViewController.m in Sources */,
 				B26217911A06EE490074A08C /* AppDelegate.m in Sources */,
+				B27D8D3A1A34FBC7006BD19D /* ChatTableViewCell.m in Sources */,
 				B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
 				B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */,
