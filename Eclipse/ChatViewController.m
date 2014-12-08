@@ -260,7 +260,21 @@
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    return 0.0f;
+    JSQMessage *message = messages[indexPath.item];
+    if ([message.senderId isEqualToString:self.senderId])
+    {
+        return 0.0f;
+    }
+    
+    if (indexPath.item - 1 > 0)
+    {
+        JSQMessage *previousMessage = messages[indexPath.item-1];
+        if ([previousMessage.senderId isEqualToString:message.senderId])
+        {
+            return 0.0f;
+        }
+    }
+    return kJSQMessagesCollectionViewCellLabelHeightDefault;
 }
 
 #pragma mark - Private
@@ -346,8 +360,7 @@
                                                                         date:object.createdAt media:mediaItem];
         [messages addObject:message];
         PFFile *filePicture = object[@"picture"];
-        [filePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
-         {
+        [filePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
              if (error == nil)
              {
                  mediaItem.image = [UIImage imageWithData:imageData];

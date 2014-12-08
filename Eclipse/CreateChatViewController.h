@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateChatViewController : UIViewController <UITextViewDelegate>
+#import "FDTakeController.h"
+
+@interface CreateChatViewController : UIViewController <UITextViewDelegate, FDTakeDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 

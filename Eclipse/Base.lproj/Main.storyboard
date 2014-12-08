@@ -53,6 +53,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C9W-t1-347" id="dlm-av-2uv">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vya-ON-imS">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OCEAN BEACH SURF COMMUNITY" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-tc-1lb">
                                             <rect key="frame" x="8" y="8" width="402" height="97"/>
                                             <fontDescription key="fontDescription" name="DINEngschriftStd" family="DIN 1451 Std" pointSize="32"/>
@@ -79,8 +82,15 @@
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.85098039219999999" green="0.1019607843" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="vya-ON-imS" firstAttribute="top" secondItem="dlm-av-2uv" secondAttribute="topMargin" constant="-8" id="1RO-9B-rY0"/>
+                                        <constraint firstItem="vya-ON-imS" firstAttribute="leading" secondItem="dlm-av-2uv" secondAttribute="leadingMargin" constant="-8" id="JPj-PG-bVX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vya-ON-imS" secondAttribute="trailing" constant="-8" id="bhB-u3-vfg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vya-ON-imS" secondAttribute="bottom" constant="-8" id="niX-Vw-tri"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="backgroundImageView" destination="vya-ON-imS" id="Kgk-fa-1Fx"/>
                                     <outlet property="distanceLabel" destination="P5z-es-BOr" id="WRO-Xb-M7B"/>
                                     <outlet property="peopleLabel" destination="Hjk-cE-cnO" id="ZY9-kS-O1M"/>
                                     <outlet property="timeLabel" destination="Mn1-GT-ma8" id="sYa-hh-hdh"/>
@@ -177,7 +187,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's what makes near interesting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTI-SY-abm">
-                                <rect key="frame" x="178.5" y="497" width="243.5" height="20.5"/>
+                                <rect key="frame" x="178" y="497" width="243.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>

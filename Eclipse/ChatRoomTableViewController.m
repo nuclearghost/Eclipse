@@ -63,6 +63,26 @@
     PFGeoPoint *currentPoint = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f km", [currentPoint distanceInKilometersTo:chatPoint]];
     
+    if (chatRoom[@"picture"] != nil) {
+        
+        PFFile *filePicture = chatRoom[@"picture"];
+        [filePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
+         {
+             if (error == nil)
+             {
+                 UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+                 UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+                 blurEffectView.frame = cell.bounds;
+                 [cell addSubview:blurEffectView];
+                 [cell sendSubviewToBack:blurEffectView];
+                 [cell sendSubviewToBack: cell.backgroundImageView];
+
+                 cell.backgroundImageView.image = [UIImage imageWithData:imageData];
+//                 [self.tableView reloadData];
+             }
+         }];
+    }
+    
     return cell;
 }
 
@@ -81,8 +101,6 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"roomSegue"]) {
         ChatViewController *cvc = (ChatViewController *)[segue destinationViewController];
         cvc.room = (PFObject *)sender;
@@ -93,38 +111,7 @@
 #pragma mark - UIBarButton Action
 
 - (IBAction)addTapped:(id)sender {
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please enter a topic for your rift" message:nil delegate:self
-//                                          cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-//    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-//    [alert show];
     [self performSegueWithIdentifier:@"createConvoSegue" sender:nil];
-}
-
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != alertView.cancelButtonIndex)
-    {
-        UITextField *textField = [alertView textFieldAtIndex:0];
-        if ([textField.text isEqualToString:@""] == NO)
-        {
-            PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
-            chatRoom[@"Name"] = textField.text;
-            chatRoom[@"creator"] = [PFUser currentUser];
-            chatRoom[@"centerPoint"] = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
-            [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-             {
-                 if (error == nil)
-                 {
-                     [self loadChats];
-                 }
-                 else {
-                     //[ProgressHUD showError:@"Network error."];
-                 }
-             }];
-        }
-    }
 }
 
 #pragma mark - Private Methods
