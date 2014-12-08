@@ -31,6 +31,10 @@
     self.chatRooms = [[NSMutableArray alloc] init];
 
     [[LocationHelper sharedLocationHelper] startLocationServices];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadChats];
 }
 

@@ -8,7 +8,10 @@
 
 #import "CreateChatViewController.h"
 
+#import <Parse/Parse.h>
+
 #import "UIColor+Eclipse.h"
+#import "LocationHelper.h"
 
 @interface CreateChatViewController ()
 @property (strong, nonatomic) NSArray *EclipseColors;
@@ -46,14 +49,27 @@
 }
 
 - (IBAction)refreshTapped:(id)sender {
-
     self.colorIndex++;
-    
+
     self.titleTextView.backgroundColor = [self.EclipseColors objectAtIndex:self.colorIndex%[self.EclipseColors count]];
 }
 
 - (IBAction)postTapped:(id)sender {
-    //TODO: Post and advance
+    if ([self.titleTextView.text isEqualToString:@""] == NO && [self.titleTextView.text isEqualToString:@"NAME YOUR CONVERSATION"] == NO) {
+
+        PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
+        chatRoom[@"Name"] = self.titleTextView.text;
+        chatRoom[@"creator"] = [PFUser currentUser];
+        chatRoom[@"centerPoint"] = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
+        [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+         if (error == nil) {
+             [self.navigationController popViewControllerAnimated:YES];
+         }
+         else {
+             //[ProgressHUD showError:@"Network error."];
+         }
+        }];
+    }
 }
 
 - (IBAction)communityGuidelinesTapped:(id)sender {
@@ -62,5 +78,10 @@
 
 - (IBAction)privacyTapped:(id)sender {
     //TODO: Open webview to privacy
+}
+
+#pragma mark - UITextViewDelegate
+- (void) textViewDidBeginEditing:(UITextView *) textView {
+    [textView setText:@""];
 }
 @end

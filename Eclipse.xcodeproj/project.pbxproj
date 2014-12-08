@@ -13,7 +13,6 @@
 		B26217911A06EE490074A08C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217901A06EE490074A08C /* AppDelegate.m */; };
 		B26217971A06EE490074A08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26217951A06EE490074A08C /* Main.storyboard */; };
 		B26217991A06EE490074A08C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26217981A06EE490074A08C /* Images.xcassets */; };
-		B262179C1A06EE490074A08C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B262179A1A06EE490074A08C /* LaunchScreen.xib */; };
 		B26217A81A06EE490074A08C /* EclipseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217A71A06EE490074A08C /* EclipseTests.m */; };
 		B26217B21A06EE7A0074A08C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217B11A06EE7A0074A08C /* Parse.framework */; };
 		B26217B41A06EE990074A08C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26217B31A06EE990074A08C /* AudioToolbox.framework */; };
@@ -43,6 +42,7 @@
 		B27D8D3E1A350835006BD19D /* UIColor+Eclipse.m in Sources */ = {isa = PBXBuildFile; fileRef = B27D8D3D1A350835006BD19D /* UIColor+Eclipse.m */; };
 		B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */; };
 		B2F34A121A354B4200CB78BF /* CreateChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F34A111A354B4200CB78BF /* CreateChatViewController.m */; };
+		B2F34A141A355C2200CB78BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F34A131A355C2200CB78BF /* LaunchScreen.xib */; };
 		C192EDA4DE5545701AF26EF9 /* libPods-Eclipse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EFC23C879DC062AE92520EF /* libPods-Eclipse.a */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,6 @@
 		B26217901A06EE490074A08C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B26217961A06EE490074A08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B26217981A06EE490074A08C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B262179B1A06EE490074A08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B26217A11A06EE490074A08C /* EclipseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EclipseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26217A61A06EE490074A08C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B26217A71A06EE490074A08C /* EclipseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EclipseTests.m; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bubbly Spaceship.wav"; sourceTree = "<group>"; };
 		B2F34A101A354B4200CB78BF /* CreateChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateChatViewController.h; sourceTree = "<group>"; };
 		B2F34A111A354B4200CB78BF /* CreateChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateChatViewController.m; sourceTree = "<group>"; };
+		B2F34A131A355C2200CB78BF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +203,7 @@
 				B27D8D371A34FB9F006BD19D /* Views */,
 				B26217D51A06F2C00074A08C /* ViewControllers */,
 				B26217981A06EE490074A08C /* Images.xcassets */,
-				B262179A1A06EE490074A08C /* LaunchScreen.xib */,
+				B2F34A131A355C2200CB78BF /* LaunchScreen.xib */,
 				B27D8D2D1A34F4ED006BD19D /* Resources */,
 				B262178B1A06EE490074A08C /* Supporting Files */,
 			);
@@ -407,7 +407,7 @@
 				B27D8D341A34F52E006BD19D /* CakeSans-regular.otf in Resources */,
 				B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */,
 				B27D8D321A34F52E006BD19D /* CakeSans-bold.otf in Resources */,
-				B262179C1A06EE490074A08C /* LaunchScreen.xib in Resources */,
+				B2F34A141A355C2200CB78BF /* LaunchScreen.xib in Resources */,
 				B26217991A06EE490074A08C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,14 +512,6 @@
 				B26217961A06EE490074A08C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B262179A1A06EE490074A08C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B262179B1A06EE490074A08C /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
