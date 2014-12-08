@@ -13,6 +13,7 @@
 #import "ChatViewController.h"
 #import "ChatTableViewCell.h"
 #import "LocationHelper.h"
+#import "UIColor+Eclipse.h"
 
 @interface ChatRoomTableViewController ()
 
@@ -88,10 +89,11 @@
 #pragma mark - UIBarButton Action
 
 - (IBAction)addTapped:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please enter a topic for your rift" message:nil delegate:self
-                                          cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please enter a topic for your rift" message:nil delegate:self
+//                                          cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+//    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//    [alert show];
+    [self performSegueWithIdentifier:@"createConvoSegue" sender:nil];
 }
 
 #pragma mark - UIAlertViewDelegate

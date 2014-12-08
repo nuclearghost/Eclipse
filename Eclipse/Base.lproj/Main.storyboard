@@ -13,6 +13,7 @@
         </mutableArray>
         <mutableArray key="DINEng.ttf">
             <string>DINEngschriftStd</string>
+            <string>DINEngschriftStd</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -41,41 +42,43 @@
         <scene sceneID="vrT-a9-NgD">
             <objects>
                 <tableViewController id="YY0-Ma-Qsc" customClass="ChatRoomTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="22" sectionFooterHeight="22" id="eWs-kX-ndo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" sectionHeaderHeight="22" sectionFooterHeight="22" id="eWs-kX-ndo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2156862745" green="0.72549019609999998" blue="0.49275287829999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.2901960784" green="0.60784313729999995" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="160" id="C9W-t1-347" customClass="ChatTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C9W-t1-347" id="dlm-av-2uv">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OCEAN BEACH SURF COMMUNITY" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-tc-1lb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OCEAN BEACH SURF COMMUNITY" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-tc-1lb">
                                             <rect key="frame" x="8" y="8" width="402" height="97"/>
                                             <fontDescription key="fontDescription" name="DINEngschriftStd" family="DIN 1451 Std" pointSize="32"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999 People" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjk-cE-cnO">
-                                            <rect key="frame" x="8" y="130" width="109" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1999 People" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hjk-cE-cnO">
+                                            <rect key="frame" x="8" y="130" width="105" height="21"/>
                                             <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.4 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5z-es-BOr">
-                                            <rect key="frame" x="125" y="130" width="61" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.40 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P5z-es-BOr">
+                                            <rect key="frame" x="121" y="130" width="75" height="21"/>
                                             <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2h:12m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-GT-ma8">
-                                            <rect key="frame" x="194" y="130" width="83" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2h:12m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-GT-ma8">
+                                            <rect key="frame" x="204" y="130" width="75" height="21"/>
                                             <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.85098039219999999" green="0.1019607843" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="distanceLabel" destination="P5z-es-BOr" id="WRO-Xb-M7B"/>
@@ -94,7 +97,7 @@
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="b4h-qo-095">
                             <color key="tintColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Magnifying" id="X6U-Lu-PzE">
+                        <barButtonItem key="rightBarButtonItem" image="Plus" id="X6U-Lu-PzE">
                             <color key="tintColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addTapped:" destination="YY0-Ma-Qsc" id="98X-GL-fup"/>
@@ -104,11 +107,151 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <segue destination="kcq-kI-ehe" kind="show" identifier="roomSegue" id="Mdj-e2-OgW"/>
+                        <segue destination="kIK-uc-bkP" kind="show" identifier="createConvoSegue" id="ZRa-G5-3DT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hum-Qu-YGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c7t-0x-zZo">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </objects>
             <point key="canvasLocation" x="1035" y="1252"/>
+        </scene>
+        <!--Create Chat View Controller-->
+        <scene sceneID="RMU-tb-ntd">
+            <objects>
+                <viewController id="kIK-uc-bkP" customClass="CreateChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KVY-nN-eFS"/>
+                        <viewControllerLayoutGuide type="bottom" id="G9H-fW-lNI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xZQ-4B-gdm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nu7-p3-Zpw">
+                                <rect key="frame" x="16" y="280" width="29" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="AaA-8F-Bdp"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Camera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraTapped:" destination="kIK-uc-bkP" eventType="touchUpInside" id="ZA3-SF-P2t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This conversation is viewable by everyone." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNz-ON-3eW">
+                                <rect key="frame" x="137" y="455" width="327" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's what makes near interesting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTI-SY-abm">
+                                <rect key="frame" x="178" y="484" width="243.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-83-3cz">
+                                <rect key="frame" x="223" y="316" width="154" height="59"/>
+                                <state key="normal" image="PostConvo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postTapped:" destination="kIK-uc-bkP" eventType="touchUpInside" id="dXE-M5-Isw"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-Wi-kBB">
+                                <rect key="frame" x="150" y="513" width="300" height="23"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEs-r6-8Hx">
+                                        <rect key="frame" x="8" y="-2" width="155" height="30"/>
+                                        <state key="normal" title="Community Guidelines">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="communityGuidelinesTapped:" destination="kIK-uc-bkP" eventType="touchUpInside" id="ShV-bE-xaI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cw-RH-xcI">
+                                        <rect key="frame" x="190" y="-2" width="96" height="30"/>
+                                        <state key="normal" title="Privacy Policy">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="privacyTapped:" destination="kIK-uc-bkP" eventType="touchUpInside" id="D2D-Dv-biN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&amp;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-02-OR8">
+                                        <rect key="frame" x="171" y="2" width="11" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="5Ua-FT-jXm"/>
+                                    <constraint firstAttribute="width" constant="300" id="BaP-OB-Gw8"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-DB-p37">
+                                <rect key="frame" x="81" y="280" width="30" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="KtA-HE-sSt"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshTapped:" destination="kIK-uc-bkP" eventType="touchUpInside" id="gVO-Xn-h4L"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="NAME YOUR CONVERSATION" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-Nd-XNw">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.1019607843" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="hqh-rm-7d9"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINEngschriftStd" family="DIN 1451 Std" pointSize="32"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ajn-Nd-XNw" firstAttribute="leading" secondItem="xZQ-4B-gdm" secondAttribute="leadingMargin" constant="-16" id="6ZR-kk-sfV"/>
+                            <constraint firstItem="cN0-DB-p37" firstAttribute="leading" secondItem="nu7-p3-Zpw" secondAttribute="trailing" constant="36" id="JMn-nl-9Na"/>
+                            <constraint firstItem="nc4-Wi-kBB" firstAttribute="top" secondItem="KTI-SY-abm" secondAttribute="bottom" constant="8.5" id="Lzw-kD-GOQ"/>
+                            <constraint firstItem="cN0-DB-p37" firstAttribute="top" secondItem="ajn-Nd-XNw" secondAttribute="bottom" constant="16" id="Ppe-28-zfN"/>
+                            <constraint firstAttribute="centerX" secondItem="nc4-Wi-kBB" secondAttribute="centerX" id="S3p-8i-cyw"/>
+                            <constraint firstItem="C4U-83-3cz" firstAttribute="top" secondItem="ajn-Nd-XNw" secondAttribute="bottom" constant="52" id="SI4-c2-ACf"/>
+                            <constraint firstItem="nu7-p3-Zpw" firstAttribute="leading" secondItem="xZQ-4B-gdm" secondAttribute="leadingMargin" id="TqF-4R-Ea5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ajn-Nd-XNw" secondAttribute="trailing" constant="-16" id="W2P-f8-0Hn"/>
+                            <constraint firstAttribute="centerX" secondItem="KTI-SY-abm" secondAttribute="centerX" id="Z8j-VC-vyo"/>
+                            <constraint firstItem="G9H-fW-lNI" firstAttribute="top" secondItem="nc4-Wi-kBB" secondAttribute="bottom" constant="20" id="d5o-QA-gDZ"/>
+                            <constraint firstItem="ajn-Nd-XNw" firstAttribute="top" secondItem="KVY-nN-eFS" secondAttribute="bottom" id="f1N-Bp-nCp"/>
+                            <constraint firstItem="nu7-p3-Zpw" firstAttribute="top" secondItem="ajn-Nd-XNw" secondAttribute="bottom" constant="16" id="hdR-X6-OC2"/>
+                            <constraint firstAttribute="centerX" secondItem="C4U-83-3cz" secondAttribute="centerX" id="kbl-31-Vdn"/>
+                            <constraint firstItem="KTI-SY-abm" firstAttribute="top" secondItem="nNz-ON-3eW" secondAttribute="bottom" constant="8" id="lbl-ZJ-IAO"/>
+                            <constraint firstAttribute="centerX" secondItem="C4U-83-3cz" secondAttribute="centerX" id="sFS-7A-Aj9"/>
+                            <constraint firstAttribute="centerX" secondItem="nNz-ON-3eW" secondAttribute="centerX" id="sb7-Pj-8Px"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleTextView" destination="ajn-Nd-XNw" id="zVD-0t-yCo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NxK-PB-Aqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="2013"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="RSI-Yj-oBh">
@@ -228,8 +371,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Magnifying" width="25" height="24"/>
+        <image name="Camera" width="27" height="21"/>
         <image name="Menu" width="24" height="24"/>
+        <image name="Plus" width="25" height="25"/>
+        <image name="PostConvo" width="154" height="59"/>
+        <image name="Refresh" width="25" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6Gu-Aa-FaT"/>
