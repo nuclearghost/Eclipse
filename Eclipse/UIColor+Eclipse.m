@@ -34,4 +34,9 @@
 + (UIColor*)eclipseGrayColor {
     return UIColorFromRGB(0x252525);
 }
+
++ (UIColor*)eclipseLightGrayColor {
+    return UIColorFromRGB(0xE5E5E5);
+}
+
 @end

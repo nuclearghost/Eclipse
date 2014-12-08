@@ -17,4 +17,5 @@
 + (UIColor*)eclipseLightBlueColor;
 + (UIColor*)eclipseDarkBlueColor;
 + (UIColor*)eclipseGrayColor;
++ (UIColor*)eclipseLightGrayColor;
 @end

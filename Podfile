@@ -3,6 +3,7 @@
 
 target 'Eclipse' do
   pod 'JSQMessagesViewController', '~> 6.1'
+  pod 'FDTake', '~> 0.2'
 end
 
 target 'EclipseTests' do

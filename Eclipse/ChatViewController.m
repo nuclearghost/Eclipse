@@ -8,6 +8,8 @@
 
 #import "ChatViewController.h"
 
+#import "UIColor+Eclipse.h"
+
 @interface ChatViewController ()
 {
     NSTimer *timer;
@@ -21,6 +23,8 @@
     JSQMessagesBubbleImage *incomingBubbleImageData;
     
     JSQMessagesAvatarImage *placeholderImageData;
+    
+    FDTakeController *takeController;
 }
 @end
 
@@ -39,11 +43,14 @@
     self.senderId = user.objectId;
     self.senderDisplayName = user[@"username"];
     
-    JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
-    outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
-    incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
+    JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] initWithBubbleImage:[UIImage imageNamed:@"Chat_Square"] capInsets:UIEdgeInsetsZero];
+    outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor eclipseGrayColor]];
+    incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor eclipseLightGrayColor]];
     
     placeholderImageData = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"User"] diameter:30.0];
+    
+    takeController = [[FDTakeController alloc] init];
+    takeController.delegate = self;
     
     isLoading = NO;
     [self loadMessages];
@@ -90,32 +97,13 @@
 
 - (void)didPressAccessoryButton:(UIButton *)sender
 {
-    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                          destructiveButtonTitle:nil
-                                               otherButtonTitles:@"Take photo", @"Choose existing photo", nil];
-    [action showInView:self.view];
+    [takeController takePhotoOrChooseFromLibrary];
 }
 
-#pragma mark - UIActionSheetDelegate
+#pragma mark - FDTakeControllerDelegate
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != actionSheet.cancelButtonIndex)
-    {
-        //if (buttonIndex == 0)	ShouldStartCamera(self, YES);
-        //if (buttonIndex == 1)	ShouldStartPhotoLibrary(self, YES);
-    }
-}
-
-#pragma mark - UIImagePickerControllerDelegate
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    //UIImage *picture = info[UIImagePickerControllerEditedImage];
-    //[self sendMessage:@"[Picture message]" Picture:picture];
-    //[picker dismissViewControllerAnimated:YES completion:nil];
+- (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info {
+    [self sendMessage:@"" Picture:photo];
 }
 
 #pragma mark - JSQMessages CollectionView DataSource
@@ -187,7 +175,21 @@
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    JSQMessage *message = messages[indexPath.item];
+    if ([message.senderId isEqualToString:self.senderId])
+    {
+        return nil;
+    }
+    
+    if (indexPath.item - 1 > 0)
+    {
+        JSQMessage *previousMessage = messages[indexPath.item-1];
+        if ([previousMessage.senderId isEqualToString:message.senderId])
+        {
+            return nil;
+        }
+    }
+    return [[NSAttributedString alloc] initWithString:message.senderDisplayName];
 }
 
 #pragma mark - UICollectionView DataSource
@@ -208,11 +210,11 @@
     JSQMessage *message = messages[indexPath.item];
     if ([message.senderId isEqualToString:self.senderId])
     {
-        cell.textView.textColor = [UIColor blackColor];
+        cell.textView.textColor = [UIColor whiteColor];
     }
     else
     {
-        cell.textView.textColor = [UIColor whiteColor];
+        cell.textView.textColor = [UIColor blackColor];
     }
     return cell;
 }
@@ -337,14 +339,13 @@
                                                                       date:object.createdAt text:object[@"text"]];
         [messages addObject:message];
     }
-    /*
-    if (object[PF_CHAT_PICTURE] != nil)
+    if (object[@"picture"] != nil)
     {
         JSQPhotoMediaItem *mediaItem = [[JSQPhotoMediaItem alloc] initWithImage:nil];
-        JSQMediaMessage *message = [[JSQMediaMessage alloc] initWithSenderId:user.objectId senderDisplayName:user[PF_USER_FULLNAME]
+        JSQMessage *message = [[JSQMessage alloc] initWithSenderId:user.objectId senderDisplayName:user[@"username"]
                                                                         date:object.createdAt media:mediaItem];
         [messages addObject:message];
-        PFFile *filePicture = object[PF_CHAT_PICTURE];
+        PFFile *filePicture = object[@"picture"];
         [filePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
          {
              if (error == nil)
@@ -354,6 +355,5 @@
              }
          }];
     }
-     */
 }
 @end

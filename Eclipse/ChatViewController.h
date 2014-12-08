@@ -10,8 +10,10 @@
 
 #import "JSQMessagesViewController.h"
 #import "JSQMessages.h"
+#import "FDTakeController.h"
 
-@interface ChatViewController : JSQMessagesViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate>
+
+@interface ChatViewController : JSQMessagesViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, FDTakeDelegate>
 
 @property (strong, nonatomic) PFObject *room;
 
