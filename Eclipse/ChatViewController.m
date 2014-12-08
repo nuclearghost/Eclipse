@@ -333,7 +333,7 @@
     [users addObject:user];
     if (object[@"picture"] == nil)
     {
-        JSQTextMessage *message = [[JSQTextMessage alloc] initWithSenderId:user.objectId senderDisplayName:user[@"username"]
+        JSQMessage *message = [[JSQMessage alloc] initWithSenderId:user.objectId senderDisplayName:user[@"username"]
                                                                       date:object.createdAt text:object[@"text"]];
         [messages addObject:message];
     }
