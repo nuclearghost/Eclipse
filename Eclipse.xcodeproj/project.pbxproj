@@ -34,6 +34,7 @@
 		B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D71A06F2EB0074A08C /* InitialViewController.m */; };
 		B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DA1A06FE830074A08C /* UserNameViewController.m */; };
 		B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */; };
+		B267C92F1A36BC6100E5CD02 /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */; };
 		B27D8D321A34F52E006BD19D /* CakeSans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D2F1A34F52E006BD19D /* CakeSans-bold.otf */; };
 		B27D8D331A34F52E006BD19D /* CakeSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D301A34F52E006BD19D /* CakeSans-Light.otf */; };
 		B27D8D341A34F52E006BD19D /* CakeSans-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D311A34F52E006BD19D /* CakeSans-regular.otf */; };
@@ -98,6 +99,8 @@
 		B26217DA1A06FE830074A08C /* UserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameViewController.m; sourceTree = "<group>"; };
 		B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomTableViewController.h; sourceTree = "<group>"; };
 		B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomTableViewController.m; sourceTree = "<group>"; };
+		B267C92D1A36BC6100E5CD02 /* UIImage+StackBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StackBlur.h"; sourceTree = "<group>"; };
+		B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+StackBlur.m"; sourceTree = "<group>"; };
 		B27D8D2F1A34F52E006BD19D /* CakeSans-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-bold.otf"; sourceTree = "<group>"; };
 		B27D8D301A34F52E006BD19D /* CakeSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-Light.otf"; sourceTree = "<group>"; };
 		B27D8D311A34F52E006BD19D /* CakeSans-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-regular.otf"; sourceTree = "<group>"; };
@@ -305,6 +308,8 @@
 			children = (
 				B27D8D3C1A350835006BD19D /* UIColor+Eclipse.h */,
 				B27D8D3D1A350835006BD19D /* UIColor+Eclipse.m */,
+				B267C92D1A36BC6100E5CD02 /* UIImage+StackBlur.h */,
+				B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				B262178E1A06EE490074A08C /* main.m in Sources */,
 				B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */,
 				B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */,
+				B267C92F1A36BC6100E5CD02 /* UIImage+StackBlur.m in Sources */,
 				B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */,
 				B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */,
 			);

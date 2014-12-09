@@ -11,6 +11,8 @@
 #import <Parse/Parse.h>
 
 #import "UIColor+Eclipse.h"
+#import "UIImage+StackBlur.h"
+
 #import "LocationHelper.h"
 
 @interface CreateChatViewController ()
@@ -50,11 +52,10 @@
 */
 
 - (IBAction)cameraTapped:(id)sender {
-    //TODO: Get photo from library or camera
     [self.takeController takePhotoOrChooseFromLibrary];
     for (UIView *subView in self.titleTextView.subviews)
     {
-        if (subView.tag == 101 || subView.tag == 102) {
+        if (subView.tag == 101) {
             [subView removeFromSuperview];
         }
     }
@@ -112,18 +113,21 @@
 
 - (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info {
     
+    CGRect clippedRect = CGRectMake((photo.size.width - 960) / 2, (photo.size.height - 600) / 2, 960, 600);
+    
+    // Crop logic
+    CGImageRef imageRef = CGImageCreateWithImageInRect([photo CGImage], clippedRect);
+    UIImage * croppedImage = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    
+    UIImage *blurredImage = [croppedImage stackBlur:20];
+    
     UIImageView *imgView = [[UIImageView alloc] initWithFrame: self.titleTextView.bounds];
-    self.backgroundImage = photo;
-    imgView.image = photo;
+    self.backgroundImage = blurredImage;
+    imgView.image = blurredImage;
     imgView.tag = 101;
     [self.titleTextView addSubview: imgView];
-    
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-    blurEffectView.frame = self.titleTextView.bounds;
-    blurEffectView.tag = 102;
-    [self.titleTextView addSubview:blurEffectView];
-    [self.titleTextView sendSubviewToBack:blurEffectView];
     [self.titleTextView sendSubviewToBack: imgView];
+     
 }
 @end
