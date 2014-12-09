@@ -78,9 +78,10 @@
                  [cell sendSubviewToBack: cell.backgroundImageView];
 
                  cell.backgroundImageView.image = [UIImage imageWithData:imageData];
-//                 [self.tableView reloadData];
              }
          }];
+    } else {
+        cell.backgroundImageView.image = nil;
     }
     
     return cell;
@@ -117,8 +118,8 @@
 #pragma mark - Private Methods
 - (void)loadChats {
     PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
-    [query whereKey:@"centerPoint" nearGeoPoint:[[LocationHelper sharedLocationHelper] getLastGeoPoint] withinMiles:3.5];
-    [query whereKey:@"active" equalTo:[NSNumber numberWithBool:YES]];
+    //[query whereKey:@"centerPoint" nearGeoPoint:[[LocationHelper sharedLocationHelper] getLastGeoPoint] withinMiles:3.5];
+    //[query whereKey:@"active" equalTo:[NSNumber numberWithBool:YES]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          if (error == nil)

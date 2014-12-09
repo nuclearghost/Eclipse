@@ -83,7 +83,7 @@
         chatRoom[@"Name"] = self.titleTextView.text;
         chatRoom[@"creator"] = [PFUser currentUser];
         chatRoom[@"centerPoint"] = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
-        if (filePicture != nil) chatRoom[@"Picture"] = filePicture;
+        if (filePicture != nil) chatRoom[@"picture"] = filePicture;
         [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
          if (error == nil) {
              [self.navigationController popViewControllerAnimated:YES];
