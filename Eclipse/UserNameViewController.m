@@ -57,7 +57,8 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
-            [self performSegueWithIdentifier:@"userNameRoomSegue" sender:nil];
+//            [self performSegueWithIdentifier:@"userNameRoomSegue" sender:nil];
+            [self performSegueWithIdentifier:@"userNameMenuSegue" sender:nil];
             
             [defaults setObject:userName forKey:@"userName"];
         } else {

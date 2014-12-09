@@ -129,7 +129,7 @@
                     </state>
                 </button>
             </objects>
-            <point key="canvasLocation" x="1035" y="1252"/>
+            <point key="canvasLocation" x="2567" y="1244"/>
         </scene>
         <!--Create Chat View Controller-->
         <scene sceneID="RMU-tb-ntd">
@@ -258,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxK-PB-Aqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="2013"/>
+            <point key="canvasLocation" x="3035" y="2265"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="RSI-Yj-oBh">
@@ -276,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkt-Ef-hUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1823" y="1252"/>
+            <point key="canvasLocation" x="3391" y="1244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dv0-uU-5dI">
@@ -297,7 +297,100 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALe-sI-sPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="1252"/>
+            <point key="canvasLocation" x="1811" y="1244"/>
+        </scene>
+        <!--Main Slide View Controller-->
+        <scene sceneID="MrP-E2-R0S">
+            <objects>
+                <viewController id="mOq-q1-k2j" customClass="MainSlideViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u2o-BP-Xv6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oph-zE-mOI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YUx-hZ-erB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3AJ-AP-cQr"/>
+                    <connections>
+                        <segue destination="SV6-Pf-uH4" kind="custom" identifier="leftMenu" customClass="AMSlideMenuLeftMenuSegue" id="hkH-Nn-eaw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJu-Re-PhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="1968"/>
+        </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="ITV-Qc-b4G">
+            <objects>
+                <tableViewController id="SV6-Pf-uH4" customClass="LeftMenuViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6RA-Ci-4L8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="r2P-pX-HcN">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="vPM-w3-SOn" style="IBUITableViewCellStyleDefault" id="r6h-8v-ELW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r6h-8v-ELW" id="iP9-g3-eWU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Near Chats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vPM-w3-SOn">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="bJG-Dx-eee" style="IBUITableViewCellStyleDefault" id="6br-oC-BN1">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6br-oC-BN1" id="sG7-hy-bB9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Profile?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bJG-Dx-eee">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="a2F-mw-YaQ" style="IBUITableViewCellStyleDefault" id="RMt-rb-LFY">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RMt-rb-LFY" id="CIW-IT-esK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Maybe Logout?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a2F-mw-YaQ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="SV6-Pf-uH4" id="hlF-c4-kcu"/>
+                            <outlet property="delegate" destination="SV6-Pf-uH4" id="99R-X5-C3Y"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="X3e-bB-OZo" kind="custom" identifier="firstRow" customClass="AMSlideMenuContentSegue" id="poT-8I-Rku"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j97-88-RqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="1964"/>
         </scene>
         <!--User Name View Controller-->
         <scene sceneID="dUE-ue-xtU">
@@ -339,6 +432,7 @@
                     <connections>
                         <outlet property="userNameField" destination="3vu-27-MCT" id="0CG-Wa-xHK"/>
                         <segue destination="X3e-bB-OZo" kind="presentation" identifier="userNameRoomSegue" id="6Gu-Aa-FaT"/>
+                        <segue destination="1bc-pA-MiL" kind="presentation" identifier="userNameMenuSegue" id="pLL-4g-GhR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBe-4G-QZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -370,11 +464,28 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="presentation" identifier="authSegue" id="bV3-PT-vEH"/>
                         <segue destination="X3e-bB-OZo" kind="presentation" identifier="chatSegue" modalTransitionStyle="flipHorizontal" id="QgY-k8-CJK"/>
+                        <segue destination="1bc-pA-MiL" kind="presentation" identifier="chatMenuSegue" modalTransitionStyle="crossDissolve" id="ULa-Nu-G0V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ZG-r2-IvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-595" y="890"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rcq-3M-1Db">
+            <objects>
+                <navigationController id="1bc-pA-MiL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nkg-7z-yxb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mOq-q1-k2j" kind="relationship" relationship="rootViewController" id="6D1-Ci-fEE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egk-Ps-C0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-595" y="1964"/>
         </scene>
     </scenes>
     <resources>
@@ -385,6 +496,7 @@
         <image name="Refresh" width="25" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6Gu-Aa-FaT"/>
+        <segue reference="poT-8I-Rku"/>
+        <segue reference="pLL-4g-GhR"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -34,7 +34,9 @@
         [PFUser logInWithUsernameInBackground:userName password:secret
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
-                                                [self performSegueWithIdentifier:@"chatSegue" sender:nil];
+//                                                [self performSegueWithIdentifier:@"chatSegue" sender:nil];
+                                                [self performSegueWithIdentifier:@"chatMenuSegue" sender:nil];
+
                                             } else {
                                                 CLS_LOG(@"Error from login: %@", error);
                                             }
