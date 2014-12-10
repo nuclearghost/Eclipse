@@ -28,6 +28,8 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     [Fabric with:@[CrashlyticsKit, TwitterKit]];
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
     // Register for Push Notitications, if running iOS 8
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
