@@ -34,6 +34,7 @@
     [super viewDidLoad];
 
     self.title = self.room[@"Name"];
+    [self setCustomNavigationBackButton];
     
     users = [[NSMutableArray alloc] init];
     messages = [[NSMutableArray alloc] init];
@@ -72,6 +73,15 @@
 {
     [super viewWillDisappear:animated];
     [timer invalidate];
+}
+
+- (void)setCustomNavigationBackButton
+{
+    UIImage *backBtn = [UIImage imageNamed:@"BackArrow"];
+    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.backBarButtonItem.title=@"";
+    self.navigationController.navigationBar.backIndicatorImage = backBtn;
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
 }
 
 /*
