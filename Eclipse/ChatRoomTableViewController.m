@@ -92,7 +92,6 @@
         double hours = floor(seconds/3600);
         double minutes = floor(((int)seconds % 3600)/60);
         cell.timeLabel.text = [NSString stringWithFormat:@"%2.0fh:%2.0fm", hours, minutes];
-
     }
     
     return cell;
