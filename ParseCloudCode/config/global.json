@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Eclipse": {
+            "applicationId": "0VJoi3nTwWf8RwJR7iwAYowSoLBod710f4l4knIK", 
+            "masterKey": "tkXEhwJDt1Dr2IkhFQorVgkCFwyd1T8DcEJda50x"
+        }, 
+        "_default": {
+            "link": "Eclipse"
+        }
+    }
+}
