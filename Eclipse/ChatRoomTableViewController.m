@@ -62,7 +62,9 @@
     PFGeoPoint *chatPoint = chatRoom[@"centerPoint"];
     PFGeoPoint *currentPoint = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f km", [currentPoint distanceInKilometersTo:chatPoint]];
-    
+    if (chatRoom[@"color"] != nil) {
+        cell.contentView.backgroundColor = UIColorFromRGB([chatRoom[@"color"] intValue]);
+    }
     if (chatRoom[@"picture"] != nil) {
         
         PFFile *filePicture = chatRoom[@"picture"];
@@ -70,17 +72,14 @@
          {
              if (error == nil)
              {
-                 UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-                 UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-                 blurEffectView.frame = cell.bounds;
-                 [cell addSubview:blurEffectView];
-                 [cell sendSubviewToBack:blurEffectView];
-                 [cell sendSubviewToBack: cell.backgroundImageView];
-
                  cell.backgroundImageView.image = [UIImage imageWithData:imageData];
+                 [UIView animateWithDuration:1.0 animations:^{
+                     cell.backgroundImageView.alpha = 1.0;
+                 }];
              }
          }];
     } else {
+        cell.backgroundImageView.alpha = 0;
         cell.backgroundImageView.image = nil;
     }
     

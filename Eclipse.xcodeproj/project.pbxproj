@@ -392,6 +392,7 @@
 				TargetAttributes = {
 					B26217871A06EE490074A08C = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 8HEK9W23RJ;
 					};
 					B26217A01A06EE490074A08C = {
 						CreatedOnToolsVersion = 6.1;
@@ -624,8 +625,8 @@
 			baseConfigurationReference = 42A691FB1D82DBCEE5F28765 /* Pods-Eclipse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: co.imnear.Eclipse";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: co.imnear.Eclipse";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Eclipse",
@@ -635,7 +636,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b76d7d99-0fbe-40d5-9232-8d70333cf53f";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -644,8 +645,8 @@
 			baseConfigurationReference = 4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: co.imnear.Eclipse";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: co.imnear.Eclipse";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Eclipse",
@@ -655,7 +656,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b76d7d99-0fbe-40d5-9232-8d70333cf53f";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

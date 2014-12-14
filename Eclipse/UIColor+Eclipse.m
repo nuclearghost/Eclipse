@@ -19,7 +19,6 @@
 
 + (UIColor*)eclipseYellowColor {
     return UIColorFromRGB(0xDFD331);
-
 }
 
 + (UIColor*)eclipseLightBlueColor {
