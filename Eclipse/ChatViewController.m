@@ -44,6 +44,15 @@
     self.senderId = user.objectId;
     self.senderDisplayName = user[@"username"];
     
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation) {
+        NSArray *subscribedChannels = [PFInstallation currentInstallation].channels;
+        if (![subscribedChannels containsObject:self.room.objectId]) {
+            [currentInstallation addUniqueObject:self.room.objectId forKey:@"channels"];
+            [currentInstallation saveInBackground];
+        }
+    }
+
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] initWithBubbleImage:[UIImage imageNamed:@"Chat_Square"] capInsets:UIEdgeInsetsZero];
     outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor eclipseGrayColor]];
     incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor eclipseLightGrayColor]];
