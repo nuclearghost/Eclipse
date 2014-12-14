@@ -59,12 +59,15 @@
     PFObject *chatRoom = [self.chatRooms objectAtIndex:indexPath.row];
     
     cell.titleLabel.text = [chatRoom[@"Name"] uppercaseString];
+
     PFGeoPoint *chatPoint = chatRoom[@"centerPoint"];
     PFGeoPoint *currentPoint = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f km", [currentPoint distanceInKilometersTo:chatPoint]];
+
     if (chatRoom[@"color"] != nil) {
         cell.contentView.backgroundColor = UIColorFromRGB([chatRoom[@"color"] intValue]);
     }
+
     if (chatRoom[@"picture"] != nil) {
         
         PFFile *filePicture = chatRoom[@"picture"];
@@ -81,6 +84,15 @@
     } else {
         cell.backgroundImageView.alpha = 0;
         cell.backgroundImageView.image = nil;
+    }
+    
+    if (chatRoom[@"expiresAt"] != nil) {
+        NSDate *expiration = chatRoom[@"expiresAt"];
+        NSTimeInterval seconds = [expiration timeIntervalSinceDate:[NSDate date]];
+        double hours = floor(seconds/3600);
+        double minutes = floor(((int)seconds % 3600)/60);
+        cell.timeLabel.text = [NSString stringWithFormat:@"%2.0fh:%2.0fm", hours, minutes];
+
     }
     
     return cell;
