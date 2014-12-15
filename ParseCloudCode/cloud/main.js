@@ -18,13 +18,23 @@ Parse.Cloud.afterSave("Chat", function(request) {
   var room = request.object.get("room");
   var user = request.user;
   var alertText = "@" + user.get("username") + ": " + request.object.get("text");
+
+  //var userQuery = new Parse.Query(Parse.User);
+  //userQuery.notEqualTo("objectId", user.id);
+
+  var pushQuery = new Parse.Query(Parse.Installation);
+  //pushQuery.matchesQuery(userQuery);
+  pushQuery.notEqualTo("user", user);
+  pushQuery.equalTo("channels", room.id);
+
   Parse.Push.send({
-    channels: [ room.id ],
+    where: pushQuery,
     data: {
       alert: alertText,
       badge: 0,
       sound: "Toast.wav",
-      title: "Near message"
+      title: "Near message",
+      room:  room.id
     }
   }, {
     success: function() {

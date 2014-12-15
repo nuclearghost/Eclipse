@@ -25,10 +25,26 @@
 
     [Parse setApplicationId:@"0VJoi3nTwWf8RwJR7iwAYowSoLBod710f4l4knIK"
                   clientKey:@"lY2Qa764KQionl2YXAkpBsaWsSeF8F4WQwhNoz7q"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+    if (application.applicationState != UIApplicationStateBackground) {
+        // Track an app open here if we launch with a push, unless
+        // "content_available" was used to trigger a background push (introduced
+        // in iOS 7). In that case, we skip tracking here to avoid double
+        // counting the app-open.
+        BOOL preBackgroundPush = ![application respondsToSelector:@selector(backgroundRefreshStatus)];
+        BOOL oldPushHandlerOnly = ![self respondsToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)];
+        BOOL noPushPayload = ![launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+            [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        }
+
+        if (!noPushPayload) {
+            NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+            NSLog(@"Notification Payload: %@", [notificationPayload objectForKey:@"room"]);
+        }
+    }
+
     [Fabric with:@[CrashlyticsKit, TwitterKit]];
-    
+
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
     //TODO: Move this code so that a user can opt in, instead of being in-undated at first launch
@@ -47,7 +63,7 @@
                                                          UIRemoteNotificationTypeAlert |
                                                          UIRemoteNotificationTypeSound)];
     }
-    
+
     return YES;
 }
 
@@ -82,7 +98,18 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
+    if (application.applicationState == UIApplicationStateInactive) {
+        // The application was just brought from the background to the foreground,
+        // so we consider the app as having been "opened by a push notification."
+        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushReceived" object:nil userInfo:userInfo];
+//    [PFPush handlePush:userInfo];
 }
-
+/*
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
+    NSLog(@"Notification received");
+//    handler(UIBackgroundModeNoData);
+}
+*/
 @end

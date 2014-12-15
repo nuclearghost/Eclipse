@@ -51,6 +51,7 @@
             [currentInstallation addUniqueObject:self.room.objectId forKey:@"channels"];
             [currentInstallation saveInBackground];
         }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:@"pushReceived" object:nil];
     }
 
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] initWithBubbleImage:[UIImage imageNamed:@"Chat_Square"] capInsets:UIEdgeInsetsZero];
@@ -69,7 +70,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(loadMessages) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(loadMessages) userInfo:nil repeats:YES];
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
 }
 
@@ -386,6 +387,13 @@
                  [self.collectionView reloadData];
              }
          }];
+    }
+}
+
+- (void)receiveNotification:(NSNotification *)notification {
+    NSLog(@"Notification received for room %@", notification.userInfo[@"room"]);
+    if ([self.room.objectId isEqualToString:notification.userInfo[@"room"]]) {
+        [self loadMessages];
     }
 }
 @end
