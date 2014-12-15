@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2384CAC1A3E5A7500D6B572 /* Synth.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2384CAB1A3E5A7500D6B572 /* Synth.wav */; };
+		B2384CAE1A3E67D400D6B572 /* Toast.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2384CAD1A3E67D400D6B572 /* Toast.wav */; };
 		B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */; };
 		B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B25A51911A08A0E300F29D97 /* LocationHelper.m */; };
 		B262178E1A06EE490074A08C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B262178D1A06EE490074A08C /* main.m */; };
@@ -63,6 +65,8 @@
 		3EFC23C879DC062AE92520EF /* libPods-Eclipse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eclipse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A691FB1D82DBCEE5F28765 /* Pods-Eclipse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eclipse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eclipse/Pods-Eclipse.debug.xcconfig"; sourceTree = "<group>"; };
 		4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eclipse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eclipse/Pods-Eclipse.release.xcconfig"; sourceTree = "<group>"; };
+		B2384CAB1A3E5A7500D6B572 /* Synth.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Synth.wav; sourceTree = "<group>"; };
+		B2384CAD1A3E67D400D6B572 /* Toast.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Toast.wav; sourceTree = "<group>"; };
 		B23EE6FE1A073BDB00E5AE9E /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B25A51901A08A0E300F29D97 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
@@ -170,6 +174,15 @@
 				4EA07F3CA1A2E79779C6B82A /* Pods-Eclipse.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2384CAA1A3E5A0900D6B572 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B2384CAD1A3E67D400D6B572 /* Toast.wav */,
+				B2384CAB1A3E5A7500D6B572 /* Synth.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		B25A518F1A08A0C200F29D97 /* Helpers */ = {
@@ -297,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B27D8D2E1A34F4F6006BD19D /* Fonts */,
+				B2384CAA1A3E5A0900D6B572 /* Sounds */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -428,9 +442,11 @@
 				B27D8D361A34F690006BD19D /* DINEng.ttf in Resources */,
 				B26217D11A06F0C80074A08C /* TwitterKitResources.bundle in Resources */,
 				B26217971A06EE490074A08C /* Main.storyboard in Resources */,
+				B2384CAC1A3E5A7500D6B572 /* Synth.wav in Resources */,
 				B27D8D341A34F52E006BD19D /* CakeSans-regular.otf in Resources */,
 				B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */,
 				B27D8D321A34F52E006BD19D /* CakeSans-bold.otf in Resources */,
+				B2384CAE1A3E67D400D6B572 /* Toast.wav in Resources */,
 				B2F34A141A355C2200CB78BF /* LaunchScreen.xib in Resources */,
 				B26217991A06EE490074A08C /* Images.xcassets in Resources */,
 			);

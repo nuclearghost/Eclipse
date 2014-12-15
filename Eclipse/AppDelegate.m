@@ -31,6 +31,7 @@
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
+    //TODO: Move this code so that a user can opt in, instead of being in-undated at first launch
     // Register for Push Notitications, if running iOS 8
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
@@ -76,6 +77,7 @@
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
+    //currentInstallation[@"user"] = [PFUser currentUser];
     [currentInstallation saveInBackground];
 }
 

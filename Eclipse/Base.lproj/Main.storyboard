@@ -485,11 +485,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4LK-9Q-Aue">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4LK-9Q-Aue">
+                                <rect key="frame" x="281" y="281" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="4LK-9Q-Aue" secondAttribute="centerY" id="3A7-Zn-uy5"/>
                             <constraint firstAttribute="centerX" secondItem="4LK-9Q-Aue" secondAttribute="centerX" id="iLG-6M-qCm"/>
@@ -530,7 +530,7 @@
         <image name="Refresh" width="25" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="poT-8I-Rku"/>
-        <segue reference="pLL-4g-GhR"/>
+        <segue reference="ULa-Nu-G0V"/>
+        <segue reference="QgY-k8-CJK"/>
     </inferredMetricsTieBreakers>
 </document>

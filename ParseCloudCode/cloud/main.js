@@ -14,6 +14,29 @@ Parse.Cloud.beforeSave("ChatRoom", function(request, response) {
   response.success();
 });
 
+Parse.Cloud.afterSave("Chat", function(request) {
+  var room = request.object.get("room");
+  var user = request.user;
+  var alertText = "@" + user.get("username") + ": " + request.object.get("text");
+  Parse.Push.send({
+    channels: [ room.id ],
+    data: {
+      alert: alertText,
+      badge: 0,
+      sound: "Toast.wav",
+      title: "Near message"
+    }
+  }, {
+    success: function() {
+      console.log("Sent '" + alertText + "' to channel " + room.id);
+    },
+    error: function(error) {
+      console.log("Push failed with error");
+      console.log(error);
+    }
+  });
+});
+
 Parse.Cloud.job("updateActiveChatRooms", function(request, status) {
   Parse.Cloud.useMasterKey();
   var query = new Parse.Query("ChatRoom");
