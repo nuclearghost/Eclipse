@@ -34,8 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = self.room[@"Name"];
-    [self setCustomNavigationBackButton];
+    [self setCustomNavigation];
     
     users = [[NSMutableArray alloc] init];
     messages = [[NSMutableArray alloc] init];
@@ -77,15 +76,33 @@
 {
     [super viewWillDisappear:animated];
     [timer invalidate];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
 }
 
-- (void)setCustomNavigationBackButton
+- (void)setCustomNavigation
 {
     UIImage *backBtn = [UIImage imageNamed:@"BackArrow"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.backBarButtonItem.title=@"";
     self.navigationController.navigationBar.backIndicatorImage = backBtn;
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
+
+    self.title = self.room[@"Name"];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                                      NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]
+                                                                      }];
+
+    if (self.room[@"picture"] != nil) {
+        PFFile *filePicture = self.room[@"picture"];
+        [filePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
+         {
+             if (error == nil)
+             {
+                 [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithData:imageData] forBarMetrics:UIBarMetricsDefault];
+             }
+         }];
+    }
 }
 
 /*

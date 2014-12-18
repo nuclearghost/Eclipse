@@ -30,6 +30,11 @@
 
     self.chatRooms = [[NSMutableArray alloc] init];
 
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName : [UIColor whiteColor],
+                                                                      NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]
+                                                                      }];
+
     [[LocationHelper sharedLocationHelper] startLocationServices];
 }
 
@@ -79,7 +84,7 @@
              if (error == nil)
              {
                  cell.backgroundImageView.image = [UIImage imageWithData:imageData];
-                 [UIView animateWithDuration:1.0 animations:^{
+                 [UIView animateWithDuration:1.5 animations:^{
                      cell.backgroundImageView.alpha = 1.0;
                  }];
              }

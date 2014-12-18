@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Eclipse/ChatViewController.m"
-            timestampString = "440575497.03886"
+            timestampString = "440578031.947488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "-receiveNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Eclipse/ChatViewController.m"
-            timestampString = "440575393.697583"
+            timestampString = "440578031.947488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "359"
-            endingLineNumber = "359"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
             landmarkName = "-checkIfUserRegistered"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Eclipse/ChatViewController.m"
-            timestampString = "440575395.129562"
+            timestampString = "440578031.947488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
             landmarkName = "-registerUserToRoom"
             landmarkType = "5">
          </BreakpointContent>

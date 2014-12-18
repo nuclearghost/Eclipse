@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -93,26 +94,33 @@
                                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vya-ON-imS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OCEAN BEACH SURF COMMUNITY" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-tc-1lb">
-                                            <rect key="frame" x="8" y="8" width="402" height="97"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OCEAN BEACH SURF COMMUNITY" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-tc-1lb">
+                                            <rect key="frame" x="28" y="8" width="402" height="97"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="97" id="iNP-NT-y7e"/>
+                                                <constraint firstAttribute="width" constant="402" id="tCB-qj-tfv"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="DINEngschriftStd" family="DIN 1451 Std" pointSize="32"/>
                                             <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1999 People" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hjk-cE-cnO">
-                                            <rect key="frame" x="8" y="130" width="105" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1999 People" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hjk-cE-cnO">
+                                            <rect key="frame" x="28" y="130" width="105" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="105" id="kXh-9c-kiC"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
                                             <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.40 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P5z-es-BOr">
-                                            <rect key="frame" x="121" y="130" width="75" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.40 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P5z-es-BOr">
+                                            <rect key="frame" x="141" y="130" width="73" height="21"/>
                                             <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
                                             <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2h:12m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-GT-ma8">
-                                            <rect key="frame" x="204" y="130" width="75" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h:12m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-GT-ma8">
+                                            <rect key="frame" x="222" y="130" width="58.5" height="21"/>
                                             <fontDescription key="fontDescription" name="CakeSans-bold" family="Cake Sans" pointSize="17"/>
                                             <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -121,9 +129,20 @@
                                     <color key="backgroundColor" red="0.85098039219999999" green="0.1019607843" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="vya-ON-imS" firstAttribute="top" secondItem="dlm-av-2uv" secondAttribute="topMargin" constant="-8" id="1RO-9B-rY0"/>
+                                        <constraint firstItem="fHW-tc-1lb" firstAttribute="top" secondItem="dlm-av-2uv" secondAttribute="topMargin" id="3AQ-Mx-zU4"/>
+                                        <constraint firstItem="Hjk-cE-cnO" firstAttribute="firstBaseline" secondItem="P5z-es-BOr" secondAttribute="firstBaseline" id="6Br-Rg-Y85"/>
+                                        <constraint firstItem="fHW-tc-1lb" firstAttribute="leading" secondItem="Hjk-cE-cnO" secondAttribute="leading" id="COy-L8-nUF"/>
+                                        <constraint firstItem="Hjk-cE-cnO" firstAttribute="baseline" secondItem="P5z-es-BOr" secondAttribute="baseline" id="G0m-EV-slE"/>
+                                        <constraint firstItem="fHW-tc-1lb" firstAttribute="leading" secondItem="dlm-av-2uv" secondAttribute="leadingMargin" constant="20" id="HqI-UP-eRK"/>
                                         <constraint firstItem="vya-ON-imS" firstAttribute="leading" secondItem="dlm-av-2uv" secondAttribute="leadingMargin" constant="-8" id="JPj-PG-bVX"/>
+                                        <constraint firstItem="Hjk-cE-cnO" firstAttribute="firstBaseline" secondItem="Mn1-GT-ma8" secondAttribute="firstBaseline" id="KK3-wT-rAe"/>
+                                        <constraint firstItem="P5z-es-BOr" firstAttribute="leading" secondItem="Hjk-cE-cnO" secondAttribute="trailing" constant="8" symbolic="YES" id="KfB-qS-RYB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Hjk-cE-cnO" secondAttribute="bottom" constant="1" id="Why-6J-cFi"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="vya-ON-imS" secondAttribute="trailing" constant="-8" id="bhB-u3-vfg"/>
+                                        <constraint firstItem="Hjk-cE-cnO" firstAttribute="baseline" secondItem="Mn1-GT-ma8" secondAttribute="baseline" id="fTw-G8-7o2"/>
+                                        <constraint firstItem="Mn1-GT-ma8" firstAttribute="top" secondItem="fHW-tc-1lb" secondAttribute="bottom" constant="25" id="n3o-Is-hhh"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="vya-ON-imS" secondAttribute="bottom" constant="-8" id="niX-Vw-tri"/>
+                                        <constraint firstItem="Mn1-GT-ma8" firstAttribute="leading" secondItem="P5z-es-BOr" secondAttribute="trailing" constant="8" id="vVc-M8-Wor"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

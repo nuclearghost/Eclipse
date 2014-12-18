@@ -43,7 +43,7 @@ Parse.Cloud.afterSave("Chat", function(request) {
 
       var pushQuery = new Parse.Query(Parse.Installation);
       pushQuery.notEqualTo("user", user);
-      pushQuery.equalTo("channels", room.id);
+      pushQuery.equalTo("channels", "A" + room.id);
 
       Parse.Push.send({
         where: pushQuery,
@@ -52,11 +52,11 @@ Parse.Cloud.afterSave("Chat", function(request) {
           badge: 0,
           sound: "Toast.wav",
           title: "Near message",
-          room:  "A" + room.id
+          room:  room.id
         }
       }, {
         success: function() {
-          console.log("Sent '" + alertText + "' to channel " + room.id);
+          console.log("Sent '" + alertText + "' to channel A" + room.id);
         },
         error: function(error) {
           console.error("Got an error " + error.code + " : " + error.message);
