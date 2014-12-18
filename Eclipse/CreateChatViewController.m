@@ -84,14 +84,12 @@
         chatRoom[@"Name"] = self.titleTextView.text;
         chatRoom[@"creator"] = [PFUser currentUser];
         chatRoom[@"centerPoint"] = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
-        
+
         const CGFloat* components;
         components = CGColorGetComponents(((UIColor*)[self.EclipseColors objectAtIndex:self.colorIndex]).CGColor);
-        NSLog(@"%f, %f, %f, %f", components[0],components[1],components[2],components[3]);
-        NSLog(@"%X, %X, %X, %X", (char)(255*components[0]), (char)(255*components[1]), (char)(255*components[2]), (char)(255*components[3]));
-        int hexValue = 0xFF0000*components[0] + 0xFF00*components[1] + 0xFF*components[2];  // for RGB
+        int hexValue = 0xFF0000*components[0] + 0xFF00*components[1] + 0xFF*components[2];
         chatRoom[@"color"] = [NSNumber numberWithInt:hexValue];
-        
+
         if (filePicture != nil) chatRoom[@"picture"] = filePicture;
         [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
          if (error == nil) {

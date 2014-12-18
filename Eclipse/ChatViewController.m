@@ -14,6 +14,7 @@
 {
     NSTimer *timer;
     BOOL isLoading;
+    BOOL userRegisteredToRoom;
     
     NSMutableArray *users;
     NSMutableArray *messages;
@@ -44,15 +45,8 @@
     self.senderId = user.objectId;
     self.senderDisplayName = user[@"username"];
     
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    if (currentInstallation) {
-        NSArray *subscribedChannels = [PFInstallation currentInstallation].channels;
-        if (![subscribedChannels containsObject:self.room.objectId]) {
-            [currentInstallation addUniqueObject:self.room.objectId forKey:@"channels"];
-            [currentInstallation saveInBackground];
-        }
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:@"pushReceived" object:nil];
-    }
+    userRegisteredToRoom = NO;
+    [self checkIfUserRegistered];
 
     JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] initWithBubbleImage:[UIImage imageNamed:@"Chat_Square"] capInsets:UIEdgeInsetsZero];
     outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor eclipseGrayColor]];
@@ -195,21 +189,7 @@
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
-    JSQMessage *message = messages[indexPath.item];
-    if ([message.senderId isEqualToString:self.senderId])
-    {
-        return nil;
-    }
-    
-    if (indexPath.item - 1 > 0)
-    {
-        JSQMessage *previousMessage = messages[indexPath.item-1];
-        if ([previousMessage.senderId isEqualToString:message.senderId])
-        {
-            return nil;
-        }
-    }
-    return [[NSAttributedString alloc] initWithString:message.senderDisplayName];
+    return nil;
 }
 
 #pragma mark - UICollectionView DataSource
@@ -275,26 +255,10 @@
     return kJSQMessagesCollectionViewCellLabelHeightDefault;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    JSQMessage *message = messages[indexPath.item];
-    if ([message.senderId isEqualToString:self.senderId])
-    {
-        return 0.0f;
-    }
-    
-    if (indexPath.item - 1 > 0)
-    {
-        JSQMessage *previousMessage = messages[indexPath.item-1];
-        if ([previousMessage.senderId isEqualToString:message.senderId])
-        {
-            return 0.0f;
-        }
-    }
-    return kJSQMessagesCollectionViewCellLabelHeightDefault;
+    return 0.0f;
 }
 
 #pragma mark - Private
@@ -324,12 +288,13 @@
              [self loadMessages];
          }
          else {
-             //[ProgressHUD showError:@"Network error."];
+             //TODO: failed to send message
          }
      }];
-    //SendPushNotification(roomId, text);
-    //UpdateMessageCounter(roomId, text);
     [self finishSendingMessage];
+    if (!userRegisteredToRoom) {
+        [self registerUserToRoom];
+    }
 }
 
 - (void)loadMessages
@@ -390,10 +355,40 @@
     }
 }
 
+- (void)checkIfUserRegistered {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation) {
+        NSArray *subscribedChannels = [PFInstallation currentInstallation].channels;
+        if ([subscribedChannels containsObject:[self safeChannelId]]) {
+            userRegisteredToRoom = YES;
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:@"pushReceived" object:nil];
+        }
+    }
+}
+
+- (void)registerUserToRoom {
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation) {
+        [currentInstallation addUniqueObject:[self safeChannelId] forKey:@"channels"];
+        [currentInstallation saveInBackground];
+        
+        PFRelation *userRelation = [self.room relationForKey:@"users"];
+        [userRelation addObject:[PFUser currentUser]];
+        [self.room saveInBackground];
+        
+        userRegisteredToRoom = YES;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:@"pushReceived" object:nil];
+    }
+}
+
 - (void)receiveNotification:(NSNotification *)notification {
     NSLog(@"Notification received for room %@", notification.userInfo[@"room"]);
     if ([self.room.objectId isEqualToString:notification.userInfo[@"room"]]) {
         [self loadMessages];
     }
+}
+
+- (NSString *)safeChannelId {
+    return [NSString stringWithFormat:@"A%@", self.room.objectId];
 }
 @end

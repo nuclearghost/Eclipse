@@ -64,6 +64,9 @@
     PFGeoPoint *currentPoint = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f km", [currentPoint distanceInKilometersTo:chatPoint]];
 
+    NSNumber *userCount = chatRoom[@"userCount"];
+    cell.peopleLabel.text = [NSString stringWithFormat:@"%@ people", userCount];
+
     if (chatRoom[@"color"] != nil) {
         cell.contentView.backgroundColor = UIColorFromRGB([chatRoom[@"color"] intValue]);
     }
@@ -129,7 +132,7 @@
 - (void)loadChats {
     PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
     //[query whereKey:@"centerPoint" nearGeoPoint:[[LocationHelper sharedLocationHelper] getLastGeoPoint] withinMiles:3.5];
-    //[query whereKey:@"active" equalTo:[NSNumber numberWithBool:YES]];
+    [query whereKey:@"active" equalTo:[NSNumber numberWithBool:YES]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          if (error == nil)
@@ -139,11 +142,10 @@
              {
                  [self.chatRooms addObject:object];
              }
-             //[ProgressHUD dismiss];
              [self.tableView reloadData];
          }
          else {
-             //[ProgressHUD showError:@"Network error."];
+             //TODO: Display message
          }
      }];
 
