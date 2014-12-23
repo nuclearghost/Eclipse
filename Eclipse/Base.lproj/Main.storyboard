@@ -340,8 +340,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oas-WS-IoX">
-                                <rect key="frame" x="237" y="348" width="126" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oas-WS-IoX">
+                                <rect key="frame" x="237" y="179" width="126" height="30"/>
                                 <state key="normal" title="Change Password">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -349,8 +349,8 @@
                                     <action selector="changePasswordTapped:" destination="FcB-1O-eNp" eventType="touchUpInside" id="QQ6-O6-L9N"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5d-TC-60h">
-                                <rect key="frame" x="249" y="310" width="102" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5d-TC-60h">
+                                <rect key="frame" x="249" y="141" width="102" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fQ4-w2-K2i"/>
                                     <constraint firstAttribute="width" constant="102" id="luF-VD-6ob"/>
@@ -362,19 +362,19 @@
                                     <action selector="changeStatusTapped:" destination="FcB-1O-eNp" eventType="touchUpInside" id="3wa-6c-IgE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnH-ua-7Ge">
-                                <rect key="frame" x="0.0" y="282" width="600" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnH-ua-7Ge">
+                                <rect key="frame" x="0.0" y="113" width="600" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-kC-SiZ">
-                                <rect key="frame" x="200" y="74" width="200" height="200"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-kC-SiZ">
+                                <rect key="frame" x="287" y="74" width="26" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5m9-2R-Vr2"/>
                                     <constraint firstAttribute="height" constant="200" id="yJS-yv-vet"/>
                                 </constraints>
-                                <state key="normal">
+                                <state key="normal" image="User">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -634,6 +634,7 @@
         <image name="Plus" width="25" height="25"/>
         <image name="PostConvo" width="154" height="59"/>
         <image name="Refresh" width="25" height="20"/>
+        <image name="User" width="26" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ULa-Nu-G0V"/>
