@@ -31,6 +31,9 @@
         case 0:
             identifier = @"firstRow";
             break;
+        case 1:
+            identifier = @"profileRow";
+            break;
     }
     
     return identifier;

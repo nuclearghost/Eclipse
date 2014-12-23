@@ -26,6 +26,7 @@
             [defaults setObject:session.userID forKey:@"digitsID"];
             [defaults setObject:session.authToken forKey:@"digitsAuthToken"];
             [defaults setObject:session.authTokenSecret forKey:@"digitsAuthTokenSecret"];
+            [defaults setObject:session.authTokenSecret forKey:@"password"];
             
             [self performSegueWithIdentifier:@"userNameSegue" sender:nil];
         } else {

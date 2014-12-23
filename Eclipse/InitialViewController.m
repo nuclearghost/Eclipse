@@ -27,10 +27,10 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *userName = [defaults objectForKey:@"userName"];
-    if (userName == nil) {
-        [self performSegueWithIdentifier:@"authSegue" sender:nil];
+    NSString *secret = [defaults objectForKey:@"password"];
+    if (userName == nil || secret == nil) {
+        [self segueToAuth];
     } else {
-        NSString *secret = [defaults objectForKey:@"digitsAuthTokenSecret"];
         [PFUser logInWithUsernameInBackground:userName password:secret
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
@@ -41,9 +41,11 @@
 
                                             } else {
                                                 CLS_LOG(@"Error from login: %@", error);
+                                                NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+                                                [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+                                                [self segueToAuth];
                                             }
                                         }];
-        
     }
 }
 
@@ -52,14 +54,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)segueToAuth {
+    [self performSegueWithIdentifier:@"authSegue" sender:nil];
 }
-*/
-
 @end

@@ -181,6 +181,24 @@
             </objects>
             <point key="canvasLocation" x="2567" y="1244"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cvb-fH-qGM">
+            <objects>
+                <navigationController id="qFP-gR-Hba" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="acD-e5-LOM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FcB-1O-eNp" kind="relationship" relationship="rootViewController" id="Jmy-TX-zil"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ny2-bE-TOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811" y="2880"/>
+        </scene>
         <!--Create Chat View Controller-->
         <scene sceneID="RMU-tb-ntd">
             <objects>
@@ -308,7 +326,90 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxK-PB-Aqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3035" y="2265"/>
+            <point key="canvasLocation" x="2567" y="2043"/>
+        </scene>
+        <!--My Profile View Controller-->
+        <scene sceneID="0BE-YP-M5u">
+            <objects>
+                <viewController id="FcB-1O-eNp" customClass="MyProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aqf-js-Jb9"/>
+                        <viewControllerLayoutGuide type="bottom" id="b1c-iu-H4p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x9b-1d-bgC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oas-WS-IoX">
+                                <rect key="frame" x="237" y="348" width="126" height="30"/>
+                                <state key="normal" title="Change Password">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changePasswordTapped:" destination="FcB-1O-eNp" eventType="touchUpInside" id="QQ6-O6-L9N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5d-TC-60h">
+                                <rect key="frame" x="249" y="310" width="102" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fQ4-w2-K2i"/>
+                                    <constraint firstAttribute="width" constant="102" id="luF-VD-6ob"/>
+                                </constraints>
+                                <state key="normal" title="Change Status">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeStatusTapped:" destination="FcB-1O-eNp" eventType="touchUpInside" id="3wa-6c-IgE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnH-ua-7Ge">
+                                <rect key="frame" x="0.0" y="282" width="600" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-kC-SiZ">
+                                <rect key="frame" x="200" y="74" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5m9-2R-Vr2"/>
+                                    <constraint firstAttribute="height" constant="200" id="yJS-yv-vet"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="profileImgTapped:" destination="FcB-1O-eNp" eventType="touchUpInside" id="SKw-mg-oDI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fef-kC-SiZ" secondAttribute="centerX" id="7Xi-on-89V"/>
+                            <constraint firstItem="UnH-ua-7Ge" firstAttribute="top" secondItem="fef-kC-SiZ" secondAttribute="bottom" constant="8" id="Bva-HX-dyc"/>
+                            <constraint firstAttribute="centerX" secondItem="l5d-TC-60h" secondAttribute="centerX" id="JuL-MR-p4B"/>
+                            <constraint firstItem="fef-kC-SiZ" firstAttribute="top" secondItem="Aqf-js-Jb9" secondAttribute="bottom" id="Kc0-QG-f8g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UnH-ua-7Ge" secondAttribute="trailing" constant="-16" id="QBr-xM-dva"/>
+                            <constraint firstItem="fef-kC-SiZ" firstAttribute="top" secondItem="Aqf-js-Jb9" secondAttribute="bottom" constant="10" id="Qfk-8c-wnn"/>
+                            <constraint firstItem="UnH-ua-7Ge" firstAttribute="leading" secondItem="x9b-1d-bgC" secondAttribute="leadingMargin" constant="-16" id="U8V-Ch-OIi"/>
+                            <constraint firstItem="Oas-WS-IoX" firstAttribute="top" secondItem="l5d-TC-60h" secondAttribute="bottom" constant="8" id="Uqb-qL-b9i"/>
+                            <constraint firstAttribute="centerX" secondItem="Oas-WS-IoX" secondAttribute="centerX" id="cKo-LC-eDf"/>
+                            <constraint firstItem="l5d-TC-60h" firstAttribute="top" secondItem="UnH-ua-7Ge" secondAttribute="bottom" constant="8" id="yd2-XH-mU0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Kc0-QG-f8g"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZLd-PJ-Xhb"/>
+                    <connections>
+                        <outlet property="profileImgButton" destination="fef-kC-SiZ" id="vYy-zs-qkf"/>
+                        <outlet property="profileStatusLabel" destination="UnH-ua-7Ge" id="AaO-B4-M1Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPV-Ek-cqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="2880"/>
         </scene>
         <!--Title-->
         <scene sceneID="RSI-Yj-oBh">
@@ -405,22 +506,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6br-oC-BN1" id="sG7-hy-bB9">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Profile?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bJG-Dx-eee">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="a2F-mw-YaQ" style="IBUITableViewCellStyleDefault" id="RMt-rb-LFY">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RMt-rb-LFY" id="CIW-IT-esK">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Maybe Logout?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a2F-mw-YaQ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bJG-Dx-eee">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -439,6 +525,7 @@
                     </tableView>
                     <connections>
                         <segue destination="X3e-bB-OZo" kind="custom" identifier="firstRow" customClass="AMSlideMenuContentSegue" id="poT-8I-Rku"/>
+                        <segue destination="qFP-gR-Hba" kind="custom" identifier="profileRow" customClass="AMSlideMenuContentSegue" id="sib-K2-Fk4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j97-88-RqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,6 +637,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ULa-Nu-G0V"/>
-        <segue reference="QgY-k8-CJK"/>
+        <segue reference="poT-8I-Rku"/>
     </inferredMetricsTieBreakers>
 </document>
