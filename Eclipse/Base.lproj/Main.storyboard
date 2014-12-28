@@ -340,8 +340,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oas-WS-IoX">
-                                <rect key="frame" x="237" y="179" width="126" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oas-WS-IoX">
+                                <rect key="frame" x="237" y="348" width="126" height="30"/>
                                 <state key="normal" title="Change Password">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -349,8 +349,8 @@
                                     <action selector="changePasswordTapped:" destination="FcB-1O-eNp" eventType="touchUpInside" id="QQ6-O6-L9N"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5d-TC-60h">
-                                <rect key="frame" x="249" y="141" width="102" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5d-TC-60h">
+                                <rect key="frame" x="249" y="310.5" width="102" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fQ4-w2-K2i"/>
                                     <constraint firstAttribute="width" constant="102" id="luF-VD-6ob"/>
@@ -362,14 +362,14 @@
                                     <action selector="changeStatusTapped:" destination="FcB-1O-eNp" eventType="touchUpInside" id="3wa-6c-IgE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnH-ua-7Ge">
-                                <rect key="frame" x="0.0" y="113" width="600" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnH-ua-7Ge">
+                                <rect key="frame" x="0.0" y="282" width="600" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-kC-SiZ">
-                                <rect key="frame" x="287" y="74" width="26" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-kC-SiZ">
+                                <rect key="frame" x="200" y="74" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5m9-2R-Vr2"/>
                                     <constraint firstAttribute="height" constant="200" id="yJS-yv-vet"/>
@@ -427,10 +427,66 @@
                     <navigationItem key="navigationItem" title="Title" id="cxc-DC-tCn">
                         <barButtonItem key="backBarButtonItem" title="  " id="rQd-UP-xLk"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="IHH-4p-7ug" kind="show" identifier="otherProfileSegue" id="kfK-N2-loC"/>
+                        <segue destination="FcB-1O-eNp" kind="show" identifier="myProfileSegue" id="wEx-8g-djb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkt-Ef-hUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3391" y="1244"/>
+        </scene>
+        <!--Other Profile View Controller-->
+        <scene sceneID="pS3-eQ-RYL">
+            <objects>
+                <viewController id="IHH-4p-7ug" customClass="OtherProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Mo-qO-RrN"/>
+                        <viewControllerLayoutGuide type="bottom" id="yGS-Ka-xxc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XBP-uA-3fW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23z-sG-njd">
+                                <rect key="frame" x="0.0" y="280" width="600" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="TXU-2o-6Pl">
+                                <rect key="frame" x="200" y="72" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6qs-kt-dWE"/>
+                                    <constraint firstAttribute="height" constant="200" id="vZg-Yj-xUH"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgT-xI-yQw">
+                                <rect key="frame" x="259" y="308" width="83" height="30"/>
+                                <state key="normal" title="Report User">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="23z-sG-njd" secondAttribute="trailing" constant="-16" id="7Wd-zj-18c"/>
+                            <constraint firstAttribute="centerX" secondItem="TXU-2o-6Pl" secondAttribute="centerX" id="J5S-6v-m0b"/>
+                            <constraint firstItem="23z-sG-njd" firstAttribute="leading" secondItem="XBP-uA-3fW" secondAttribute="leadingMargin" constant="-16" id="LGh-X6-73K"/>
+                            <constraint firstItem="TXU-2o-6Pl" firstAttribute="top" secondItem="8Mo-qO-RrN" secondAttribute="bottom" constant="8" id="O7D-JV-Hfr"/>
+                            <constraint firstAttribute="centerX" secondItem="cgT-xI-yQw" secondAttribute="centerX" id="YUi-gs-9db"/>
+                            <constraint firstItem="23z-sG-njd" firstAttribute="top" secondItem="TXU-2o-6Pl" secondAttribute="bottom" constant="8" id="sUi-3I-A90"/>
+                            <constraint firstItem="cgT-xI-yQw" firstAttribute="top" secondItem="23z-sG-njd" secondAttribute="bottom" constant="8" id="sWy-dx-3zQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="TXU-2o-6Pl" id="iHo-c1-5Ac"/>
+                        <outlet property="statusLabel" destination="23z-sG-njd" id="GuP-sD-QVZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSj-NA-Cyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4201" y="1244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dv0-uU-5dI">
@@ -639,5 +695,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="ULa-Nu-G0V"/>
         <segue reference="poT-8I-Rku"/>
+        <segue reference="wEx-8g-djb"/>
     </inferredMetricsTieBreakers>
 </document>

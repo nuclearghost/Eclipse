@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A28B82278F3E2F221B944DBB"
+               BlueprintIdentifier = "224665B4BEFE3F6FC105A605"
                BuildableName = "libPods-Eclipse-FDTake.a"
                BlueprintName = "Pods-Eclipse-FDTake"
                ReferencedContainer = "container:Pods.xcodeproj">

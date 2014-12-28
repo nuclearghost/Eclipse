@@ -39,6 +39,7 @@
 		B267C92F1A36BC6100E5CD02 /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */; };
 		B267C9331A36C8EB00E5CD02 /* MainSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B267C9321A36C8EB00E5CD02 /* MainSlideViewController.m */; };
 		B267C9361A36C94400E5CD02 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B267C9351A36C94400E5CD02 /* LeftMenuViewController.m */; };
+		B27416D21A50779000D31B93 /* OtherProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27416D11A50779000D31B93 /* OtherProfileViewController.m */; };
 		B27D8D321A34F52E006BD19D /* CakeSans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D2F1A34F52E006BD19D /* CakeSans-bold.otf */; };
 		B27D8D331A34F52E006BD19D /* CakeSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D301A34F52E006BD19D /* CakeSans-Light.otf */; };
 		B27D8D341A34F52E006BD19D /* CakeSans-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B27D8D311A34F52E006BD19D /* CakeSans-regular.otf */; };
@@ -112,6 +113,8 @@
 		B267C9321A36C8EB00E5CD02 /* MainSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSlideViewController.m; sourceTree = "<group>"; };
 		B267C9341A36C94400E5CD02 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
 		B267C9351A36C94400E5CD02 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		B27416D01A50779000D31B93 /* OtherProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherProfileViewController.h; sourceTree = "<group>"; };
+		B27416D11A50779000D31B93 /* OtherProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherProfileViewController.m; sourceTree = "<group>"; };
 		B27D8D2F1A34F52E006BD19D /* CakeSans-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-bold.otf"; sourceTree = "<group>"; };
 		B27D8D301A34F52E006BD19D /* CakeSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-Light.otf"; sourceTree = "<group>"; };
 		B27D8D311A34F52E006BD19D /* CakeSans-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CakeSans-regular.otf"; sourceTree = "<group>"; };
@@ -296,6 +299,8 @@
 				B2F34A111A354B4200CB78BF /* CreateChatViewController.m */,
 				B282C7551A490183006F1C01 /* MyProfileViewController.h */,
 				B282C7561A490183006F1C01 /* MyProfileViewController.m */,
+				B27416D01A50779000D31B93 /* OtherProfileViewController.h */,
+				B27416D11A50779000D31B93 /* OtherProfileViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				B2F34A121A354B4200CB78BF /* CreateChatViewController.m in Sources */,
 				B282C7571A490183006F1C01 /* MyProfileViewController.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
+				B27416D21A50779000D31B93 /* OtherProfileViewController.m in Sources */,
 				B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */,
 				B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */,
 				B267C9331A36C8EB00E5CD02 /* MainSlideViewController.m in Sources */,

@@ -8,7 +8,12 @@
 
 #import "ChatViewController.h"
 
+#import "JTSImageViewController.h"
+#import "JTSImageInfo.h"
+
 #import "UIColor+Eclipse.h"
+
+#import "OtherProfileViewController.h"
 
 @interface ChatViewController ()
 {
@@ -105,15 +110,14 @@
     }
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"otherProfileSegue"]) {
+        OtherProfileViewController *opvc = [segue destinationViewController];
+        [opvc setUserID:sender];
+    }
 }
-*/
 
 #pragma mark - JSQMessagesViewController method overrides
 
@@ -211,16 +215,12 @@
 
 #pragma mark - UICollectionView DataSource
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     return [messages count];
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     JSQMessagesCollectionViewCell *cell = (JSQMessagesCollectionViewCell *)[super collectionView:collectionView cellForItemAtIndexPath:indexPath];
     
@@ -233,15 +233,14 @@
     {
         cell.textView.textColor = [UIColor blackColor];
     }
+    cell.delegate = self;
     return cell;
 }
 
 #pragma mark - JSQMessages collection view flow layout delegate
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellTopLabelAtIndexPath:(NSIndexPath *)indexPath
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     if (indexPath.item % 3 == 0)
     {
@@ -250,10 +249,8 @@
     return 0.0f;
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath *)indexPath
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 {
     JSQMessage *message = messages[indexPath.item];
     if ([message.senderId isEqualToString:self.senderId])
@@ -276,6 +273,45 @@
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
     return 0.0f;
+}
+
+#pragma mark - JSQMessagesCollectionViewCellDelegate
+
+- (void)messagesCollectionViewCellDidTapAvatar:(JSQMessagesCollectionViewCell *)cell {
+    NSIndexPath *path = [self.collectionView indexPathForCell:cell];
+    JSQMessage *msg = messages[path.item];
+    if ([msg.senderId isEqualToString:self.senderId]) {
+        [self performSegueWithIdentifier:@"myProfileSegue" sender:nil];
+    } else {
+        [self performSegueWithIdentifier:@"otherProfileSegue" sender:msg.senderId];
+    }
+}
+
+- (void)messagesCollectionViewCellDidTapMessageBubble:(JSQMessagesCollectionViewCell *)cell {
+    NSIndexPath *path = [self.collectionView indexPathForCell:cell];
+    JSQMessage *msg = messages[path.item];
+    JSQPhotoMediaItem *mediaItem = (JSQPhotoMediaItem *)msg.media;
+    if (mediaItem.image != nil) {
+        JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+        imageInfo.image = mediaItem.image;
+        imageInfo.referenceRect = cell.messageBubbleContainerView.frame;
+        imageInfo.referenceView = cell.messageBubbleContainerView.superview;
+        imageInfo.referenceContentMode = cell.messageBubbleContainerView.contentMode;
+        imageInfo.referenceCornerRadius = cell.messageBubbleContainerView.layer.cornerRadius;
+        // Setup view controller
+        JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                               initWithImageInfo:imageInfo
+                                               mode:JTSImageViewControllerMode_Image
+                                               backgroundStyle:JTSImageViewControllerBackgroundOption_Blurred];
+        
+        // Present the view controller.
+        [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+    }
+
+}
+
+- (void)messagesCollectionViewCellDidTapCell:(JSQMessagesCollectionViewCell *)cell atPosition:(CGPoint)position {
+    NSLog(@"Did tap cell: %@", cell);
 }
 
 #pragma mark - Private
@@ -354,9 +390,7 @@
         JSQMessage *message = [[JSQMessage alloc] initWithSenderId:user.objectId senderDisplayName:user[@"username"]
                                                                       date:object.createdAt text:object[@"text"]];
         [messages addObject:message];
-    }
-    if (object[@"picture"] != nil)
-    {
+    } else {
         JSQPhotoMediaItem *mediaItem = [[JSQPhotoMediaItem alloc] initWithImage:nil];
         JSQMessage *message = [[JSQMessage alloc] initWithSenderId:user.objectId senderDisplayName:user[@"username"]
                                                                         date:object.createdAt media:mediaItem];

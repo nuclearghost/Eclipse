@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Eclipse-JTSImageViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Eclipse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>78526074890AD7BA2FCEB15B</key>
+		<key>224665B4BEFE3F6FC105A605</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>939757A0514482BB9435E32C</key>
+		<key>43B7E01DD2CF9293EFEF3375</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A28B82278F3E2F221B944DBB</key>
+		<key>5E1C46C5C1DD6EC61BCF6BD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3FD328D8BBB696B4419D035</key>
+		<key>644D6BB5EBA050D07D03CD11</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE76774DFED7830988ACB69D</key>
+		<key>83ED562BC8FEAE083B6E450A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3CBF5F19163437E446A7C04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
