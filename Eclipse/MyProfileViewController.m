@@ -11,6 +11,8 @@
 #import <Parse/Parse.h>
 #import <ImageIO/ImageIO.h>
 
+
+
 @interface MyProfileViewController ()
 
 @property (strong, nonatomic) FDTakeController *takeController;
@@ -86,20 +88,27 @@
     [alert show];
 }
 
-#pragma mark - FDTakeControllerDelegate
+#pragma mark - RSKImageCropViewControllerDelegate
 
-- (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info {
+- (void)imageCropViewControllerDidCancelCrop:(RSKImageCropViewController *)controller
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+// The original image has been cropped.
+- (void)imageCropViewController:(RSKImageCropViewController *)controller didCropImage:(UIImage *)croppedImage
+{
     PFFile *filePicture = nil;
-    filePicture = [PFFile fileWithName:@"picture.jpg" data:UIImageJPEGRepresentation(photo, 0.6)];
+    filePicture = [PFFile fileWithName:@"picture.jpg" data:UIImageJPEGRepresentation(croppedImage, 0.6)];
     [filePicture saveInBackground];
     PFUser *user = [PFUser currentUser];
     user[@"picture"] = filePicture;
     self.profileImgButton.imageView.layer.cornerRadius = self.profileImgButton.frame.size.width / 2;
-    [self.profileImgButton setImage:photo forState:UIControlStateNormal];
+    [self.profileImgButton setImage:croppedImage forState:UIControlStateNormal];
     
     CGSize size = CGSizeMake(360, 360);
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-    [photo drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    [croppedImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
     
     UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     PFFile *fileThumb = nil;
@@ -108,6 +117,17 @@
     user[@"thumbnail"] = fileThumb;
     
     [user saveInBackground];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - FDTakeControllerDelegate
+
+- (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info {
+    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:photo];
+    imageCropVC.delegate = self;
+    [self.navigationController pushViewController:imageCropVC animated:YES];
+
 }
 
 #pragma mark - UIAlertViewDelegate

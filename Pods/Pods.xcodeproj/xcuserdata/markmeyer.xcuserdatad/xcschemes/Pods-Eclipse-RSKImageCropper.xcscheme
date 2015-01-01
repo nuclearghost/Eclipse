@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04397CFB01E9B603683E625A"
-               BuildableName = "libPods-Eclipse-AMSlideMenu.a"
-               BlueprintName = "Pods-Eclipse-AMSlideMenu"
+               BlueprintIdentifier = "D6C77D797D230869CCC37B36"
+               BuildableName = "libPods-Eclipse-RSKImageCropper.a"
+               BlueprintName = "Pods-Eclipse-RSKImageCropper"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

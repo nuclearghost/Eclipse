@@ -36,3 +36,9 @@
 #define COCOAPODS_VERSION_MINOR_JTSImageViewController 4
 #define COCOAPODS_VERSION_PATCH_JTSImageViewController 0
 
+// RSKImageCropper
+#define COCOAPODS_POD_AVAILABLE_RSKImageCropper
+#define COCOAPODS_VERSION_MAJOR_RSKImageCropper 0
+#define COCOAPODS_VERSION_MINOR_RSKImageCropper 4
+#define COCOAPODS_VERSION_PATCH_RSKImageCropper 0
+

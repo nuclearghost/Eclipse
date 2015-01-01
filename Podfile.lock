@@ -5,12 +5,14 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.0)
   - JSQSystemSoundPlayer (2.0.0)
   - JTSImageViewController (1.4)
+  - RSKImageCropper (0.4.0)
 
 DEPENDENCIES:
   - AMSlideMenu (HEAD)
   - FDTake (~> 0.2)
   - JSQMessagesViewController (~> 6.1)
   - JTSImageViewController (~> 1.4)
+  - RSKImageCropper (~> 0.4)
 
 SPEC CHECKSUMS:
   AMSlideMenu: ab0c9313c74eac61e360d2a714d2d8202f6de916
@@ -18,5 +20,6 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 8998c086bf6db5d6190376041903d5be2961f03f
   JSQSystemSoundPlayer: c98443b1cbb3b45db09d0d3d6c2355cf78294981
   JTSImageViewController: 9fe6402194b7679f0e28d0c1002d6164301fc34a
+  RSKImageCropper: d8bb948b8b618720479227805197106b90e14a16
 
 COCOAPODS: 0.35.0

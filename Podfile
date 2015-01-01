@@ -6,6 +6,7 @@ target 'Eclipse' do
   pod 'FDTake', '~> 0.2'
   pod "AMSlideMenu", :head
   pod 'JTSImageViewController', '~> 1.4'
+  pod 'RSKImageCropper', '~> 0.4'
 end
 
 target 'EclipseTests' do

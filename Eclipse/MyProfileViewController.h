@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <FDTakeController.h>
+#import <RSKImageCropViewController.h>
 
 #define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
-@interface MyProfileViewController : UIViewController <FDTakeDelegate, UIAlertViewDelegate>
+@interface MyProfileViewController : UIViewController <FDTakeDelegate, UIAlertViewDelegate, RSKImageCropViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *profileImgButton;
 @property (weak, nonatomic) IBOutlet UILabel *profileStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
