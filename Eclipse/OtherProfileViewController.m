@@ -20,11 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.reportUserButton.layer.borderWidth = 1.0;
+    self.reportUserButton.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)reportTapped:(id)sender {
+    NSLog(@"Report Tapped");
 }
 
 - (void)setUserID:(NSString*)userID {
@@ -33,7 +40,8 @@
          if (error == nil)
          {
              self.user = object;
-             self.title = self.user[@"username"];
+             self.title = @"PROFILE";
+             self.usernameLabel.text = self.user[@"username"];
              [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                                                NSForegroundColorAttributeName : [UIColor whiteColor],
                                                                                NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]

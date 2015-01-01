@@ -21,16 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     PFUser *user = [PFUser currentUser];
-    
-    self.title = user[@"username"];
+
+    self.usernameLabel.text = user[@"username"];
     [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                                       NSForegroundColorAttributeName : [UIColor whiteColor],
                                                                       NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]
                                                                       }];
     self.profileStatusLabel.text = user[@"status"];
-    
+
     PFFile *pictureFile = user[@"picture"];
     [pictureFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
      {
@@ -40,9 +40,20 @@
              [self.profileImgButton setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
          }
      }];
-    
+
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = self;
+    
+    self.statusButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.statusButton.layer.borderWidth = 1.0;
+    self.passwordButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.passwordButton.layer.borderWidth = 1.0;
+
+    UIImage *backBtn = [UIImage imageNamed:@"BackArrow"];
+    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.backBarButtonItem.title=@"";
+    self.navigationController.navigationBar.backIndicatorImage = backBtn;
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
 }
 
 - (void)didReceiveMemoryWarning {

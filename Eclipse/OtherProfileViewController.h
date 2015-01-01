@@ -11,6 +11,9 @@
 @interface OtherProfileViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *reportUserButton;
 
+- (IBAction)reportTapped:(id)sender;
 - (void)setUserID:(NSString*)userID;
 @end

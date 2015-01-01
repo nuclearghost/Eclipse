@@ -14,6 +14,9 @@
 @interface MyProfileViewController : UIViewController <FDTakeDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *profileImgButton;
 @property (weak, nonatomic) IBOutlet UILabel *profileStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *statusButton;
+@property (weak, nonatomic) IBOutlet UIButton *passwordButton;
 
 - (IBAction)profileImgTapped:(id)sender;
 - (IBAction)changeStatusTapped:(id)sender;
