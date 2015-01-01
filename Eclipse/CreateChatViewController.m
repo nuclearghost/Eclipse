@@ -34,6 +34,12 @@
     
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = self;
+    
+    UIImage *backBtn = [UIImage imageNamed:@"BackArrow"];
+    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.backBarButtonItem.title=@"";
+    self.navigationController.navigationBar.backIndicatorImage = backBtn;
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,10 +121,54 @@
     [textView setText:@""];
 }
 
+#pragma mark - RSKImageCropViewControllerDelegate
+- (void)imageCropViewControllerDidCancelCrop:(RSKImageCropViewController *)controller
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+// The original image has been cropped.
+- (void)imageCropViewController:(RSKImageCropViewController *)controller didCropImage:(UIImage *)croppedImage
+{
+    UIImage *blurredImage = [croppedImage stackBlur:20];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame: self.titleTextView.bounds];
+    self.backgroundImage = blurredImage;
+    imgView.image = blurredImage;
+    imgView.tag = 101;
+    [self.titleTextView addSubview: imgView];
+    [self.titleTextView sendSubviewToBack: imgView];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (CGRect)imageCropViewControllerCustomMaskRect:(RSKImageCropViewController *)controller
+{
+    CGFloat viewWidth = CGRectGetWidth(controller.view.frame);
+    CGFloat viewHeight = CGRectGetHeight(controller.view.frame);
+    
+    CGSize maskSize = CGSizeMake(viewWidth, viewWidth/2);
+    
+    CGRect maskRect = CGRectMake((viewWidth - maskSize.width) * 0.5f,
+                                 (viewHeight - maskSize.height) * 0.5f,
+                                 maskSize.width,
+                                 maskSize.height);
+    
+    return maskRect;
+}
+
+- (UIBezierPath *)imageCropViewControllerCustomMaskPath:(RSKImageCropViewController *)controller
+{
+    return [UIBezierPath bezierPathWithRect:controller.maskRect];
+}
+
 #pragma mark - FDTakeControllerDelegate
 
 - (void)takeController:(FDTakeController *)controller gotPhoto:(UIImage *)photo withInfo:(NSDictionary *)info {
-    
+    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:photo];
+    imageCropVC.delegate = self;
+    imageCropVC.dataSource = self;
+    imageCropVC.cropMode = RSKImageCropModeCustom;
+    [self.navigationController pushViewController:imageCropVC animated:YES];
+    /*
     CGRect clippedRect = CGRectMake((photo.size.width - 960) / 2, (photo.size.height - 600) / 2, 960, 600);
     
     // Crop logic
@@ -134,6 +184,6 @@
     imgView.tag = 101;
     [self.titleTextView addSubview: imgView];
     [self.titleTextView sendSubviewToBack: imgView];
-     
+        */
 }
 @end

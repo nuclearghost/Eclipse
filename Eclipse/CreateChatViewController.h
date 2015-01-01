@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "FDTakeController.h"
+#import "RSKImageCropViewController.h"
 
-@interface CreateChatViewController : UIViewController <UITextViewDelegate, FDTakeDelegate>
+@interface CreateChatViewController : UIViewController <UITextViewDelegate, FDTakeDelegate, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 
