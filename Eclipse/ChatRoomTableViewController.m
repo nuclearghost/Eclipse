@@ -14,6 +14,7 @@
 #import "ChatTableViewCell.h"
 #import "LocationHelper.h"
 #import "UIColor+Eclipse.h"
+#import "ShareManager.h"
 
 @interface ChatRoomTableViewController ()
 
@@ -34,13 +35,24 @@
                                                                       NSForegroundColorAttributeName : [UIColor whiteColor],
                                                                       NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]
                                                                       }];
-
+    
     [[LocationHelper sharedLocationHelper] startLocationServices];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadChats];
+    ShareManager *sm = [ShareManager sharedShareManager];
+    if (sm.roomId && ![sm.roomId isEqualToString:@""]) {
+        PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
+        [query whereKey:@"objectId" equalTo:sm.roomId];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            PFObject *room = objects[0];
+            sm.roomId = nil;
+            [self performSegueWithIdentifier:@"roomSegue" sender:room];
+        }];
+    } else {
+        [self loadChats];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,6 +114,8 @@
         cell.timeLabel.text = [NSString stringWithFormat:@"%2.0fh:%2.0fm", hours, minutes];
     }
     
+    cell.shareBtn.tag = indexPath.row;
+    
     return cell;
 }
 
@@ -109,9 +123,6 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PFObject *chatroom = self.chatRooms[indexPath.row];
-    //NSString *roomId = chatroom.objectId;
-    //CreateMessageItem([PFUser currentUser], roomId, chatroom[PF_CHATROOMS_NAME]);
-    
     [self performSegueWithIdentifier:@"roomSegue" sender:chatroom];
 }
 
@@ -131,6 +142,23 @@
 
 - (IBAction)addTapped:(id)sender {
     [self performSegueWithIdentifier:@"createConvoSegue" sender:nil];
+}
+
+- (IBAction)shareTapped:(UIButton *)sender {
+    PFObject *chatroom = self.chatRooms[sender.tag];
+    NSString *text = @"Join the conversation with Near.";
+    NSURL *shareURL = [NSURL URLWithString:[NSString stringWithFormat:@"nearapp://room/%@", chatroom.objectId]];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]
+                                                            initWithActivityItems:@[text, shareURL]
+                                                            applicationActivities:nil];
+    activityViewController.excludedActivityTypes = @[UIActivityTypeAddToReadingList];
+
+    [self presentViewController:activityViewController
+                                       animated:YES
+                                     completion:^{
+                                         //
+                                     }];
 }
 
 #pragma mark - Private Methods

@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
+
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end

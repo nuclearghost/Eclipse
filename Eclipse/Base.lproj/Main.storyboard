@@ -125,11 +125,21 @@
                                             <color key="textColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loB-hA-X2V">
+                                            <rect key="frame" x="533" y="106" width="59" height="51"/>
+                                            <state key="normal" image="Share">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="shareTapped:" destination="YY0-Ma-Qsc" eventType="touchUpInside" id="9bA-UK-A49"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.85098039219999999" green="0.1019607843" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="vya-ON-imS" firstAttribute="top" secondItem="dlm-av-2uv" secondAttribute="topMargin" constant="-8" id="1RO-9B-rY0"/>
                                         <constraint firstItem="fHW-tc-1lb" firstAttribute="top" secondItem="dlm-av-2uv" secondAttribute="topMargin" id="3AQ-Mx-zU4"/>
+                                        <constraint firstItem="loB-hA-X2V" firstAttribute="trailing" secondItem="dlm-av-2uv" secondAttribute="trailingMargin" id="4VF-Nf-wJG"/>
                                         <constraint firstItem="Hjk-cE-cnO" firstAttribute="firstBaseline" secondItem="P5z-es-BOr" secondAttribute="firstBaseline" id="6Br-Rg-Y85"/>
                                         <constraint firstItem="fHW-tc-1lb" firstAttribute="leading" secondItem="Hjk-cE-cnO" secondAttribute="leading" id="COy-L8-nUF"/>
                                         <constraint firstItem="Hjk-cE-cnO" firstAttribute="baseline" secondItem="P5z-es-BOr" secondAttribute="baseline" id="G0m-EV-slE"/>
@@ -139,6 +149,7 @@
                                         <constraint firstItem="P5z-es-BOr" firstAttribute="leading" secondItem="Hjk-cE-cnO" secondAttribute="trailing" constant="8" symbolic="YES" id="KfB-qS-RYB"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Hjk-cE-cnO" secondAttribute="bottom" constant="1" id="Why-6J-cFi"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="vya-ON-imS" secondAttribute="trailing" constant="-8" id="bhB-u3-vfg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="loB-hA-X2V" secondAttribute="bottom" constant="-5" id="cLd-Z1-ZWe"/>
                                         <constraint firstItem="Hjk-cE-cnO" firstAttribute="baseline" secondItem="Mn1-GT-ma8" secondAttribute="baseline" id="fTw-G8-7o2"/>
                                         <constraint firstItem="Mn1-GT-ma8" firstAttribute="top" secondItem="fHW-tc-1lb" secondAttribute="bottom" constant="25" id="n3o-Is-hhh"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="vya-ON-imS" secondAttribute="bottom" constant="-8" id="niX-Vw-tri"/>
@@ -149,6 +160,7 @@
                                     <outlet property="backgroundImageView" destination="vya-ON-imS" id="Kgk-fa-1Fx"/>
                                     <outlet property="distanceLabel" destination="P5z-es-BOr" id="WRO-Xb-M7B"/>
                                     <outlet property="peopleLabel" destination="Hjk-cE-cnO" id="ZY9-kS-O1M"/>
+                                    <outlet property="shareBtn" destination="loB-hA-X2V" id="a0H-yX-Jdi"/>
                                     <outlet property="timeLabel" destination="Mn1-GT-ma8" id="sYa-hh-hdh"/>
                                     <outlet property="titleLabel" destination="fHW-tc-1lb" id="vwy-Pf-i1S"/>
                                 </connections>
@@ -225,7 +237,7 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN0-DB-p37">
-                                <rect key="frame" x="81" y="280" width="30" height="22"/>
+                                <rect key="frame" x="81" y="280" width="30" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="KtA-HE-sSt"/>
                                 </constraints>
@@ -237,7 +249,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nu7-p3-Zpw">
-                                <rect key="frame" x="16" y="280" width="29" height="22"/>
+                                <rect key="frame" x="16" y="280" width="29" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="29" id="AaA-8F-Bdp"/>
                                 </constraints>
@@ -436,6 +448,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="cxc-DC-tCn">
                         <barButtonItem key="backBarButtonItem" title="  " id="rQd-UP-xLk"/>
+                        <barButtonItem key="rightBarButtonItem" image="Share" id="iFR-rQ-uhQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="shareTapped:" destination="kcq-kI-ehe" id="kZP-X3-0xN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="IHH-4p-7ug" kind="show" identifier="otherProfileSegue" id="kfK-N2-loC"/>
@@ -712,11 +730,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera" width="27" height="21"/>
-        <image name="Menu" width="24" height="24"/>
-        <image name="Plus" width="25" height="25"/>
+        <image name="Camera" width="58" height="52"/>
+        <image name="Menu" width="59" height="31"/>
+        <image name="Plus" width="128" height="128"/>
         <image name="PostConvo" width="154" height="59"/>
-        <image name="Refresh" width="25" height="20"/>
+        <image name="Refresh" width="57" height="60"/>
+        <image name="Share" width="59" height="51"/>
         <image name="User" width="26" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>

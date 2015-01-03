@@ -11,5 +11,6 @@
 @interface ChatRoomTableViewController : UITableViewController <UIAlertViewDelegate>
 
 - (IBAction)addTapped:(id)sender;
+- (IBAction)shareTapped:(UIButton *)sender;
 
 @end

@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Char_X.png"
+      "filename" : "near_close_icon_white_@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Char_X@2x.png"
+      "filename" : "near_close_icon_white_@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "near_close_icon_white_@3x.png"
     }
   ],
   "info" : {

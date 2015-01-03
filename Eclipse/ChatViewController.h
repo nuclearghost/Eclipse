@@ -17,4 +17,6 @@
 
 @property (strong, nonatomic) PFObject *room;
 
+- (IBAction)shareTapped:(id)sender;
+
 @end

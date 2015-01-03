@@ -442,4 +442,20 @@
 - (NSString *)safeChannelId {
     return [NSString stringWithFormat:@"A%@", self.room.objectId];
 }
+
+- (IBAction)shareTapped:(id)sender {
+    NSString *text = @"Join the conversation with Near.";
+    NSURL *shareURL = [NSURL URLWithString:[NSString stringWithFormat:@"nearapp://room/%@", self.room.objectId]];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]
+                                                        initWithActivityItems:@[text, shareURL]
+                                                        applicationActivities:nil];
+    activityViewController.excludedActivityTypes = @[UIActivityTypeAddToReadingList];
+    
+    [self presentViewController:activityViewController
+                       animated:YES
+                     completion:^{
+                         //
+                     }];
+}
 @end

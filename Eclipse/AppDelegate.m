@@ -7,12 +7,13 @@
 //
 
 #import "AppDelegate.h"
+
 #import <Parse/Parse.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <TwitterKit/TwitterKit.h>
 
-
+#import "ShareManager.h"
 
 @interface AppDelegate ()
 
@@ -104,7 +105,18 @@
         [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pushReceived" object:nil userInfo:userInfo];
-//    [PFPush handlePush:userInfo];
+}
+
+-(BOOL)application:(UIApplication *)application
+           openURL:(NSURL *)url
+ sourceApplication:(NSString *)sourceApplication
+        annotation:(id)annotation {
+    if([[url host] isEqualToString:@"room"]){
+        ShareManager *sm = [ShareManager sharedShareManager];
+        sm.roomId = [[url path] substringFromIndex:1];
+        return YES;
+    }
+    return NO;
 }
 /*
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {

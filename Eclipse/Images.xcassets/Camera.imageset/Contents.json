@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Camera.png"
+      "filename" : "near_camera_icon_@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "camera_icon.png"
+      "filename" : "near_camera_icon_@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "near_camera_icon_@3x.png"
     }
   ],
   "info" : {
