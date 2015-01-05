@@ -163,10 +163,9 @@
 
 #pragma mark - Private Methods
 - (void)loadChats {
-    PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
-    //[query whereKey:@"centerPoint" nearGeoPoint:[[LocationHelper sharedLocationHelper] getLastGeoPoint] withinMiles:3.5];
-    [query whereKey:@"active" equalTo:[NSNumber numberWithBool:YES]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    [PFCloud callFunctionInBackground:@"findAvailableChatRooms"
+                       withParameters:@{@"geoPoint": [[LocationHelper sharedLocationHelper] getLastGeoPoint]}
+                                block:^(NSArray *objects, NSError *error)
      {
          if (error == nil)
          {

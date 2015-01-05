@@ -83,3 +83,22 @@ Parse.Cloud.job("updateActiveChatRooms", function(request, status) {
     status.error("Error while updating active rooms. " + error);
   });
 });
+
+Parse.Cloud.define("findAvailableChatRooms", function(request, response) {
+  var geoPoint = request.params.geoPoint;
+  var query = new Parse.Query("ChatRoom");
+  query.equalTo("active", true);
+  query.withinKilometers("centerPoint", geoPoint, 40);
+  query.find({
+    success: function(results) {
+      response.success(results);
+    },
+    error: function(error) {
+      response.error("Error");
+    }
+  });
+});
+
+Parse.Cloud.define("reportUser", function(request, response) {
+  console.log("Attempting to report User");
+});
