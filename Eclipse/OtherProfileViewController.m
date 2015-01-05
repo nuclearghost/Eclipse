@@ -35,7 +35,6 @@
                        withParameters:@{@"reportedUserId": self.user.objectId}
                                 block:^(id object, NSError *error) {
                                     if (!error) {
-                                        NSLog(@"Reported User");
                                     }
     }];
 }

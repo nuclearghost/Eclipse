@@ -106,12 +106,11 @@
         cell.backgroundImageView.image = nil;
     }
     
+    [cell.timer invalidate];
+    cell.timeLabel.text = @"";
     if (chatRoom[@"expiresAt"] != nil) {
-        NSDate *expiration = chatRoom[@"expiresAt"];
-        NSTimeInterval seconds = [expiration timeIntervalSinceDate:[NSDate date]];
-        double hours = floor(seconds/3600);
-        double minutes = floor(((int)seconds % 3600)/60);
-        cell.timeLabel.text = [NSString stringWithFormat:@"%2.0fh:%2.0fm", hours, minutes];
+        cell.expiration = chatRoom[@"expiresAt"];
+        cell.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:cell selector:@selector(updateTimestamp) userInfo:nil repeats:YES];
     }
     
     cell.shareBtn.tag = indexPath.row;

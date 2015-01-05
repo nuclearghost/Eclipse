@@ -18,4 +18,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
+@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSDate *expiration;
+
+- (void)updateTimestamp;
+
 @end
