@@ -101,4 +101,15 @@ Parse.Cloud.define("findAvailableChatRooms", function(request, response) {
 
 Parse.Cloud.define("reportUser", function(request, response) {
   console.log("Attempting to report User");
+  var query = new Parse.Query(Parse.User);
+  query.equalTo("objectId", request.params.reportedUserId);
+  query.find({
+      success: function() {
+        // Do stuff to disable
+        response.success(true);
+      },
+      error: function(error) {
+        response.error("Error");
+      }
+  });
 });

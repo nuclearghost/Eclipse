@@ -31,7 +31,13 @@
 }
 
 - (IBAction)reportTapped:(id)sender {
-    NSLog(@"Report Tapped");
+    [PFCloud callFunctionInBackground:@"reportUser"
+                       withParameters:@{@"reportedUserId": self.user.objectId}
+                                block:^(id object, NSError *error) {
+                                    if (!error) {
+                                        NSLog(@"Reported User");
+                                    }
+    }];
 }
 
 - (void)setUserID:(NSString*)userID {
