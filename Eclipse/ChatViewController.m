@@ -70,6 +70,8 @@
     [super viewDidAppear:animated];
     timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(loadMessages) userInfo:nil repeats:YES];
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -392,6 +394,7 @@
         [messages addObject:message];
     } else {
         JSQPhotoMediaItem *mediaItem = [[JSQPhotoMediaItem alloc] initWithImage:nil];
+        mediaItem.appliesMediaViewMaskAsOutgoing = [user.objectId isEqualToString:self.senderId];
         JSQMessage *message = [[JSQMessage alloc] initWithSenderId:user.objectId senderDisplayName:user[@"username"]
                                                                         date:object.createdAt media:mediaItem];
         [messages addObject:message];
