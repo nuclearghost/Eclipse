@@ -24,7 +24,7 @@
     NSTimeInterval seconds = [self.expiration timeIntervalSinceDate:[NSDate date]];
     double hours = floor(seconds/3600);
     double minutes = floor(((int)seconds % 3600)/60);
-    self.timeLabel.text = [NSString stringWithFormat:@"%2.0fh:%2.0fm:%2.0ds", hours, minutes, (int)seconds % 60];
+    self.timeLabel.text = [NSString stringWithFormat:@"%02.0fh:%02.0fm:%02ds", hours, minutes, (int)seconds % 60];
 }
 
 @end

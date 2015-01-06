@@ -88,7 +88,7 @@ Parse.Cloud.define("findAvailableChatRooms", function(request, response) {
   var geoPoint = request.params.geoPoint;
   var query = new Parse.Query("ChatRoom");
   query.equalTo("active", true);
-  query.withinKilometers("centerPoint", geoPoint, 40);
+  query.withinKilometers("centerPoint", geoPoint, 100);
   query.find({
     success: function(results) {
       response.success(results);

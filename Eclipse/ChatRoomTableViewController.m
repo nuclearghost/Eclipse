@@ -110,6 +110,7 @@
     cell.timeLabel.text = @"";
     if (chatRoom[@"expiresAt"] != nil) {
         cell.expiration = chatRoom[@"expiresAt"];
+        [cell updateTimestamp];
         cell.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:cell selector:@selector(updateTimestamp) userInfo:nil repeats:YES];
     }
     

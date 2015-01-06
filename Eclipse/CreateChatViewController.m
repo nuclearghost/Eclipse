@@ -35,7 +35,7 @@
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = self;
     
-    UIImage *backBtn = [UIImage imageNamed:@"BackArrow"];
+    UIImage *backBtn = [UIImage imageNamed:@"Close"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.backBarButtonItem.title=@"";
     self.navigationController.navigationBar.backIndicatorImage = backBtn;
@@ -75,6 +75,8 @@
 
 - (IBAction)postTapped:(id)sender {
     if ([self.titleTextView.text isEqualToString:@""] == NO && [self.titleTextView.text isEqualToString:@"NAME YOUR CONVERSATION"] == NO) {
+        
+        
         
         PFFile *filePicture = nil;
         if (self.backgroundImage != nil)
