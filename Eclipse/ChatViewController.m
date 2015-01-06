@@ -60,7 +60,7 @@
     
     takeController = [[FDTakeController alloc] init];
     takeController.delegate = self;
-    
+        
     isLoading = NO;
     [self loadMessages];
 }

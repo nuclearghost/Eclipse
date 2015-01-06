@@ -26,7 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.navigationController.hidesBarsOnSwipe = YES;
+
     self.clearsSelectionOnViewWillAppear = NO;
 
     self.chatRooms = [[NSMutableArray alloc] init];
@@ -125,7 +127,6 @@
     PFObject *chatroom = self.chatRooms[indexPath.row];
     [self performSegueWithIdentifier:@"roomSegue" sender:chatroom];
 }
-
 
 #pragma mark - Navigation
 

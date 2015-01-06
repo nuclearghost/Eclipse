@@ -11,9 +11,11 @@
 #import "FDTakeController.h"
 #import "RSKImageCropViewController.h"
 
-@interface CreateChatViewController : UIViewController <UITextViewDelegate, FDTakeDelegate, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource>
+@interface CreateChatViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, FDTakeDelegate, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
+@property (weak, nonatomic) IBOutlet UIButton *postButton;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
 - (IBAction)cameraTapped:(id)sender;
 - (IBAction)refreshTapped:(id)sender;

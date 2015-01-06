@@ -59,6 +59,7 @@
 		B2B549F21A5B9C8A0035C0F9 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549E81A5B9C8A0035C0F9 /* OpenSans-Regular.ttf */; };
 		B2B549F31A5B9C8A0035C0F9 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549E91A5B9C8A0035C0F9 /* OpenSans-Semibold.ttf */; };
 		B2B549F41A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549EA1A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf */; };
+		B2B549F71A5BC2570035C0F9 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */; };
 		B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */; };
 		B2F34A121A354B4200CB78BF /* CreateChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F34A111A354B4200CB78BF /* CreateChatViewController.m */; };
 		B2F34A141A355C2200CB78BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F34A131A355C2200CB78BF /* LaunchScreen.xib */; };
@@ -150,6 +151,8 @@
 		B2B549E81A5B9C8A0035C0F9 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		B2B549E91A5B9C8A0035C0F9 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		B2B549EA1A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		B2B549F51A5BC2570035C0F9 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bubbly Spaceship.wav"; sourceTree = "<group>"; };
 		B2F34A101A354B4200CB78BF /* CreateChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateChatViewController.h; sourceTree = "<group>"; };
 		B2F34A111A354B4200CB78BF /* CreateChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateChatViewController.m; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				B27D8D3D1A350835006BD19D /* UIColor+Eclipse.m */,
 				B267C92D1A36BC6100E5CD02 /* UIImage+StackBlur.h */,
 				B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */,
+				B2B549F51A5BC2570035C0F9 /* UIImageEffects.h */,
+				B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 				B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */,
 				B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */,
 				B267C9331A36C8EB00E5CD02 /* MainSlideViewController.m in Sources */,
+				B2B549F71A5BC2570035C0F9 /* UIImageEffects.m in Sources */,
 				B267C92F1A36BC6100E5CD02 /* UIImage+StackBlur.m in Sources */,
 				B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */,
 				B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */,

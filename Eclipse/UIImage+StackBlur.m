@@ -41,6 +41,33 @@ inline static void zeroClearInt(int* p, size_t count) { memset(p, 0, sizeof(int)
 
 @implementation  UIImage (StackBlur)
 
++ (UIImage *)colorizeImage:(UIImage *)image withColor:(UIColor *)color {
+    UIGraphicsBeginImageContext(image.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect area = CGRectMake(0, 0, image.size.width, image.size.height);
+    
+    CGContextScaleCTM(context, 1, -1);
+    CGContextTranslateCTM(context, 0, -area.size.height);
+    
+    CGContextSaveGState(context);
+    CGContextClipToMask(context, area, image.CGImage);
+    
+    [color set];
+    CGContextFillRect(context, area);
+    
+    CGContextRestoreGState(context);
+    
+    CGContextSetBlendMode(context, kCGBlendModeMultiply);
+    
+    CGContextDrawImage(context, area, image.CGImage);
+    
+    UIImage *colorizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return colorizedImage;
+}
 
 // Stackblur algorithm
 // from
@@ -60,7 +87,7 @@ inline static void zeroClearInt(int* p, size_t count) { memset(p, 0, sizeof(int)
     //	return [other applyBlendFilter:filterOverlay  other:self context:nil];
     // First get the image into your data buffer
     CGImageRef inImage = self.CGImage;
-    int nbPerCompt = CGImageGetBitsPerPixel(inImage);
+    size_t nbPerCompt = CGImageGetBitsPerPixel(inImage);
     if(nbPerCompt != 32){
         UIImage *tmpImage = [self normalize];
         inImage = tmpImage.CGImage;

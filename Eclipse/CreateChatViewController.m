@@ -12,6 +12,7 @@
 
 #import "UIColor+Eclipse.h"
 #import "UIImage+StackBlur.h"
+#import "UIImageEffects.h"
 
 #import "LocationHelper.h"
 
@@ -30,10 +31,15 @@
     self.title = @"CREATE A CONVERSATION";
     
     self.EclipseColors = @[[UIColor eclipseDarkBlueColor], [UIColor eclipseYellowColor], [UIColor eclipseMagentaColor], [UIColor eclipseLightBlueColor], [UIColor eclipseRedColor]];
-    self.colorIndex = 0;
+    self.colorIndex = -1;
+    [self refreshTapped:nil];
     
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = self;
+    
+
+    self.titleTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"NAME YOUR CONVERSATION" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.titleTextField.delegate = self;
     
     UIImage *backBtn = [UIImage imageNamed:@"Close"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -47,24 +53,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)cameraTapped:(id)sender {
     [self.takeController takePhotoOrChooseFromLibrary];
-    for (UIView *subView in self.titleTextView.subviews)
-    {
-        if (subView.tag == 101) {
-            [subView removeFromSuperview];
-        }
-    }
 }
 
 - (IBAction)refreshTapped:(id)sender {
@@ -74,9 +64,9 @@
 }
 
 - (IBAction)postTapped:(id)sender {
-    if ([self.titleTextView.text isEqualToString:@""] == NO && [self.titleTextView.text isEqualToString:@"NAME YOUR CONVERSATION"] == NO) {
+    if ([self.titleTextField.text isEqualToString:@""] == NO && [self.titleTextField.text isEqualToString:@"NAME YOUR CONVERSATION"] == NO) {
         
-        
+        self.postButton.enabled = NO;
         
         PFFile *filePicture = nil;
         if (self.backgroundImage != nil)
@@ -89,7 +79,7 @@
         }
 
         PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
-        chatRoom[@"Name"] = self.titleTextView.text;
+        chatRoom[@"Name"] = self.titleTextField.text;
         chatRoom[@"creator"] = [PFUser currentUser];
         chatRoom[@"centerPoint"] = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
 
@@ -102,9 +92,8 @@
         [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
          if (error == nil) {
              [self.navigationController popViewControllerAnimated:YES];
-         }
-         else {
-             //[ProgressHUD showError:@"Network error."];
+         } else {
+             self.postButton.enabled = YES;
          }
         }];
     }
@@ -118,9 +107,12 @@
     //TODO: Open webview to privacy
 }
 
-#pragma mark - UITextViewDelegate
-- (void) textViewDidBeginEditing:(UITextView *) textView {
-    [textView setText:@""];
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 #pragma mark - RSKImageCropViewControllerDelegate
@@ -132,14 +124,22 @@
 // The original image has been cropped.
 - (void)imageCropViewController:(RSKImageCropViewController *)controller didCropImage:(UIImage *)croppedImage
 {
-    UIImage *blurredImage = [croppedImage stackBlur:20];
+    for (UIView *subView in self.titleTextView.subviews)
+    {
+        if (subView.tag == 101) {
+            [subView removeFromSuperview];
+            break;
+        }
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+    UIImage *blurredImage = [UIImageEffects imageByApplyingBlurToImage:croppedImage withRadius:25 tintColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.4] saturationDeltaFactor:1.0 maskImage:nil];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame: self.titleTextView.bounds];
     self.backgroundImage = blurredImage;
     imgView.image = blurredImage;
     imgView.tag = 101;
+    
     [self.titleTextView addSubview: imgView];
     [self.titleTextView sendSubviewToBack: imgView];
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (CGRect)imageCropViewControllerCustomMaskRect:(RSKImageCropViewController *)controller
@@ -170,22 +170,5 @@
     imageCropVC.dataSource = self;
     imageCropVC.cropMode = RSKImageCropModeCustom;
     [self.navigationController pushViewController:imageCropVC animated:YES];
-    /*
-    CGRect clippedRect = CGRectMake((photo.size.width - 960) / 2, (photo.size.height - 600) / 2, 960, 600);
-    
-    // Crop logic
-    CGImageRef imageRef = CGImageCreateWithImageInRect([photo CGImage], clippedRect);
-    UIImage * croppedImage = [UIImage imageWithCGImage:imageRef];
-    CGImageRelease(imageRef);
-    
-    UIImage *blurredImage = [croppedImage stackBlur:20];
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame: self.titleTextView.bounds];
-    self.backgroundImage = blurredImage;
-    imgView.image = blurredImage;
-    imgView.tag = 101;
-    [self.titleTextView addSubview: imgView];
-    [self.titleTextView sendSubviewToBack: imgView];
-        */
 }
 @end

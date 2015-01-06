@@ -14,6 +14,7 @@
 @import UIKit;
 
 @interface UIImage (StackBlur)
++ (UIImage *)colorizeImage:(UIImage *)image withColor:(UIColor *)color;
 - (UIImage*) stackBlur:(NSUInteger)radius;
 - (UIImage *) normalize ;
 + (void) applyStackBlurToBuffer:(UInt8*)targetBuffer width:(const int)w height:(const int)h withRadius:(NSUInteger)inradius;
