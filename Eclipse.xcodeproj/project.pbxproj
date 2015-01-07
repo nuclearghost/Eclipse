@@ -60,6 +60,7 @@
 		B2B549F31A5B9C8A0035C0F9 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549E91A5B9C8A0035C0F9 /* OpenSans-Semibold.ttf */; };
 		B2B549F41A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549EA1A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf */; };
 		B2B549F71A5BC2570035C0F9 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */; };
+		B2DABCF71A5D06EB00F0C2BC /* BetaCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DABCF61A5D06EB00F0C2BC /* BetaCodeViewController.m */; };
 		B2E0C00B1A181ACA00AE8E12 /* Bubbly Spaceship.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */; };
 		B2F34A121A354B4200CB78BF /* CreateChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F34A111A354B4200CB78BF /* CreateChatViewController.m */; };
 		B2F34A141A355C2200CB78BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F34A131A355C2200CB78BF /* LaunchScreen.xib */; };
@@ -153,6 +154,8 @@
 		B2B549EA1A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		B2B549F51A5BC2570035C0F9 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		B2DABCF51A5D06EB00F0C2BC /* BetaCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetaCodeViewController.h; sourceTree = "<group>"; };
+		B2DABCF61A5D06EB00F0C2BC /* BetaCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetaCodeViewController.m; sourceTree = "<group>"; };
 		B2E0C00A1A181ACA00AE8E12 /* Bubbly Spaceship.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bubbly Spaceship.wav"; sourceTree = "<group>"; };
 		B2F34A101A354B4200CB78BF /* CreateChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateChatViewController.h; sourceTree = "<group>"; };
 		B2F34A111A354B4200CB78BF /* CreateChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateChatViewController.m; sourceTree = "<group>"; };
@@ -315,22 +318,16 @@
 		B26217D51A06F2C00074A08C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B26217D21A06F0FD0074A08C /* AuthViewController.h */,
-				B26217D31A06F0FD0074A08C /* AuthViewController.m */,
 				B26217D61A06F2EB0074A08C /* InitialViewController.h */,
 				B26217D71A06F2EB0074A08C /* InitialViewController.m */,
-				B26217D91A06FE830074A08C /* UserNameViewController.h */,
-				B26217DA1A06FE830074A08C /* UserNameViewController.m */,
 				B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */,
 				B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */,
 				B23EE6FE1A073BDB00E5AE9E /* ChatViewController.h */,
 				B23EE6FF1A073BDB00E5AE9E /* ChatViewController.m */,
 				B2F34A101A354B4200CB78BF /* CreateChatViewController.h */,
 				B2F34A111A354B4200CB78BF /* CreateChatViewController.m */,
-				B282C7551A490183006F1C01 /* MyProfileViewController.h */,
-				B282C7561A490183006F1C01 /* MyProfileViewController.m */,
-				B27416D01A50779000D31B93 /* OtherProfileViewController.h */,
-				B27416D11A50779000D31B93 /* OtherProfileViewController.m */,
+				B2DABCF31A5D050B00F0C2BC /* SignUp */,
+				B2DABCF41A5D052F00F0C2BC /* Profiles */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -405,6 +402,30 @@
 				B28B6CF01A576D1B00EF8652 /* ShareManager.m */,
 			);
 			name = Singletons;
+			sourceTree = "<group>";
+		};
+		B2DABCF31A5D050B00F0C2BC /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				B26217D21A06F0FD0074A08C /* AuthViewController.h */,
+				B26217D31A06F0FD0074A08C /* AuthViewController.m */,
+				B26217D91A06FE830074A08C /* UserNameViewController.h */,
+				B26217DA1A06FE830074A08C /* UserNameViewController.m */,
+				B2DABCF51A5D06EB00F0C2BC /* BetaCodeViewController.h */,
+				B2DABCF61A5D06EB00F0C2BC /* BetaCodeViewController.m */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
+		B2DABCF41A5D052F00F0C2BC /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				B282C7551A490183006F1C01 /* MyProfileViewController.h */,
+				B282C7561A490183006F1C01 /* MyProfileViewController.m */,
+				B27416D01A50779000D31B93 /* OtherProfileViewController.h */,
+				B27416D11A50779000D31B93 /* OtherProfileViewController.m */,
+			);
+			name = Profiles;
 			sourceTree = "<group>";
 		};
 		B2E0C0091A181AB700AE8E12 /* Sounds */ = {
@@ -594,6 +615,7 @@
 				B28B6CF11A576D1B00EF8652 /* ShareManager.m in Sources */,
 				B2F34A121A354B4200CB78BF /* CreateChatViewController.m in Sources */,
 				B282C7571A490183006F1C01 /* MyProfileViewController.m in Sources */,
+				B2DABCF71A5D06EB00F0C2BC /* BetaCodeViewController.m in Sources */,
 				B262178E1A06EE490074A08C /* main.m in Sources */,
 				B27416D21A50779000D31B93 /* OtherProfileViewController.m in Sources */,
 				B25A51921A08A0E300F29D97 /* LocationHelper.m in Sources */,

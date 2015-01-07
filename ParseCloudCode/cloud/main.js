@@ -100,13 +100,30 @@ Parse.Cloud.define("findAvailableChatRooms", function(request, response) {
 });
 
 Parse.Cloud.define("reportUser", function(request, response) {
-  console.log("Attempting to report User");
   var query = new Parse.Query(Parse.User);
   query.equalTo("objectId", request.params.reportedUserId);
   query.find({
       success: function() {
         // Do stuff to disable
         response.success(true);
+      },
+      error: function(error) {
+        response.error("Error");
+      }
+  });
+});
+
+Parse.Cloud.define("checkAccessCode", function(request, response) {
+  var query = new Parse.Query("AccessCode");
+  query.equalTo("name", request.params.accessCode);
+  query.find({
+      success: function(results) {
+        if (results.length === 1) {
+        //TODO: check counter and decrease
+          response.success(true);
+        } else {
+          response.error("Access code not found");
+        }
       },
       error: function(error) {
         response.error("Error");

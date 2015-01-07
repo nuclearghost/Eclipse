@@ -18,6 +18,7 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
@@ -45,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="522"/>
+            <point key="canvasLocation" x="1763" y="-526"/>
         </scene>
         <!--CONVERSATIONS NEARBY-->
         <scene sceneID="vrT-a9-NgD">
@@ -709,13 +710,73 @@
                     </view>
                     <connections>
                         <outlet property="userNameField" destination="3vu-27-MCT" id="0CG-Wa-xHK"/>
-                        <segue destination="X3e-bB-OZo" kind="presentation" identifier="userNameRoomSegue" id="6Gu-Aa-FaT"/>
                         <segue destination="1bc-pA-MiL" kind="presentation" identifier="userNameMenuSegue" id="pLL-4g-GhR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBe-4G-QZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="522"/>
+            <point key="canvasLocation" x="2554" y="-526"/>
+        </scene>
+        <!--Beta Code View Controller-->
+        <scene sceneID="lGz-Ni-Rey">
+            <objects>
+                <viewController id="zfy-SF-J26" customClass="BetaCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gxu-fE-zef"/>
+                        <viewControllerLayoutGuide type="bottom" id="b87-rd-dAA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B5S-cG-uLj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="near is currently in beta." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-oz-1Ft">
+                                <rect key="frame" x="16" y="50" width="568" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Access Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fX3-RQ-UVI">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zfy-SF-J26" id="ggD-hY-gcc"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="please enter your access code below to continue" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG2-5a-9Ng">
+                                <rect key="frame" x="16" y="148.5" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bPl-oz-1Ft" firstAttribute="top" secondItem="gxu-fE-zef" secondAttribute="bottom" constant="8" id="0Jk-Te-LzJ"/>
+                            <constraint firstAttribute="centerY" secondItem="fX3-RQ-UVI" secondAttribute="centerY" id="F4E-0X-SDN"/>
+                            <constraint firstItem="bPl-oz-1Ft" firstAttribute="top" secondItem="gxu-fE-zef" secondAttribute="bottom" constant="30" id="NB0-xc-hzK"/>
+                            <constraint firstItem="hG2-5a-9Ng" firstAttribute="top" secondItem="bPl-oz-1Ft" secondAttribute="bottom" constant="75" id="UMf-Tk-oQp"/>
+                            <constraint firstItem="fX3-RQ-UVI" firstAttribute="trailing" secondItem="B5S-cG-uLj" secondAttribute="trailingMargin" id="fKe-iQ-lB2"/>
+                            <constraint firstItem="bPl-oz-1Ft" firstAttribute="leading" secondItem="B5S-cG-uLj" secondAttribute="leadingMargin" id="gTl-m1-diK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bPl-oz-1Ft" secondAttribute="trailing" id="gkv-X1-9Bv"/>
+                            <constraint firstItem="hG2-5a-9Ng" firstAttribute="leading" secondItem="B5S-cG-uLj" secondAttribute="leadingMargin" id="jdh-95-ilA"/>
+                            <constraint firstAttribute="centerX" secondItem="fX3-RQ-UVI" secondAttribute="centerX" id="nPL-6c-iIK"/>
+                            <constraint firstItem="fX3-RQ-UVI" firstAttribute="leading" secondItem="B5S-cG-uLj" secondAttribute="leadingMargin" id="uJx-wh-4XR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hG2-5a-9Ng" secondAttribute="trailing" id="zOz-e0-Q9h"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0Jk-Te-LzJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="accessCodeTextField" destination="fX3-RQ-UVI" id="9kT-ub-aYx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6y-Uy-eIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="-384"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="Wm7-P4-XYi">
@@ -740,9 +801,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="authSegue" id="bV3-PT-vEH"/>
                         <segue destination="X3e-bB-OZo" kind="presentation" identifier="chatSegue" modalTransitionStyle="flipHorizontal" id="QgY-k8-CJK"/>
                         <segue destination="1bc-pA-MiL" kind="presentation" identifier="chatMenuSegue" modalTransitionStyle="crossDissolve" id="ULa-Nu-G0V"/>
+                        <segue destination="zfy-SF-J26" kind="presentation" identifier="betaCodeSegue" id="bTv-D6-zU6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ZG-r2-IvA" userLabel="First Responder" sceneMemberID="firstResponder"/>

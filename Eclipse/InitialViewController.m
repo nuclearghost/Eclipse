@@ -34,11 +34,7 @@
         [PFUser logInWithUsernameInBackground:userName password:secret
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
-                                                //TODO remove this after 12/15/2014
-                                                [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
-                                                [[PFInstallation currentInstallation] saveEventually];
                                                 [self performSegueWithIdentifier:@"chatMenuSegue" sender:nil];
-
                                             } else {
                                                 CLS_LOG(@"Error from login: %@", error);
                                                 NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
@@ -55,6 +51,6 @@
 }
 
 - (void)segueToAuth {
-    [self performSegueWithIdentifier:@"authSegue" sender:nil];
+    [self performSegueWithIdentifier:@"betaCodeSegue" sender:nil];
 }
 @end

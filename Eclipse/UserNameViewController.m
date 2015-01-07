@@ -56,8 +56,6 @@
 
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
-            // Hooray! Let them use the app now.
-//            [self performSegueWithIdentifier:@"userNameRoomSegue" sender:nil];
             [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
             [[PFInstallation currentInstallation] saveEventually];
 
