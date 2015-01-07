@@ -4,7 +4,7 @@
 //  Copyright (c) 2014 Twitter. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "TWTRAuthSession.h"
 
 /**
  *  Authentication configuration details. Encapsulates credentials required to authenticate a Twitter application. You can obtain your credentials at https://apps.twitter.com/.
@@ -38,7 +38,7 @@
 /**
  *  TWTRSession represents a user's session authenticated with the Twitter API.
  */
-@interface TWTRSession : NSObject
+@interface TWTRSession : NSObject <TWTRAuthSession>
 
 /**
  *  The authorization token.

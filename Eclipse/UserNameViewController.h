@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserNameViewController : UIViewController
+@interface UserNameViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
-
-- (IBAction)checkAvailabilityTapped:(id)sender;
 
 @end

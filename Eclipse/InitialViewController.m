@@ -51,6 +51,6 @@
 }
 
 - (void)segueToAuth {
-    [self performSegueWithIdentifier:@"betaCodeSegue" sender:nil];
+    [self performSegueWithIdentifier:@"signupSegue" sender:nil];
 }
 @end

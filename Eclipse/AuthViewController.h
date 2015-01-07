@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AuthViewController : UIViewController
+- (IBAction)usePhoneNumberTapped:(id)sender;
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "AuthViewController.h"
+
 #import <TwitterKit/TwitterKit.h>
 #import <Crashlytics/Crashlytics.h>
+
+#import "UIColor+Eclipse.h"
 
 @interface AuthViewController ()
 
@@ -18,8 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DGTAuthenticateButton *authenticateButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
-        
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)usePhoneNumberTapped:(id)sender {
+    DGTAppearance *digitsAppearance = [[DGTAppearance alloc] init];
+    digitsAppearance.backgroundColor = [UIColor eclipseGrayColor];
+    digitsAppearance.accentColor = [UIColor whiteColor];
+    
+    Digits *digits = [Digits sharedInstance];
+    [digits authenticateWithDigitsAppearance:digitsAppearance viewController:nil title:nil completion:^(DGTSession *session, NSError *error) {
         if (session != nil) {
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:session.phoneNumber forKey:@"digitsPhoneNumber"];
@@ -31,26 +46,10 @@
             [self performSegueWithIdentifier:@"userNameSegue" sender:nil];
         } else {
             CLS_LOG(@"Error from digits: %@", error);
+            NSString *errorString = [error userInfo][@"error"];
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [av show];
         }
     }];
-    authenticateButton.center = self.view.center;
-    [self.view addSubview:authenticateButton];
-
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

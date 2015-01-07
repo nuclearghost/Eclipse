@@ -40,7 +40,11 @@ typedef NS_ENUM(NSInteger, TWTRErrorCode) {
     /**
      *  A resource has been requested by ID, but that ID was not found.
      */
-    TWTRErrorCodeInvalidResourceID = 4
+    TWTRErrorCodeInvalidResourceID = 4,
+    /**
+     *  A request has been issued for an invalid URL.
+     */
+    TWTRErrorCodeInvalidURL = 5,
 };
 
 /**

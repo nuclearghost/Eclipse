@@ -14,6 +14,12 @@
 @interface TWTRLogInButton : UIButton
 
 /**
+ *  The completion block to be called with a `TWTRSession` if successful,
+ *  and a `NSError` if logging in failed or was canceled.
+ */
+@property (nonatomic, copy) TWTRLogInCompletion logInCompletion;
+
+/**
  *  Returns a new log in button which launches Twitter log in when tapped and
  *  calls `completion` when logging in succeeds or fails.
  *

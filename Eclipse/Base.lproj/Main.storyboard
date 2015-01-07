@@ -19,6 +19,16 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
@@ -38,7 +48,32 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="near is for humans to converse, we need to verify you're a human" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlM-4F-biO">
+                                <rect key="frame" x="16" y="120" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PG-Pg-Fzx">
+                                <rect key="frame" x="231" y="283" width="138" height="33"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Use Phone Number">
+                                    <color key="titleColor" red="0.77576546719999995" green="0.77576546719999995" blue="0.77576546719999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="usePhoneNumberTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6K2-nT-oDT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xlM-4F-biO" secondAttribute="trailing" id="3PY-wV-KVO"/>
+                            <constraint firstItem="xlM-4F-biO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="NKf-Oy-m6r"/>
+                            <constraint firstItem="xlM-4F-biO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="100" id="X68-Mi-smF"/>
+                            <constraint firstAttribute="centerX" secondItem="4PG-Pg-Fzx" secondAttribute="centerX" id="kAQ-03-oPc"/>
+                            <constraint firstAttribute="centerY" secondItem="4PG-Pg-Fzx" secondAttribute="centerY" id="wrP-ko-QNP"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="bFs-RA-Ial" kind="presentation" identifier="userNameSegue" id="dbG-qq-MUH"/>
@@ -46,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="-526"/>
+            <point key="canvasLocation" x="2545" y="-50"/>
         </scene>
         <!--CONVERSATIONS NEARBY-->
         <scene sceneID="vrT-a9-NgD">
@@ -191,7 +226,7 @@
                             <color key="tintColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Plus" id="X6U-Lu-PzE">
-                            <color key="tintColor" red="0.97977825129999996" green="0.97977825129999996" blue="0.97977825129999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addTapped:" destination="YY0-Ma-Qsc" id="98X-GL-fup"/>
                             </connections>
@@ -686,27 +721,34 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vu-27-MCT">
                                 <rect key="frame" x="16" y="285" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljk-R4-qPd">
-                                <rect key="frame" x="240" y="247" width="121" height="30"/>
-                                <state key="normal" title="Check Availability">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
                                 <connections>
-                                    <action selector="checkAvailabilityTapped:" destination="bFs-RA-Ial" eventType="touchUpInside" id="8VV-DH-ods"/>
+                                    <outlet property="delegate" destination="bFs-RA-Ial" id="u22-AM-ORl"/>
                                 </connections>
-                            </button>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enter your desired username below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYU-Ua-Z3D">
+                                <rect key="frame" x="16" y="120" width="568" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UYU-Ua-Z3D" firstAttribute="top" secondItem="wjw-H1-kmB" secondAttribute="bottom" constant="100" id="2n5-X2-tKG"/>
                             <constraint firstItem="3vu-27-MCT" firstAttribute="trailing" secondItem="vYm-YE-u3h" secondAttribute="trailingMargin" id="7za-eX-u9u"/>
                             <constraint firstAttribute="centerX" secondItem="3vu-27-MCT" secondAttribute="centerX" id="J1H-eD-YwO"/>
-                            <constraint firstItem="ljk-R4-qPd" firstAttribute="top" secondItem="3vu-27-MCT" secondAttribute="bottom" constant="-68" id="NFQ-lJ-l4B"/>
                             <constraint firstItem="3vu-27-MCT" firstAttribute="leading" secondItem="vYm-YE-u3h" secondAttribute="leadingMargin" id="V1S-kp-Q4t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UYU-Ua-Z3D" secondAttribute="trailing" id="cms-cg-pQN"/>
                             <constraint firstAttribute="centerY" secondItem="3vu-27-MCT" secondAttribute="centerY" id="dJi-UR-EUG"/>
-                            <constraint firstAttribute="centerX" secondItem="ljk-R4-qPd" secondAttribute="centerX" id="joM-92-CiJ"/>
+                            <constraint firstItem="3vu-27-MCT" firstAttribute="top" secondItem="UYU-Ua-Z3D" secondAttribute="bottom" constant="100" id="fKw-4b-Aja"/>
+                            <constraint firstItem="UYU-Ua-Z3D" firstAttribute="leading" secondItem="vYm-YE-u3h" secondAttribute="leadingMargin" id="fxb-2y-mdN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fKw-4b-Aja"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="userNameField" destination="3vu-27-MCT" id="0CG-Wa-xHK"/>
@@ -715,7 +757,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBe-4G-QZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="-526"/>
+            <point key="canvasLocation" x="3336" y="-50"/>
         </scene>
         <!--Beta Code View Controller-->
         <scene sceneID="lGz-Ni-Rey">
@@ -729,8 +771,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="near is currently in beta." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-oz-1Ft">
-                                <rect key="frame" x="16" y="50" width="568" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-oz-1Ft">
+                                <rect key="frame" x="16" y="120" width="568" height="46.5"/>
+                                <string key="text">near is currently in beta. please enter your access code below. if you don't have one we'll notifiy you when it becomes available</string>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -743,40 +786,197 @@
                                     <outlet property="delegate" destination="zfy-SF-J26" id="ggD-hY-gcc"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="please enter your access code below to continue" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG2-5a-9Ng">
-                                <rect key="frame" x="16" y="148.5" width="568" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bPl-oz-1Ft" firstAttribute="top" secondItem="gxu-fE-zef" secondAttribute="bottom" constant="8" id="0Jk-Te-LzJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bPl-oz-1Ft" secondAttribute="trailing" id="0c7-vv-8Bw"/>
                             <constraint firstAttribute="centerY" secondItem="fX3-RQ-UVI" secondAttribute="centerY" id="F4E-0X-SDN"/>
                             <constraint firstItem="bPl-oz-1Ft" firstAttribute="top" secondItem="gxu-fE-zef" secondAttribute="bottom" constant="30" id="NB0-xc-hzK"/>
-                            <constraint firstItem="hG2-5a-9Ng" firstAttribute="top" secondItem="bPl-oz-1Ft" secondAttribute="bottom" constant="75" id="UMf-Tk-oQp"/>
                             <constraint firstItem="fX3-RQ-UVI" firstAttribute="trailing" secondItem="B5S-cG-uLj" secondAttribute="trailingMargin" id="fKe-iQ-lB2"/>
                             <constraint firstItem="bPl-oz-1Ft" firstAttribute="leading" secondItem="B5S-cG-uLj" secondAttribute="leadingMargin" id="gTl-m1-diK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bPl-oz-1Ft" secondAttribute="trailing" id="gkv-X1-9Bv"/>
-                            <constraint firstItem="hG2-5a-9Ng" firstAttribute="leading" secondItem="B5S-cG-uLj" secondAttribute="leadingMargin" id="jdh-95-ilA"/>
                             <constraint firstAttribute="centerX" secondItem="fX3-RQ-UVI" secondAttribute="centerX" id="nPL-6c-iIK"/>
                             <constraint firstItem="fX3-RQ-UVI" firstAttribute="leading" secondItem="B5S-cG-uLj" secondAttribute="leadingMargin" id="uJx-wh-4XR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hG2-5a-9Ng" secondAttribute="trailing" id="zOz-e0-Q9h"/>
+                            <constraint firstItem="bPl-oz-1Ft" firstAttribute="top" secondItem="gxu-fE-zef" secondAttribute="bottom" constant="100" id="xgm-rK-uwF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0Jk-Te-LzJ"/>
+                                <exclude reference="NB0-xc-hzK"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="accessCodeTextField" destination="fX3-RQ-UVI" id="9kT-ub-aYx"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="betaToAuthSegue" id="CIb-ha-8H9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6y-Uy-eIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="-384"/>
+            <point key="canvasLocation" x="1739" y="-50"/>
+        </scene>
+        <!--Description View Controller-->
+        <scene sceneID="DXv-w0-Qa2">
+            <objects>
+                <viewController id="PeF-mW-wtz" customClass="DescriptionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jez-Rp-3yJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="4k7-P5-KWV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TJJ-O6-c2K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="near is an app for having conversations with people nearby" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODP-ps-JdK">
+                                <rect key="frame" x="16" y="120" width="568" height="23.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dD-f1-QWu">
+                                <rect key="frame" x="268" y="283.5" width="64" height="33"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.77576546717171713" green="0.77576546717171713" blue="0.77576546717171713" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueTapped:" destination="PeF-mW-wtz" eventType="touchUpInside" id="dIq-YO-e1S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ODP-ps-JdK" firstAttribute="leading" secondItem="TJJ-O6-c2K" secondAttribute="leadingMargin" id="gMZ-cC-wTQ"/>
+                            <constraint firstAttribute="centerY" secondItem="5dD-f1-QWu" secondAttribute="centerY" id="k9h-xt-Xnt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ODP-ps-JdK" secondAttribute="trailing" id="rnX-Gq-35T"/>
+                            <constraint firstItem="ODP-ps-JdK" firstAttribute="top" secondItem="Jez-Rp-3yJ" secondAttribute="bottom" constant="100" id="uWA-yd-zr5"/>
+                            <constraint firstAttribute="centerX" secondItem="5dD-f1-QWu" secondAttribute="centerX" id="v9u-UN-sGm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="rct-B2-P0s" kind="showDetail" identifier="descriptionToLocationSegue" id="lRz-nC-1xh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AP1-cG-R3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-595" y="-50"/>
+        </scene>
+        <!--Location Auth View Controller-->
+        <scene sceneID="eCl-qR-0fB">
+            <objects>
+                <viewController id="rct-B2-P0s" customClass="LocationAuthViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d7W-fE-JnT"/>
+                        <viewControllerLayoutGuide type="bottom" id="fhf-8M-Hl0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t74-Dh-5uD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="near needs your location to find conversations nearby" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW9-Wl-W0t">
+                                <rect key="frame" x="16" y="120" width="568" height="46.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN6-Mt-EdF">
+                                <rect key="frame" x="268" y="283" width="64" height="33"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.77576546719999995" green="0.77576546719999995" blue="0.77576546719999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueTapped:" destination="rct-B2-P0s" eventType="touchUpInside" id="ZXS-8l-xwM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvP-Ux-9hA">
+                                <rect key="frame" x="257" y="346" width="87" height="33"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Maybe Later">
+                                    <color key="titleColor" red="0.77576546719999995" green="0.77576546719999995" blue="0.77576546719999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="laterTapped:" destination="rct-B2-P0s" eventType="touchUpInside" id="AZd-lo-Cak"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="vvP-Ux-9hA" secondAttribute="centerX" id="5YP-SO-hAF"/>
+                            <constraint firstItem="vvP-Ux-9hA" firstAttribute="top" secondItem="gN6-Mt-EdF" secondAttribute="bottom" constant="30" id="LYV-3i-MZE"/>
+                            <constraint firstAttribute="centerY" secondItem="gN6-Mt-EdF" secondAttribute="centerY" id="RJa-0T-ieC"/>
+                            <constraint firstItem="KW9-Wl-W0t" firstAttribute="top" secondItem="d7W-fE-JnT" secondAttribute="bottom" constant="100" id="fyg-Ee-e7K"/>
+                            <constraint firstItem="KW9-Wl-W0t" firstAttribute="leading" secondItem="t74-Dh-5uD" secondAttribute="leadingMargin" id="pBv-FS-6Ax"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KW9-Wl-W0t" secondAttribute="trailing" id="u5f-KF-KMa"/>
+                            <constraint firstAttribute="centerX" secondItem="gN6-Mt-EdF" secondAttribute="centerX" id="wMw-Tm-JsY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BC7-4c-ijf" kind="show" identifier="locationToNotificationSegue" id="jh2-iv-O8r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Cw-ys-BCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121" y="-66"/>
+        </scene>
+        <!--Notification Auth View Controller-->
+        <scene sceneID="bha-Bj-C2j">
+            <objects>
+                <viewController id="BC7-4c-ijf" customClass="NotificationAuthViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Myo-57-qsA"/>
+                        <viewControllerLayoutGuide type="bottom" id="y15-oz-l2z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jv5-bB-ond">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="near would like to send you notifications to keep you updated on conversations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4G-48-lcp">
+                                <rect key="frame" x="16" y="120" width="568" height="46.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHL-c9-xPc">
+                                <rect key="frame" x="268" y="283" width="64" height="33"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.77576546719999995" green="0.77576546719999995" blue="0.77576546719999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueTapped:" destination="BC7-4c-ijf" eventType="touchUpInside" id="NYh-KU-ewk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUx-JF-0Er">
+                                <rect key="frame" x="256.5" y="346.5" width="87" height="33"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Maybe Later">
+                                    <color key="titleColor" red="0.77576546719999995" green="0.77576546719999995" blue="0.77576546719999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="laterTapped:" destination="BC7-4c-ijf" eventType="touchUpInside" id="HUY-XV-E7j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="A4G-48-lcp" firstAttribute="leading" secondItem="jv5-bB-ond" secondAttribute="leadingMargin" id="Co1-k2-LLt"/>
+                            <constraint firstAttribute="centerX" secondItem="QHL-c9-xPc" secondAttribute="centerX" id="HKV-BZ-Wuv"/>
+                            <constraint firstItem="qUx-JF-0Er" firstAttribute="top" secondItem="QHL-c9-xPc" secondAttribute="bottom" constant="30" id="Obp-cI-krP"/>
+                            <constraint firstItem="A4G-48-lcp" firstAttribute="top" secondItem="Myo-57-qsA" secondAttribute="bottom" constant="100" id="PXz-SF-mw0"/>
+                            <constraint firstAttribute="centerY" secondItem="QHL-c9-xPc" secondAttribute="centerY" id="VtM-W6-A5c"/>
+                            <constraint firstAttribute="centerX" secondItem="qUx-JF-0Er" secondAttribute="centerX" id="chx-bW-e1J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A4G-48-lcp" secondAttribute="trailing" id="kOu-Zv-etB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="zfy-SF-J26" kind="show" identifier="locationToBetaSegue" id="1Ey-Gb-D2g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oln-QI-NXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="-58"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="Wm7-P4-XYi">
@@ -803,7 +1003,7 @@
                     <connections>
                         <segue destination="X3e-bB-OZo" kind="presentation" identifier="chatSegue" modalTransitionStyle="flipHorizontal" id="QgY-k8-CJK"/>
                         <segue destination="1bc-pA-MiL" kind="presentation" identifier="chatMenuSegue" modalTransitionStyle="crossDissolve" id="ULa-Nu-G0V"/>
-                        <segue destination="zfy-SF-J26" kind="presentation" identifier="betaCodeSegue" id="bTv-D6-zU6"/>
+                        <segue destination="PeF-mW-wtz" kind="presentation" identifier="signupSegue" id="jo4-AG-VpA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ZG-r2-IvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -838,8 +1038,8 @@
         <image name="User" width="26" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="pLL-4g-GhR"/>
         <segue reference="QgY-k8-CJK"/>
-        <segue reference="ULa-Nu-G0V"/>
         <segue reference="wEx-8g-djb"/>
     </inferredMetricsTieBreakers>
 </document>

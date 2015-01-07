@@ -26,16 +26,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -50,7 +40,7 @@
                        withParameters:@{@"accessCode": self.accessCodeTextField.text}
                                 block:^(id object, NSError *error) {
                                     if (!error) {
-                                        NSLog(@"Perform Segue");
+                                        [self performSegueWithIdentifier:@"betaToAuthSegue" sender:nil];
                                     } else {
                                         NSString *errorString = [error userInfo][@"error"];
                                         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
