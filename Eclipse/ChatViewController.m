@@ -60,6 +60,7 @@
     
     takeController = [[FDTakeController alloc] init];
     takeController.delegate = self;
+    takeController.allowsEditingPhoto = YES;
         
     isLoading = NO;
     [self loadMessages];
