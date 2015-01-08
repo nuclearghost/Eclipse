@@ -70,7 +70,6 @@
 {
     [super viewDidAppear:animated];
     timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(loadMessages) userInfo:nil repeats:YES];
-    self.collectionView.collectionViewLayout.springinessEnabled = YES;
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
@@ -448,7 +447,7 @@
 }
 
 - (IBAction)shareTapped:(id)sender {
-    NSString *text = @"Join the conversation with Near.";
+    NSString *text = [NSString stringWithFormat:@"Join the conversation with Near. %@", self.room[@"Name"]];
     NSURL *shareURL = [NSURL URLWithString:[NSString stringWithFormat:@"nearapp://room/%@", self.room.objectId]];
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]

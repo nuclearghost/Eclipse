@@ -34,6 +34,9 @@
         case 1:
             identifier = @"profileRow";
             break;
+        case 2:
+            identifier = @"aboutRowSegue";
+            break;
     }
     
     return identifier;

@@ -50,6 +50,8 @@
     self.statusButton.layer.borderWidth = 1.0;
     self.passwordButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.passwordButton.layer.borderWidth = 1.0;
+    self.pictureButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.pictureButton.layer.borderWidth = 1.0;
 
     UIImage *backBtn = [UIImage imageNamed:@"BackArrow"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -92,6 +94,9 @@
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     alert.tag = 101;
     [alert show];
+}
+
+- (IBAction)changePictureTapped:(id)sender {
 }
 
 #pragma mark - RSKImageCropViewControllerDelegate

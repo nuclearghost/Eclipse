@@ -36,7 +36,6 @@
 		B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217D71A06F2EB0074A08C /* InitialViewController.m */; };
 		B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DA1A06FE830074A08C /* UserNameViewController.m */; };
 		B26217DE1A070CCE0074A08C /* ChatRoomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */; };
-		B267C92F1A36BC6100E5CD02 /* UIImage+StackBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */; };
 		B267C9331A36C8EB00E5CD02 /* MainSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B267C9321A36C8EB00E5CD02 /* MainSlideViewController.m */; };
 		B267C9361A36C94400E5CD02 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B267C9351A36C94400E5CD02 /* LeftMenuViewController.m */; };
 		B27416D21A50779000D31B93 /* OtherProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27416D11A50779000D31B93 /* OtherProfileViewController.m */; };
@@ -60,6 +59,7 @@
 		B2B549F31A5B9C8A0035C0F9 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549E91A5B9C8A0035C0F9 /* OpenSans-Semibold.ttf */; };
 		B2B549F41A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549EA1A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf */; };
 		B2B549F71A5BC2570035C0F9 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */; };
+		B2C14D6D1A5E560B00C3E964 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C14D6C1A5E560B00C3E964 /* AboutViewController.m */; };
 		B2DABCF71A5D06EB00F0C2BC /* BetaCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DABCF61A5D06EB00F0C2BC /* BetaCodeViewController.m */; };
 		B2DABCFA1A5D143700F0C2BC /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DABCF91A5D143700F0C2BC /* DescriptionViewController.m */; };
 		B2DABCFD1A5D147E00F0C2BC /* LocationAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DABCFC1A5D147E00F0C2BC /* LocationAuthViewController.m */; };
@@ -124,8 +124,6 @@
 		B26217DA1A06FE830074A08C /* UserNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNameViewController.m; sourceTree = "<group>"; };
 		B26217DC1A070CCE0074A08C /* ChatRoomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomTableViewController.h; sourceTree = "<group>"; };
 		B26217DD1A070CCE0074A08C /* ChatRoomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomTableViewController.m; sourceTree = "<group>"; };
-		B267C92D1A36BC6100E5CD02 /* UIImage+StackBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+StackBlur.h"; sourceTree = "<group>"; };
-		B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+StackBlur.m"; sourceTree = "<group>"; };
 		B267C9311A36C8EB00E5CD02 /* MainSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSlideViewController.h; sourceTree = "<group>"; };
 		B267C9321A36C8EB00E5CD02 /* MainSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSlideViewController.m; sourceTree = "<group>"; };
 		B267C9341A36C94400E5CD02 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
@@ -157,6 +155,8 @@
 		B2B549EA1A5B9C8A0035C0F9 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		B2B549F51A5BC2570035C0F9 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		B2C14D6B1A5E560B00C3E964 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		B2C14D6C1A5E560B00C3E964 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B2DABCF51A5D06EB00F0C2BC /* BetaCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetaCodeViewController.h; sourceTree = "<group>"; };
 		B2DABCF61A5D06EB00F0C2BC /* BetaCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetaCodeViewController.m; sourceTree = "<group>"; };
 		B2DABCF81A5D143700F0C2BC /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionViewController.h; sourceTree = "<group>"; };
@@ -337,6 +337,8 @@
 				B2F34A111A354B4200CB78BF /* CreateChatViewController.m */,
 				B2DABCF31A5D050B00F0C2BC /* SignUp */,
 				B2DABCF41A5D052F00F0C2BC /* Profiles */,
+				B2C14D6B1A5E560B00C3E964 /* AboutViewController.h */,
+				B2C14D6C1A5E560B00C3E964 /* AboutViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -396,8 +398,6 @@
 			children = (
 				B27D8D3C1A350835006BD19D /* UIColor+Eclipse.h */,
 				B27D8D3D1A350835006BD19D /* UIColor+Eclipse.m */,
-				B267C92D1A36BC6100E5CD02 /* UIImage+StackBlur.h */,
-				B267C92E1A36BC6100E5CD02 /* UIImage+StackBlur.m */,
 				B2B549F51A5BC2570035C0F9 /* UIImageEffects.h */,
 				B2B549F61A5BC2570035C0F9 /* UIImageEffects.m */,
 			);
@@ -629,6 +629,7 @@
 				B2DABCFA1A5D143700F0C2BC /* DescriptionViewController.m in Sources */,
 				B26217DB1A06FE830074A08C /* UserNameViewController.m in Sources */,
 				B28B6CF11A576D1B00EF8652 /* ShareManager.m in Sources */,
+				B2C14D6D1A5E560B00C3E964 /* AboutViewController.m in Sources */,
 				B2F34A121A354B4200CB78BF /* CreateChatViewController.m in Sources */,
 				B282C7571A490183006F1C01 /* MyProfileViewController.m in Sources */,
 				B2DABCF71A5D06EB00F0C2BC /* BetaCodeViewController.m in Sources */,
@@ -640,7 +641,6 @@
 				B267C9331A36C8EB00E5CD02 /* MainSlideViewController.m in Sources */,
 				B2B549F71A5BC2570035C0F9 /* UIImageEffects.m in Sources */,
 				B2DABD001A5D14CB00F0C2BC /* NotificationAuthViewController.m in Sources */,
-				B267C92F1A36BC6100E5CD02 /* UIImage+StackBlur.m in Sources */,
 				B23EE7001A073BDB00E5AE9E /* ChatViewController.m in Sources */,
 				B26217D81A06F2EB0074A08C /* InitialViewController.m in Sources */,
 			);

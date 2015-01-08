@@ -86,9 +86,6 @@
     NSNumber *userCount = chatRoom[@"userCount"];
     cell.peopleLabel.text = [NSString stringWithFormat:@"%@ people", userCount];
 
-    if (chatRoom[@"color"] != nil) {
-        cell.contentView.backgroundColor = UIColorFromRGB([chatRoom[@"color"] intValue]);
-    }
 
     if (chatRoom[@"picture"] != nil) {
         
@@ -106,6 +103,12 @@
     } else {
         cell.backgroundImageView.alpha = 0;
         cell.backgroundImageView.image = nil;
+        
+        if (chatRoom[@"color"] != nil) {
+            cell.contentView.backgroundColor = UIColorFromRGB([chatRoom[@"color"] intValue]);
+        } else {
+            cell.contentView.backgroundColor = UIColorFromRGB(0x9b9b9b);
+        }
     }
     
     [cell.timer invalidate];
@@ -147,7 +150,7 @@
 
 - (IBAction)shareTapped:(UIButton *)sender {
     PFObject *chatroom = self.chatRooms[sender.tag];
-    NSString *text = @"Join the conversation with Near.";
+    NSString *text = [NSString stringWithFormat:@"Join the conversation with Near. %@", chatroom[@"Name"]];
     NSURL *shareURL = [NSURL URLWithString:[NSString stringWithFormat:@"nearapp://room/%@", chatroom.objectId]];
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]

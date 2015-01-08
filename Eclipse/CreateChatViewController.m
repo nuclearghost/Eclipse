@@ -11,7 +11,6 @@
 #import <Parse/Parse.h>
 
 #import "UIColor+Eclipse.h"
-#import "UIImage+StackBlur.h"
 #import "UIImageEffects.h"
 
 #import "LocationHelper.h"
@@ -31,7 +30,7 @@
     self.title = @"CREATE A CONVERSATION";
     
     self.EclipseColors = @[[UIColor eclipseDarkBlueColor], [UIColor eclipseYellowColor], [UIColor eclipseMagentaColor], [UIColor eclipseLightBlueColor], [UIColor eclipseRedColor]];
-    self.colorIndex = -1;
+    self.colorIndex = arc4random_uniform([self.EclipseColors count]);
     [self refreshTapped:nil];
     
     self.takeController = [[FDTakeController alloc] init];
@@ -100,10 +99,12 @@
 }
 
 - (IBAction)communityGuidelinesTapped:(id)sender {
+#warning FIX THIS
     //TODO: Open webview to guidelines
 }
 
 - (IBAction)privacyTapped:(id)sender {
+#warning FIX THIS
     //TODO: Open webview to privacy
 }
 

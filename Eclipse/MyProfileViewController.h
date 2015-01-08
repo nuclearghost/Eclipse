@@ -18,9 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *statusButton;
 @property (weak, nonatomic) IBOutlet UIButton *passwordButton;
+@property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 
 - (IBAction)profileImgTapped:(id)sender;
 - (IBAction)changeStatusTapped:(id)sender;
 - (IBAction)changePasswordTapped:(id)sender;
+- (IBAction)changePictureTapped:(id)sender;
 
 @end
