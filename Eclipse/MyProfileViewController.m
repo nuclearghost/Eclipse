@@ -62,6 +62,12 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (IBAction)profileImgTapped:(id)sender {
     [self.takeController takePhotoOrChooseFromLibrary];
 }

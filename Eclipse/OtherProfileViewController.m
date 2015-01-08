@@ -39,6 +39,12 @@
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 - (void)setUserID:(NSString*)userID {
     PFQuery *query = [PFUser query];
     [query getObjectInBackgroundWithId:userID block:^(PFObject *object, NSError *error) {
