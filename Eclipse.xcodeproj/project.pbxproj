@@ -46,7 +46,6 @@
 		B27D8D3A1A34FBC7006BD19D /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B27D8D391A34FBC7006BD19D /* ChatTableViewCell.m */; };
 		B27D8D3E1A350835006BD19D /* UIColor+Eclipse.m in Sources */ = {isa = PBXBuildFile; fileRef = B27D8D3D1A350835006BD19D /* UIColor+Eclipse.m */; };
 		B282C7571A490183006F1C01 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B282C7561A490183006F1C01 /* MyProfileViewController.m */; };
-		B28B6CED1A5747A500EF8652 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B28B6CEC1A5747A500EF8652 /* Icon-60@3x.png */; };
 		B28B6CF11A576D1B00EF8652 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B28B6CF01A576D1B00EF8652 /* ShareManager.m */; };
 		B2B549EB1A5B9C8A0035C0F9 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549E11A5B9C8A0035C0F9 /* OpenSans-Bold.ttf */; };
 		B2B549EC1A5B9C8A0035C0F9 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B549E21A5B9C8A0035C0F9 /* OpenSans-BoldItalic.ttf */; };
@@ -140,7 +139,6 @@
 		B27D8D3D1A350835006BD19D /* UIColor+Eclipse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Eclipse.m"; sourceTree = "<group>"; };
 		B282C7551A490183006F1C01 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		B282C7561A490183006F1C01 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
-		B28B6CEC1A5747A500EF8652 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
 		B28B6CEF1A576D1B00EF8652 /* ShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
 		B28B6CF01A576D1B00EF8652 /* ShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareManager.m; sourceTree = "<group>"; };
 		B2B549E11A5B9C8A0035C0F9 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		B262177F1A06EE490074A08C = {
 			isa = PBXGroup;
 			children = (
-				B28B6CEC1A5747A500EF8652 /* Icon-60@3x.png */,
 				B262178A1A06EE490074A08C /* Eclipse */,
 				B26217A41A06EE490074A08C /* EclipseTests */,
 				B26217891A06EE490074A08C /* Products */,
@@ -535,7 +532,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B28B6CED1A5747A500EF8652 /* Icon-60@3x.png in Resources */,
 				B27D8D331A34F52E006BD19D /* CakeSans-Light.otf in Resources */,
 				B27D8D361A34F690006BD19D /* DINEng.ttf in Resources */,
 				B26217D11A06F0C80074A08C /* TwitterKitResources.bundle in Resources */,
