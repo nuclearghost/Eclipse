@@ -10,6 +10,8 @@
 
 #import <Parse/Parse.h>
 
+#import "TOWebViewController.h"
+
 #import "UIColor+Eclipse.h"
 #import "UIImageEffects.h"
 
@@ -99,13 +101,17 @@
 }
 
 - (IBAction)communityGuidelinesTapped:(id)sender {
-#warning FIX THIS
-    //TODO: Open webview to guidelines
+    NSURL *url = [NSURL URLWithString:@"http://imnear.wordpress.com/2015/01/08/community-guidelines/"];
+    TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:url];
+//    [self.navigationController pushViewController:webViewController animated:YES];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:webViewController] animated:YES completion:nil];
 }
 
 - (IBAction)privacyTapped:(id)sender {
-#warning FIX THIS
-    //TODO: Open webview to privacy
+    NSURL *url = [NSURL URLWithString:@"http://imnear.wordpress.com/2015/01/08/privacy-policy/"];
+    TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:url];
+//    [self.navigationController pushViewController:webViewController animated:YES];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:webViewController] animated:YES completion:nil];
 }
 
 #pragma mark - UITextFieldDelegate

@@ -7,6 +7,7 @@ target 'Eclipse' do
   pod "AMSlideMenu", :head
   pod 'JTSImageViewController', '~> 1.4'
   pod 'RSKImageCropper', '~> 0.4'
+  pod 'TOWebViewController', '~> 2.0'
 end
 
 target 'EclipseTests' do
