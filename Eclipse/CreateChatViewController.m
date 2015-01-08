@@ -28,7 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.title = @"CREATE A CONVERSATION";
     
     self.EclipseColors = @[[UIColor eclipseDarkBlueColor], [UIColor eclipseYellowColor], [UIColor eclipseMagentaColor], [UIColor eclipseLightBlueColor], [UIColor eclipseRedColor]];
@@ -47,6 +46,11 @@
     self.navigationItem.backBarButtonItem.title=@"";
     self.navigationController.navigationBar.backIndicatorImage = backBtn;
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.hidesBarsOnSwipe = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,14 +107,12 @@
 - (IBAction)communityGuidelinesTapped:(id)sender {
     NSURL *url = [NSURL URLWithString:@"http://imnear.wordpress.com/2015/01/08/community-guidelines/"];
     TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:url];
-//    [self.navigationController pushViewController:webViewController animated:YES];
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:webViewController] animated:YES completion:nil];
 }
 
 - (IBAction)privacyTapped:(id)sender {
     NSURL *url = [NSURL URLWithString:@"http://imnear.wordpress.com/2015/01/08/privacy-policy/"];
     TOWebViewController *webViewController = [[TOWebViewController alloc] initWithURL:url];
-//    [self.navigationController pushViewController:webViewController animated:YES];
     [self presentViewController:[[UINavigationController alloc] initWithRootViewController:webViewController] animated:YES completion:nil];
 }
 

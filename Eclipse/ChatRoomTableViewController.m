@@ -26,9 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.navigationController.hidesBarsOnSwipe = YES;
-
+    
     self.clearsSelectionOnViewWillAppear = NO;
 
     self.chatRooms = [[NSMutableArray alloc] init];
@@ -48,6 +46,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    self.navigationController.hidesBarsOnSwipe = YES;
+
     ShareManager *sm = [ShareManager sharedShareManager];
     if (sm.roomId && ![sm.roomId isEqualToString:@""]) {
         PFQuery *query = [PFQuery queryWithClassName:@"ChatRoom"];
