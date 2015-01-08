@@ -36,7 +36,6 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
-            <string>OpenSans</string>
         </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
@@ -320,20 +319,8 @@
                                     <action selector="cameraTapped:" destination="kIK-uc-bkP" eventType="touchUpInside" id="ZA3-SF-P2t"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This conversation is viewable by everyone." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNz-ON-3eW">
-                                <rect key="frame" x="70" y="614" width="275.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's what makes near interesting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTI-SY-abm">
-                                <rect key="frame" x="103" y="638" width="207.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-83-3cz">
-                                <rect key="frame" x="57" y="401" width="300" height="60"/>
+                                <rect key="frame" x="57" y="344" width="300" height="60"/>
                                 <state key="normal" image="PostConvo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -344,11 +331,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wym-6J-YWC">
                                 <rect key="frame" x="74" y="662" width="267" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-RE-EDa">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-RE-EDa">
                                         <rect key="frame" x="-9" y="-2" width="155" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Community Guidelines">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.60787563131313127" green="0.60787563131313127" blue="0.60787563131313127" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Community Guidelines">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <action selector="communityGuidelinesTapped:" destination="kIK-uc-bkP" eventType="touchUpInside" id="xDT-Zz-pIR"/>
@@ -357,6 +350,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GR-Ma-rbw">
                                         <rect key="frame" x="154" y="-1" width="96" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="tintColor" red="0.60787563131313127" green="0.60787563131313127" blue="0.60787563131313127" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -386,17 +380,22 @@
                                 <fontDescription key="fontDescription" name="DINEngschriftStd" family="DIN 1451 Std" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This conversation is viewable by everyone within a 100km radius. It's what makes near intersting" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNz-ON-3eW">
+                                <rect key="frame" x="24" y="623" width="366" height="38.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.982421875" green="0.982421875" blue="0.982421875" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="nNz-ON-3eW" firstAttribute="leading" secondItem="xZQ-4B-gdm" secondAttribute="leadingMargin" constant="8" id="13B-Sc-IiS"/>
                             <constraint firstItem="8Jv-jX-5db" firstAttribute="leading" secondItem="xZQ-4B-gdm" secondAttribute="leadingMargin" constant="-8" id="9MD-p7-0Bh"/>
-                            <constraint firstItem="C4U-83-3cz" firstAttribute="top" secondItem="ajn-Nd-XNw" secondAttribute="bottom" constant="137" id="Hcf-iT-YvH"/>
-                            <constraint firstItem="wym-6J-YWC" firstAttribute="top" secondItem="KTI-SY-abm" secondAttribute="bottom" constant="4" id="Osh-6i-0Ea"/>
+                            <constraint firstItem="C4U-83-3cz" firstAttribute="top" secondItem="ajn-Nd-XNw" secondAttribute="bottom" constant="80" id="Hcf-iT-YvH"/>
+                            <constraint firstItem="wym-6J-YWC" firstAttribute="top" secondItem="nNz-ON-3eW" secondAttribute="bottom" id="ON7-y6-X1y"/>
                             <constraint firstItem="cN0-DB-p37" firstAttribute="top" secondItem="ajn-Nd-XNw" secondAttribute="bottom" constant="16" id="Ppe-28-zfN"/>
                             <constraint firstItem="8Jv-jX-5db" firstAttribute="top" secondItem="KVY-nN-eFS" secondAttribute="bottom" id="Q7j-pp-1XZ"/>
                             <constraint firstItem="nu7-p3-Zpw" firstAttribute="leading" secondItem="xZQ-4B-gdm" secondAttribute="leadingMargin" id="TqF-4R-Ea5"/>
-                            <constraint firstAttribute="centerX" secondItem="KTI-SY-abm" secondAttribute="centerX" id="Z8j-VC-vyo"/>
-                            <constraint firstItem="KTI-SY-abm" firstAttribute="top" secondItem="nNz-ON-3eW" secondAttribute="bottom" constant="4" id="aai-W3-I4n"/>
                             <constraint firstItem="ajn-Nd-XNw" firstAttribute="top" secondItem="KVY-nN-eFS" secondAttribute="bottom" id="f1N-Bp-nCp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Jv-jX-5db" secondAttribute="trailing" constant="-8" id="hcU-Os-6ms"/>
                             <constraint firstItem="nu7-p3-Zpw" firstAttribute="top" secondItem="ajn-Nd-XNw" secondAttribute="bottom" constant="16" id="hdR-X6-OC2"/>
@@ -406,13 +405,20 @@
                             <constraint firstItem="G9H-fW-lNI" firstAttribute="top" secondItem="wym-6J-YWC" secondAttribute="bottom" id="myG-j0-A4P"/>
                             <constraint firstAttribute="centerX" secondItem="C4U-83-3cz" secondAttribute="centerX" id="sFS-7A-Aj9"/>
                             <constraint firstAttribute="centerX" secondItem="nNz-ON-3eW" secondAttribute="centerX" id="sb7-Pj-8Px"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nNz-ON-3eW" secondAttribute="trailing" constant="8" id="way-gK-3U1"/>
                             <constraint firstItem="ajn-Nd-XNw" firstAttribute="leading" secondItem="xZQ-4B-gdm" secondAttribute="leadingMargin" constant="-16" id="xvg-ou-xVr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ajn-Nd-XNw" secondAttribute="trailing" constant="-16" id="zeA-63-WIa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="sb7-Pj-8Px"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="postButton" destination="C4U-83-3cz" id="bXi-np-amp"/>
                         <outlet property="titleTextField" destination="8Jv-jX-5db" id="1ne-c6-DF2"/>

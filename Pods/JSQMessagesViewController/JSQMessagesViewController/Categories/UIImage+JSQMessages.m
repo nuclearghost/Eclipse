@@ -82,7 +82,8 @@
 
 + (UIImage *)jsq_defaultAccessoryImage
 {
-    return [UIImage jsq_bubbleImageFromBundleWithName:@"clip"];
+//    return [UIImage jsq_bubbleImageFromBundleWithName:@"clip"];
+    return [UIImage imageNamed:@"Camera"];
 }
 
 + (UIImage *)jsq_defaultTypingIndicatorImage
