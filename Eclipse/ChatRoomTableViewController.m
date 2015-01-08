@@ -37,7 +37,12 @@
                                                                       NSForegroundColorAttributeName : [UIColor whiteColor],
                                                                       NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]
                                                                       }];
-    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(loadChats)
+                  forControlEvents:UIControlEventValueChanged];
     [[LocationHelper sharedLocationHelper] startLocationServices];
 }
 
@@ -177,6 +182,18 @@
              for (PFObject *object in objects)
              {
                  [self.chatRooms addObject:object];
+             }
+             if (self.refreshControl) {
+                 
+                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                 [formatter setDateFormat:@"MMM d, h:mm a"];
+                 NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+                 NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                             forKey:NSForegroundColorAttributeName];
+                 NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+                 self.refreshControl.attributedTitle = attributedTitle;
+                 
+                 [self.refreshControl endRefreshing];
              }
              [self.tableView reloadData];
          }
