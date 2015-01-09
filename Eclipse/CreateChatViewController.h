@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;
 @property (weak, nonatomic) IBOutlet UIButton *postButton;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UIButton *guidelinesButton;
+@property (weak, nonatomic) IBOutlet UIButton *privacyButton;
 
 - (IBAction)cameraTapped:(id)sender;
 - (IBAction)refreshTapped:(id)sender;

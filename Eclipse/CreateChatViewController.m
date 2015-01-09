@@ -30,8 +30,8 @@
     [super viewDidLoad];
     self.title = @"CREATE A CONVERSATION";
     
-    self.EclipseColors = @[[UIColor eclipseDarkBlueColor], [UIColor eclipseYellowColor], [UIColor eclipseMagentaColor], [UIColor eclipseLightBlueColor], [UIColor eclipseRedColor]];
-    self.colorIndex = arc4random_uniform([self.EclipseColors count]);
+    self.EclipseColors = @[[UIColor eclipseMedGrayColor], [UIColor eclipseDarkBlueColor], [UIColor eclipseYellowColor], [UIColor eclipseMagentaColor], [UIColor eclipseLightBlueColor], [UIColor eclipseRedColor]];
+    self.colorIndex = -1;
     [self refreshTapped:nil];
     
     self.takeController = [[FDTakeController alloc] init];
@@ -46,6 +46,12 @@
     self.navigationItem.backBarButtonItem.title=@"";
     self.navigationController.navigationBar.backIndicatorImage = backBtn;
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
+    
+    NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle)};
+    [self.guidelinesButton setAttributedTitle: [[NSAttributedString alloc] initWithString:@"Community Guidelines"
+                                                                               attributes:underlineAttribute] forState:UIControlStateNormal];
+    [self.privacyButton setAttributedTitle: [[NSAttributedString alloc] initWithString:@"Privacy Policy"
+                                                                               attributes:underlineAttribute] forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -52,7 +52,7 @@
     userRegisteredToRoom = NO;
     [self checkIfUserRegistered];
 
-    JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] initWithBubbleImage:[UIImage imageNamed:@"Chat_Square"] capInsets:UIEdgeInsetsZero];
+    JSQMessagesBubbleImageFactory *bubbleFactory = [[JSQMessagesBubbleImageFactory alloc] init];
     outgoingBubbleImageData = [bubbleFactory outgoingMessagesBubbleImageWithColor:[UIColor eclipseGrayColor]];
     incomingBubbleImageData = [bubbleFactory incomingMessagesBubbleImageWithColor:[UIColor eclipseLightGrayColor]];
     
