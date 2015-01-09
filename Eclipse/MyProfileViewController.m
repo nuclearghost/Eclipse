@@ -32,13 +32,13 @@
                                                                       NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]
                                                                       }];
     self.profileStatusLabel.text = user[@"status"];
+    self.profileImgButton.imageView.layer.cornerRadius = self.profileImgButton.frame.size.width / 2;
 
     PFFile *pictureFile = user[@"picture"];
     [pictureFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error)
      {
          if (error == nil)
          {
-             self.profileImgButton.imageView.layer.cornerRadius = self.profileImgButton.frame.size.width / 2;
              [self.profileImgButton setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
          }
      }];

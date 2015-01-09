@@ -28,13 +28,13 @@
 {
     NSString *identifier = @"";
     switch (indexPath.row) {
-        case 0:
+        case 1:
             identifier = @"firstRow";
             break;
-        case 1:
+        case 2:
             identifier = @"profileRow";
             break;
-        case 2:
+        case 3:
             identifier = @"aboutRowSegue";
             break;
     }
@@ -51,14 +51,23 @@
     [button setImage:[UIImage imageNamed:@"Menu"] forState:UIControlStateNormal];
     
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSIndexPath *)initialIndexPathForLeftMenu {
+    return [NSIndexPath indexPathForItem:1 inSection:0];
 }
-*/
+
+- (CGFloat) panGestureWarkingAreaPercent {
+    return 15.0;
+}
+
+- (void) configureSlideLayer:(CALayer *)layer
+{
+    layer.shadowColor = [UIColor blackColor].CGColor;
+    layer.shadowOpacity = 1;
+    layer.shadowOffset = CGSizeMake(0, 0);
+    layer.shadowRadius = 5;
+    layer.masksToBounds = NO;
+    layer.shadowPath =[UIBezierPath bezierPathWithRect:self.view.layer.bounds].CGPath;
+}
 
 @end
