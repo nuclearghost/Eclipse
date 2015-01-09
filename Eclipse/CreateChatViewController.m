@@ -37,6 +37,8 @@
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = self;
     
+    [self.postButton setImage:[UIImage imageNamed:@"PostConvoInactive"] forState:UIControlStateDisabled];
+    self.postButton.enabled = NO;
 
     self.titleTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"NAME YOUR CONVERSATION" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.titleTextField.delegate = self;
@@ -95,6 +97,7 @@
         chatRoom[@"centerPoint"] = [[LocationHelper sharedLocationHelper] getLastGeoPoint];
 
         const CGFloat* components;
+        uint32_t index = self.colorIndex == 0 ? arc4random_uniform([self.EclipseColors count]) : (uint32_t)self.colorIndex;
         components = CGColorGetComponents(((UIColor*)[self.EclipseColors objectAtIndex:self.colorIndex]).CGColor);
         int hexValue = 0xFF0000*components[0] + 0xFF00*components[1] + 0xFF*components[2];
         chatRoom[@"color"] = [NSNumber numberWithInt:hexValue];
@@ -126,7 +129,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    
+    self.postButton.enabled = YES;
     return YES;
 }
 

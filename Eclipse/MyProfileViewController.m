@@ -97,6 +97,7 @@
 }
 
 - (IBAction)changePictureTapped:(id)sender {
+    [self.takeController takePhotoOrChooseFromLibrary];
 }
 
 #pragma mark - RSKImageCropViewControllerDelegate
