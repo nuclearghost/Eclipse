@@ -36,7 +36,7 @@
                                                                       NSFontAttributeName : [UIFont fontWithName:@"DINCondensed-Bold" size:20]
                                                                       }];
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor eclipseMedGrayColor];
+    self.refreshControl.backgroundColor = [UIColor eclipseGrayColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
                             action:@selector(loadChats)

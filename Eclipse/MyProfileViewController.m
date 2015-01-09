@@ -46,12 +46,16 @@
     self.takeController = [[FDTakeController alloc] init];
     self.takeController.delegate = self;
     
+    CGFloat cornerRadius = 20;
     self.statusButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.statusButton.layer.borderWidth = 1.0;
+    self.statusButton.layer.cornerRadius = cornerRadius;
     self.passwordButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.passwordButton.layer.borderWidth = 1.0;
+    self.passwordButton.layer.cornerRadius = cornerRadius;
     self.pictureButton.layer.borderColor = [UIColor whiteColor].CGColor;
     self.pictureButton.layer.borderWidth = 1.0;
+    self.pictureButton.layer.cornerRadius = cornerRadius;
 
     UIImage *backBtn = [UIImage imageNamed:@"BackArrow"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
